@@ -191,16 +191,7 @@ Em nome do Pai, do Filho e do Espírito Santo. Amém.
 </div>
 
 <script>
-const canticosSemana = {
-  0: { titulo: "Cântico do Domingo: Digno é o Cordeiro (Apocalipse 5:9–14)", texto: "E cantavam um novo cântico, dizendo:<br>Digno és de tomar o livro e de abrir os seus selos; porque foste morto, e com o teu sangue compraste para Deus homens de toda tribo, e língua, e povo, e nação;<br>E para o nosso Deus os fizeste reis e sacerdotes; e eles reinarão sobre a terra.<br>E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos anciãos; e era o número deles milhões de milhões e milhares de milhares,<br>Que com grande voz diziam:<br>Digno é o Cordeiro, que foi morto, de receber o poder, e riquezas, e sabedoria, e força, e honra, e glória, e ações de graças.<br>E ouvi a toda criatura que está no céu, e na terra, e debaixo da terra, e que está no mar, e a todas as coisas que neles há, dizer:<br>Ao que está assentado sobre o trono, e ao Cordeiro, sejam dadas ações de graças, e honra, e glória, e poder para todo o sempre.<br>E os quatro animais diziam: Amém. E os vinte e quatro anciãos prostraram-se e adoraram ao que vive para todo o sempre." },
-  1: { titulo: "Cântico de Segunda-feira: Cântico de Moisés (Êxodo 15:1–18)", texto: "Cantarei ao Senhor, porque gloriosamente triunfou; lançou no mar o cavalo e o seu cavaleiro.<br>O Senhor é a minha força e o meu cântico; ele me foi por salvação; este é o meu Deus, portanto lhe farei uma habitação; ele é o Deus de meu pai, por isso o exaltarei.<br>O Senhor é homem de guerra; o Senhor é o seu nome.<br>Lançou no mar os carros de Faraó e o seu exército; e os seus capitães afogaram-se no mar Vermelho.<br>Os abismos os cobriram; desceram às profundezas como pedra.<br>A tua destra, ó Senhor, se tem glorificado em poder; a tua destra, ó Senhor, tem despedaçado o inimigo.<br>Tu, com a tua beneficência, guiaste este povo que salvaste; com a tua força o levaste à habitação da tua santidade.<br>O Senhor reinará eterna e perpetuamente." },
-  2: { titulo: "Cântico de Terça-feira: Cântico de Ana (1 Samuel 2:1–10)", texto: "O meu coração exulta no Senhor, o meu poder está exaltado no Senhor; a minha boca se dilatou sobre os meus inimigos, porquanto me alegro na tua salvação.<br>Não há santo como o Senhor; porque não há outro fora de ti; e rocha nenhuma há como o nosso Deus.<br>O arco dos fortes foi quebrado, e os que tropeçavam foram cingidos de força.<br>O Senhor é o que tira a vida e a dá; faz descer à sepultura e faz tornar a subir dela.<br>O Senhor empobrece e enriquece; abaixa e também exalta.<br>Levanta o pobre do pó e, desde o monturo, exalta o necessitado, para o fazer assentar entre os príncipes, para o fazer herdar o trono de glória." },
-  3: { titulo: "Cântico de Quarta-feira: Magnificat (Lucas 1:46–55)", texto: "A minha alma engrandece ao Senhor,<br>E o meu espírito se alegra em Deus meu Salvador,<br>Porque atentou na baixeza de sua serva; pois eis que desde agora todas as gerações me chamarão bem-aventurada,<br>Porque me fez grandes coisas o Poderoso; e santo é o seu nome.<br>E a sua misericórdia é de geração em geração sobre os que o temem.<br>Com o seu braço agiu valorosamente; dissipou os soberbos no pensamento de seus corações.<br>Depôs dos tronos os poderosos, e elevou os humildes.<br>Encheu de bens os famintos, e despediu vazios os ricos.<br>Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br>Como falou a nossos pais, para com Abraão e sua posteridade, para sempre." },
-  4: { titulo: "Cântico de Quinta-feira: Benedictus (Lucas 1:68–79)", texto: "Bendito o Senhor Deus de Israel, porque visitou e remiu o seu povo,<br>E nos levantou uma salvação poderosa na casa de Davi seu servo,<br>Como falou pela boca dos seus santos profetas, desde o princípio do mundo;<br>Para nos livrar dos nossos inimigos e da mão de todos os que nos aborrecem;<br>Para manifestar misericórdia a nossos pais, e lembrar-se do seu santo concerto,<br>E tu, ó menino, serás chamado profeta do Altíssimo, porque hás de ir ante a face do Senhor, a preparar os seus caminhos;<br>Para dar ao seu povo conhecimento da salvação, na remissão dos seus pecados;<br>Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos visitou." },
-  5: { titulo: "Cântico de Sexta-feira: Nunc Dimittis (Lucas 2:29–32)", texto: "Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>Pois já os meus olhos viram a tua salvação,<br>A qual tu preparaste perante a face de todos os povos;<br>Luz para alumiar as nações, e para glória de teu povo Israel." },
-  6: { titulo: "Cântico de Sábado: Cântico do Cordeiro (Apocalipse 15:3–4)", texto: "Grandes e maravilhosas são as tuas obras, Senhor Deus Todo-Poderoso!<br>Justos e verdadeiros são os teus caminhos, ó Rei dos santos.<br>Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br>Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos." }
-};
-
+// Tradução dos livros
 const traducaoLivros = {
   "Genesis": "Gênesis", "Exodus": "Êxodo", "Leviticus": "Levítico", "Numbers": "Números", "Deuteronomy": "Deuteronômio",
   "Joshua": "Josué", "Judges": "Juízes", "Ruth": "Rute", "1 Samuel": "1 Samuel", "2 Samuel": "2 Samuel",
@@ -229,8 +220,8 @@ function traduzirParaExibicao(refIngles) {
   return refLimpa;
 }
 
-// Lê o lecionário a partir do arquivo rcl.json salvo no repositório
-async function consultarLeituraDoDia(dataObj) {
+// Busca a leitura diária (RCL Daily Complementary) por data exata no rcl.json
+async function consultarLeituraDiaria(dataObj) {
   const ano = dataObj.getFullYear();
   const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
   const dia = String(dataObj.getDate()).padStart(2, '0');
@@ -248,9 +239,7 @@ async function consultarLeituraDoDia(dataObj) {
         };
       }
     }
-  } catch(e) {
-    console.error("Erro ao ler rcl.json:", e);
-  }
+  } catch(e) {}
   return null;
 }
 
@@ -270,11 +259,9 @@ async function atualizarPaginaDiaria() {
   const hoje = new Date();
   const diaSemana = hoje.getDay();
 
-  // Cabeçalho da data
   const opcoesData = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   document.getElementById("data-cabecalho").innerHTML = hoje.toLocaleDateString('pt-BR', opcoesData);
 
-  // Cântico
   const cantico = canticosSemana[diaSemana];
   document.getElementById("cantico-diario").innerHTML = `
     <h2>${cantico.titulo}</h2>
@@ -284,10 +271,10 @@ async function atualizarPaginaDiaria() {
   const containerSalmo = document.getElementById("container-salmo-rcl");
   const containerLeituras = document.getElementById("container-leituras");
 
-  containerSalmo.innerHTML = `<p class="red">Buscando o Salmo de hoje no lecionário...</p>`;
-  containerLeituras.innerHTML = `<p class="red">Buscando as leituras de hoje no lecionário...</p>`;
+  containerSalmo.innerHTML = `<p class="red">Buscando o Salmo de hoje do lecionário...</p>`;
+  containerLeituras.innerHTML = `<p class="red">Buscando as leituras de hoje do lecionário...</p>`;
 
-  const refs = await consultarLeituraDoDia(hoje);
+  const refs = await consultarLeituraDiaria(hoje);
 
   if (refs && (refs.salmo || refs.at)) {
     const [textoSalmo, textoAT, textoNT] = await Promise.all([
@@ -308,8 +295,8 @@ async function atualizarPaginaDiaria() {
       <p>${textoNT.replace(/\n/g, '<br>')}</p>
     `;
   } else {
-    containerSalmo.innerHTML = `<p class="red">Não foi possível localizar as leituras para a data de hoje no rcl.json.</p>`;
-    containerLeituras.innerHTML = `<p class="red">Não foi possível localizar as leituras para a data de hoje no rcl.json.</p>`;
+    containerSalmo.innerHTML = `<p class="red">Não foi possível carregar a leitura para a data de hoje.</p>`;
+    containerLeituras.innerHTML = `<p class="red">Não foi possível carregar a leitura para a data de hoje.</p>`;
   }
 }
 
