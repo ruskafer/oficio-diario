@@ -1,0 +1,18 @@
+{
+  "name": "Ofício Diário",
+  "short_name": "Ofício Diário",
+  "description": "Roteiro litúrgico para o Ofício Diário e Breve Ofício da Noite",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff7e6",
+  "theme_color": "#fff7e6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
