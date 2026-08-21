@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- PWA Manifest & Theme -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#fff7e6">
+<link rel="apple-touch-icon" href="icon-512.png">
+
+<!-- Register Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('PWA Service Worker Registrado com Sucesso!'))
+        .catch((err) => console.log('Falha ao registrar Service Worker:', err));
+    });
+  }
+</script>
 <meta charset="utf-8">
 <title>Breve Ofício da Noite</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
