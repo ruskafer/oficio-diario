@@ -99,11 +99,40 @@ hr {
     margin: 15px 10% 15px 10%;
 }
 
+/* Estilos para a seção explicativa do projeto com fonte menor */
+.sobre-projeto {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(255, 0, 0, 0.6);
+    font-size: 0.8em; /* Define tamanho de fonte menor para todo o bloco */
+    color: #333;
+}
+
+.sobre-projeto h2 {
+    font-size: 110%;
+    color: rgba(255, 0, 0, 0.9);
+    margin-top: 20px;
+}
+
+.sobre-projeto p {
+    font-size: 100%;
+    line-height: 140%;
+}
+
+.img-lutero {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 15px 10%;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
 @media only screen and (max-width: 480px) {
     p { margin-right: 1%; margin-left: 0%; }
     h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
     .seletor-data { margin: 10px 0%; }
     .card-domingo { margin: 15px 0%; }
+    .img-lutero { margin: 15px auto; }
 }
 </style>
 </head>
@@ -117,7 +146,6 @@ hr {
 
 <p class="red" id="data-cabecalho">Carregando data...</p>
 
-<!-- Container para o conteúdo do Domingo -->
 <!-- Container para o conteúdo do Domingo -->
 <div id="conteudo-domingo" style="display: none;">
   <div class="card-domingo">
@@ -161,71 +189,6 @@ hr {
   </div>
 </div>
 
-<script>
-// Mapeamento de domingos e datas festivas do Ano A (IECLB)
-const FESTAS_DOMINGO = {
-  "2025-11-30": "1º Domingo de Advento",
-  "2025-12-07": "2º Domingo de Advento",
-  "2025-12-14": "3º Domingo de Advento",
-  "2025-12-21": "4º Domingo de Advento",
-  "2025-12-28": "1º Domingo após o Natal",
-  "2026-01-04": "2º Domingo após o Natal",
-  "2026-01-11": "Batismo do Senhor",
-  "2026-01-18": "2º Domingo após Epifania",
-  "2026-01-25": "3º Domingo após Epifania",
-  "2026-02-01": "4º Domingo após Epifania",
-  "2026-02-08": "5º Domingo após Epifania",
-  "2026-02-15": "Domingo da Transfiguração",
-  "2026-02-22": "1º Domingo na Quaresma",
-  "2026-03-01": "2º Domingo na Quaresma",
-  "2026-03-08": "3º Domingo na Quaresma",
-  "2026-03-15": "4º Domingo na Quaresma",
-  "2026-03-22": "5º Domingo na Quaresma",
-  "2026-03-29": "Domingo de Ramos e da Paixão",
-  "2026-04-05": "Domingo da Ressurreição (Páscoa)",
-  "2026-04-12": "2º Domingo de Páscoa",
-  "2026-04-19": "3º Domingo de Páscoa",
-  "2026-04-26": "4º Domingo de Páscoa",
-  "2026-05-03": "5º Domingo de Páscoa",
-  "2026-05-10": "6º Domingo de Páscoa",
-  "2026-05-17": "7º Domingo de Páscoa",
-  "2026-05-24": "Dia de Pentecostes",
-  "2026-05-31": "Domingo da Santíssima Trindade",
-  "2026-06-07": "10º Domingo do Tempo Comum",
-  "2026-06-14": "11º Domingo do Tempo Comum",
-  "2026-06-21": "12º Domingo do Tempo Comum",
-  "2026-06-28": "13º Domingo do Tempo Comum",
-  "2026-07-05": "14º Domingo do Tempo Comum",
-  "2026-07-12": "15º Domingo do Tempo Comum",
-  "2026-07-19": "16º Domingo do Tempo Comum",
-  "2026-07-26": "17º Domingo do Tempo Comum",
-  "2026-08-02": "18º Domingo do Tempo Comum",
-  "2026-08-09": "19º Domingo do Tempo Comum",
-  "2026-08-16": "20º Domingo do Tempo Comum",
-  "2026-08-23": "21º Domingo do Tempo Comum",
-  "2026-08-30": "22º Domingo do Tempo Comum",
-  "2026-09-06": "23º Domingo do Tempo Comum",
-  "2026-09-13": "24º Domingo do Tempo Comum",
-  "2026-09-20": "25º Domingo do Tempo Comum",
-  "2026-09-27": "26º Domingo do Tempo Comum",
-  "2026-10-04": "27º Domingo do Tempo Comum",
-  "2026-10-11": "28º Domingo do Tempo Comum",
-  "2026-10-18": "29º Domingo do Tempo Comum",
-  "2026-10-25": "30º Domingo do Tempo Comum",
-  "2026-11-01": "Dia de Todos os Santos",
-  "2026-11-08": "32º Domingo do Tempo Comum",
-  "2026-11-15": "33º Domingo do Tempo Comum",
-  "2026-11-22": "Cristo Rei (Último Domingo do Ano Litúrgico)"
-};
-
-function atualizarDomingoFesta(dataChave) {
-  const elFesta = document.getElementById("domingo-festa-nome");
-  if (elFesta) {
-    const nomeFesta = FESTAS_DOMINGO[dataChave] || "Domingo do Ano Litúrgico";
-    elFesta.innerHTML = `<strong>Celebrando: ${nomeFesta}</strong>`;
-  }
-}
-</script>
 <!-- Container para o conteúdo dos Dias da Semana -->
 <div id="conteudo-semana">
   <h1>Ofício Diário</h1>
@@ -389,7 +352,7 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <h2>Ação de Graças</h2>
   <p>
-Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém.  </p>
+Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém. </p>
 
   <hr>
 
@@ -405,9 +368,116 @@ Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalme
   </p>
 </div>
 
+<!-- ======================================================= -->
+<!-- SEÇÃO SOBRE O PROJETO (FONTE MENOR / FIXA EM TODOS OS DIAS) -->
+<!-- ======================================================= -->
+<div class="sobre-projeto">
+  
+  <!-- Espaço reservado para a imagem de Martinho Lutero -->
+  <img src="lutero.jpeg" alt="Martim Lutero" class="img-lutero">
+
+  <h2>Sobre este Projeto</h2>
+  <p>
+    Esta plataforma foi criada com o intuito de oferecer um roteiro simples, acessível e estruturado para o <strong>Ofício Diário</strong>. Em um mundo marcado pelo ritmo acelerado e por constantes distrações virtuais e diárias, manter uma disciplina de oração e leitura bíblica pode ser um desafio. O objetivo deste projeto é auxiliar principalmente irmãs e irmãos luteranos — e a quem mais desejar — a cultivar uma vida de oração mais litúrgica, focada e ancorada nas leituras bíblicas semanais.
+  </p>
+  <p>
+    <strong>O projeto não é oficialmente vinculado à IECLB:</strong> Esclarecemos que este é um projeto independente de iniciativa pessoal e <u>não possui nenhum vínculo oficial ou institucional</u> com a Igreja Evangélica de Confissão Luterana no Brasil (IECLB). No entanto, o projeto foi elaborado com profundo carinho e respeito pela tradição e espiritualidade luterana, servindo como uma ferramenta complementar de devoção individual, familiar ou em pequenos grupos.
+  </p>
+
+  <h2>Quem somos nós, luteranos? </h2>
+  <p>
+    As pessoas luteranas são pessoas cristãs que fazem parte da herança da Reforma Protestante do século XVI, iniciada pelo pregador e teólogo <strong>Martim Lutero</strong> na Alemanha. A fé luterana está centrada no amor incondicional de Deus revelado em Jesus Cristo. Os pilares fundamentais da nossa teologia resumem-se nos conhecidos princípios da Reforma:
+  </p>
+  <p>
+    • <strong>Somente a Graça (Sola Gratia):</strong> A salvação é um presente gratuito de Deus, não um mérito alcançado por nossas boas obras.<br>
+    • <strong>Somente a Fé (Sola Fide):</strong> Recebemos o perdão e a vida nova única e exclusivamente pela confiança nas promessas de Cristo.<br>
+    • <strong>Somente Cristo (Solus Christus):</strong> Jesus é o centro das Escrituras, o único mediador entre Deus e a humanidade.<br>
+    • <strong>Somente a Escritura (Sola Scriptura):</strong> A Bíblia Sagrada é a fonte, norma e regra de fé e vida para a comunidade de fiéis.
+  </p>
+
+  <h2>O que é o RCL (Revised Common Lectionary)?</h2>
+  <p>
+    O <strong>Lecionário Comum Revisado (RCL)</strong> é um calendário de leituras bíblicas organizado ecumenicamente e utilizado por diversas denominações cristãs ao redor do mundo (incluindo luteranos, anglicanos, metodistas, presbiterianos, entre outros). Ele organiza a leitura das Escrituras em um ciclo de três anos (Anos A, B e C):
+  </p>
+  <p>
+    • <strong>De segunda a quarta-feira:</strong> As leituras refletem e aprofundam as passagens do Domingo anterior.<br>
+    • <strong>De quinta-feira a sábado:</strong> As leituras preparam o coração e a mente para o Domingo que se aproxima.<br>
+    • <strong>No Domingo:</strong> Celebra-se o Dia do Senhor na comunhão comunitária com leituras próprias da data litúrgica.
+  </p>
+
+  <h2>Um espaço aberto a todas as pessoas</h2>
+  <p>
+    Embora esta ferramenta seja pensada com especial carinho para a espiritualidade luterana, este espaço <strong>é destinado a todos e todas as pessoas</strong>, de qualquer denominação cristã ou tradição religiosa, que busquem um momento de silêncio, reflexão, oração diária e contato com a Palavra de Deus. Que este humilde instrumento possa abençoar a sua jornada diária de fé!
+  </p>
+</div>
+
 </div>
 
 <script>
+// Mapeamento de domingos e datas festivas do Ano A (IECLB)
+const FESTAS_DOMINGO = {
+  "2025-11-30": "1º Domingo de Advento",
+  "2025-12-07": "2º Domingo de Advento",
+  "2025-12-14": "3º Domingo de Advento",
+  "2025-12-21": "4º Domingo de Advento",
+  "2025-12-28": "1º Domingo após o Natal",
+  "2026-01-04": "2º Domingo após o Natal",
+  "2026-01-11": "Batismo do Senhor",
+  "2026-01-18": "2º Domingo após Epifania",
+  "2026-01-25": "3º Domingo após Epifania",
+  "2026-02-01": "4º Domingo após Epifania",
+  "2026-02-08": "5º Domingo após Epifania",
+  "2026-02-15": "Domingo da Transfiguração",
+  "2026-02-22": "1º Domingo na Quaresma",
+  "2026-03-01": "2º Domingo na Quaresma",
+  "2026-03-08": "3º Domingo na Quaresma",
+  "2026-03-15": "4º Domingo na Quaresma",
+  "2026-03-22": "5º Domingo na Quaresma",
+  "2026-03-29": "Domingo de Ramos e da Paixão",
+  "2026-04-05": "Domingo da Ressurreição (Páscoa)",
+  "2026-04-12": "2º Domingo de Páscoa",
+  "2026-04-19": "3º Domingo de Páscoa",
+  "2026-04-26": "4º Domingo de Páscoa",
+  "2026-05-03": "5º Domingo de Páscoa",
+  "2026-05-10": "6º Domingo de Páscoa",
+  "2026-05-17": "7º Domingo de Páscoa",
+  "2026-05-24": "Dia de Pentecostes",
+  "2026-05-31": "Domingo da Santíssima Trindade",
+  "2026-06-07": "10º Domingo do Tempo Comum",
+  "2026-06-14": "11º Domingo do Tempo Comum",
+  "2026-06-21": "12º Domingo do Tempo Comum",
+  "2026-06-28": "13º Domingo do Tempo Comum",
+  "2026-07-05": "14º Domingo do Tempo Comum",
+  "2026-07-12": "15º Domingo do Tempo Comum",
+  "2026-07-19": "16º Domingo do Tempo Comum",
+  "2026-07-26": "17º Domingo do Tempo Comum",
+  "2026-08-02": "18º Domingo do Tempo Comum",
+  "2026-08-09": "19º Domingo do Tempo Comum",
+  "2026-08-16": "20º Domingo do Tempo Comum",
+  "2026-08-23": "21º Domingo do Tempo Comum",
+  "2026-08-30": "22º Domingo do Tempo Comum",
+  "2026-09-06": "23º Domingo do Tempo Comum",
+  "2026-09-13": "24º Domingo do Tempo Comum",
+  "2026-09-20": "25º Domingo do Tempo Comum",
+  "2026-09-27": "26º Domingo do Tempo Comum",
+  "2026-10-04": "27º Domingo do Tempo Comum",
+  "2026-10-11": "28º Domingo do Tempo Comum",
+  "2026-10-18": "29º Domingo do Tempo Comum",
+  "2026-10-25": "30º Domingo do Tempo Comum",
+  "2026-11-01": "Dia de Todos os Santos",
+  "2026-11-08": "32º Domingo do Tempo Comum",
+  "2026-11-15": "33º Domingo do Tempo Comum",
+  "2026-11-22": "Cristo Rei (Último Domingo do Ano Litúrgico)"
+};
+
+function atualizarDomingoFesta(dataChave) {
+  const elFesta = document.getElementById("domingo-festa-nome");
+  if (elFesta) {
+    const nomeFesta = FESTAS_DOMINGO[dataChave] || "Domingo do Ano Litúrgico";
+    elFesta.innerHTML = `<strong>Celebrando: ${nomeFesta}</strong>`;
+  }
+}
+
 const CONFIG_ANO = {
   dataInicio: "2025-11-27",
   dataFim: "2026-11-25"
@@ -863,4 +933,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </body>
-</html>
+</html> 
