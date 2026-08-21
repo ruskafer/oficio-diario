@@ -1,312 +1,341 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8">
 <title>Ofício da Noite</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
-body{
-
-    max-width:850px;
-    margin:auto;
-    padding:40px;
-
-    background:#f5f1e8;
-    color:#222;
-
-    font-family:"Times New Roman", serif;
-    font-size:20px;
-    line-height:1.8;
+/* Estilos alinhados com o Ofício Diário da IECLB */
+body {
+    background: rgba(255, 247, 230, 1.0);
+    font-size: 1.4em;
+    font-family: "Times New Roman", Times, serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
 }
 
-h1,h2,h3{
-    font-weight:normal;
+#stuffing {
+    padding: 2px;
 }
 
-h1{
-    text-align:center;
-    font-size:42px;
+h1 {
+    font-size: 106%;
+    color: rgba(255, 0, 0, 1);
+    margin-top: 2%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 2%;
 }
 
-h2{
-
-    margin-top:60px;
-    border-bottom:1px solid #999;
-    padding-bottom:8px;
-
+h2 {
+    font-size: 104%;
+    margin-top: 2%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 1%;
 }
 
-blockquote{
-
-    margin-left:25px;
-
+h3 {
+    font-size: 102%;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-left: 10%;
+    margin-bottom: .5%;
 }
 
-.topo{
-
-    text-align:right;
-
+p {
+    font-size: 100%;
+    margin-top: 0;
+    margin-right: 30%;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    line-height: 150%;
 }
 
-a{
-
-    color:#222;
+.red {
+    color: rgba(255, 0, 0, 1);
 }
 
+.indent { padding-left: 2%; display: block; }
+.indent2 { padding-left: 4%; display: block; }
+.indent3 { padding-left: 6%; display: block; }
+
+a:link, a:visited {
+    color: rgba(51, 102, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(51, 102, 255, 1);
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 0, 0, 0.5);
+    margin: 20px 10%;
+}
+
+.topo {
+    margin: 30px 10% 20px 10%;
+    text-align: right;
+}
+
+audio {
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 480px) {
+    p { margin-right: 1%; margin-left: 0%; }
+    h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
+    hr { margin: 20px 0%; }
+    .topo { margin: 30px 0% 20px 0%; }
+}
 </style>
-
 </head>
-
-
 <body id="topo">
+<div id="stuffing">
 
+  <h1>Ofício da Noite</h1>
 
-<h1>Ofício da Noite</h1>
+  <p class="red"><em>Todos juntos</em></p>
+  <p>
+  Em nome do Pai, do Filho e do Espírito Santo.<br>
+  <strong>Amém.</strong>
+  </p>
 
+  <hr>
 
-<p style="text-align:center;">
-Em nome do Pai, do Filho e do Espírito Santo.
-<br>
-<strong>Amém.</strong>
-</p>
+  <h1>Abertura</h1>
 
+  <h2>Orações Iniciais</h2>
 
+  <p class="red"><em>Dirigente</em></p>
+  <p>Senhor, abre os meus lábios.</p>
 
-<h2>Abertura</h2>
+  <p class="red"><em>Resposta</em></p>
+  <p>E a minha boca anunciará o teu louvor.</p>
 
+  <p class="red"><em>Dirigente</em></p>
+  <p>Ó Deus, vem em meu auxílio.</p>
 
-<blockquote>
+  <p class="red"><em>Resposta</em></p>
+  <p>Senhor, apressa-te em socorrer-me.</p>
 
-Senhor, abre os meus lábios.
+  <p class="red"><em>Todos juntos</em></p>
+  <p>
+  Glória ao Pai, ao Filho e ao Espírito Santo:<br>
+  como era no princípio, agora e sempre. Amém.
+  </p>
 
-<br><br>
+  <hr>
 
-E a minha boca anunciará o teu louvor.
+  <h1>Cântico da Noite</h1>
 
-<br><br>
+  <h2>Nunc Dimittis (Lucas 2:29–32)</h2>
 
-Ó Deus, vem em meu auxílio.
+  <p>
+  Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>
+  Pois já os meus olhos viram a tua salvação,<br>
+  A qual tu preparaste perante a face de todos os povos;<br>
+  Luz para alumiar nações, e para glória de teu povo Israel.
+  </p>
 
-<br><br>
+  <hr>
 
-Senhor, apressa-te em socorrer-me.
+  <h1>Salmo do Dia</h1>
 
-<br><br>
+  <div id="salmo-noite">
+    <p class="red">Carregando Salmo da noite...</p>
+  </div>
 
-Glória ao Pai, ao Filho e ao Espírito Santo.
+  <hr>
 
-<br><br>
+  <h1>Exame do Dia e Confissão</h1>
 
-Como era no princípio, agora e sempre.
+  <p class="red"><em>Momento de silêncio para reflexão pessoal sobre o dia que passou.</em></p>
 
-Amém.
+  <p class="red"><em>Todos juntos:</em></p>
 
-</blockquote>
+  <p>
+  Deus de infinita misericórdia, ao encerrar este dia, colocamo-nos diante da tua presença com o coração contrito. Confessamos que nem sempre vivemos de acordo com a tua vontade: falhamos no amor a ti e no serviço ao nosso próximo, omitindo-nos diante da necessidade alheia e pecando por pensamentos, palavras e ações. Perdoa a nossa culpa, renova em nós a esperança e concede-nos descansar no abraço da tua graça e do teu amor incondicional, revelados em Jesus Cristo, nosso Salvador. Amém.
+  </p>
 
+  <hr>
 
+  <h1>Oração da Noite de Martim Lutero</h1>
 
-<h2>Cântico da Noite</h2>
+  <p class="red"><em>Oração de devoção pessoal e familiar do Catecismo Menor:</em></p>
 
+  <p>
+  Agradeço-te meu Pai celeste, por Jesus Cristo, teu filho amado, que bondosamente me guardaste nesse dia. E peço-te, queiras perdoar-me todos os pecados e injustiças que cometi, e guardar-me misericordiosamente nesta noite. Pois confio a mim, meu corpo e minha alma, e tudo em tuas mãos. Teu santo anjo esteja comigo, para que o mau adversário não se apodere de mim. Amém.
+  </p>
 
-<h3>Nunc Dimittis (Lucas 2:29–32)</h3>
+  <hr>
 
+  <h1>As Orações</h1>
 
-<blockquote>
+  <h2>Pai Nosso</h2>
 
-Agora, Senhor, despedes em paz o teu servo,
-segundo a tua palavra;
+  <p>
+  Pai nosso que estás nos céus,<br>
+  <span class="indent">santificado seja o teu nome,</span>
+  <span class="indent">venha o teu reino,</span>
+  <span class="indent">seja feita a tua vontade,</span>
+  <span class="indent2">assim na terra como no céu.</span>
+  O pão nosso de cada dia nos dá hoje.
+  Perdoa-nos as nossas dívidas
+  <span class="indent">assim como nós perdoamos</span>
+  <span class="indent3">aos nossos devedores.</span>
+  E não nos deixes cair em tentação,
+  <span class="indent">mas livra-nos do mal.</span>
+  Pois teu é o reino, o poder<br>
+  <span class="indent">e a glória para sempre. Amém.</span>
+  </p>
 
-<br><br>
+  <h2>Intercessão e Ação de Graças</h2>
 
-Pois já os meus olhos viram a tua salvação,
-
-<br><br>
-
-A qual tu preparaste perante a face de todos os povos;
-
-<br><br>
-
-Luz para alumiar as nações,
-
-e para glória de teu povo Israel.
-
-</blockquote>
-
-
-
-<h2>Salmo</h2>
-
-
-<p>
-Leia um salmo de confiança ou proteção.
-</p>
-
-
-<p>
-Sugestões:
-</p>
-
-
-<ul>
-
-<li>Salmo 4</li>
-
-<li>Salmo 23</li>
-
-<li>Salmo 27</li>
-
-<li>Salmo 91</li>
-
-<li>Salmo 121</li>
-
-</ul>
-
-
-
-<h2>Exame do Dia</h2>
-
-
-<blockquote>
-
-Senhor Deus,
-
-ao terminar este dia, coloco diante de ti tudo o que vivi.
-
-<br><br>
-
-Mostra-me onde pequei,
-
-onde deixei de amar,
-
-onde preciso crescer.
-
-<br><br>
-
-Obrigado pelas graças recebidas,
-
-pelas pessoas que colocaste em meu caminho
-
-e pela tua presença comigo.
-
-</blockquote>
-
-
-
-<h2>Confissão</h2>
-
-
-<blockquote>
-
-Deus misericordioso,
-
-confesso os meus pecados diante de ti.
-
-<br><br>
-
-Perdoa minhas falhas,
-
-purifica meu coração
-
-e concede-me descansar na tua misericórdia.
-
-<br><br>
-
-Guarda-me nesta noite
-
-e renova minhas forças para um novo dia.
-
-<br><br>
-
-Amém.
-
-</blockquote>
-
-
-
-<h2>Pai Nosso</h2>
-
-
-<blockquote>
-
-Pai nosso que estás nos céus. Santificado seja o teu nome. Venha o teu reino. Seja feita a tua vontade, assim na terra como no céu. O pão nosso de cada dia nos dá hoje. E perdoa-nos as nossas dívidas, assim como nós também perdoamos aos nossos devedores. E não nos deixes cair em tentação. Mas livra-nos do mal. Pois, teu é o reino, o poder e a glória, para sempre. Amém.
-
-</blockquote>
-
-
-<h2>Oração Final</h2>
-
-
-<blockquote>
-
-Senhor,
-
-em tuas mãos entrego o meu espírito.
-
-<br><br>
-
-Concede-me uma noite tranquila,
-
-livre de medo e ansiedade.
-
-<br><br>
-
-Guarda minha casa,
-
-minha família
-
-e todos aqueles que amo.
-
-<br><br>
-
-Que eu descanse sob tua proteção
-
-e desperte para servir-te novamente.
-
-<br><br>
-
-Amém.
-
-</blockquote>
-
-
-
-<h2>Bênção</h2>
-
-
-<blockquote>
-
-O Senhor me abençoe e me guarde.
-
-<br><br>
-
-O Senhor faça resplandecer o seu rosto sobre mim
-
-e tenha misericórdia de mim.
-
-<br><br>
-
-O Senhor sobre mim levante o seu rosto
-
-e me dê a paz.
-
-<br><br>
-
-Amém.
-
-</blockquote>
-
-
-
-<p class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</p>
-
-
+  <p class="red"><em>Pela Igreja, pelo Mundo e pelos Aflitos</em></p>
+
+  <p>
+  Ó Deus, amparo dos fracos e sustento dos que confiam em ti: rogamos-te nesta noite por toda a tua Igreja, para que permaneça fiel no testemunho do Evangelho e na prática do amor e da justiça. Intercedemos pelo mundo, por paz entre as nações e pelo cuidado integral com a tua Criação. Guarda todas as pessoas que passam a noite em sofrimento, enfermidade, solidão ou desamparo. Sê o consolo dos aflitos e capacita-nos a sermos instrumentos da tua compaixão e diaconia. Por Jesus Cristo, nosso Senhor. Amém.
+  </p>
+
+  <h2>Oração de Recolhimento</h2>
+
+  <p>
+  Permanece conosco, Senhor, pois a noite se aproxima e o dia já declina. Sê o nosso guia, ilumina a nossa escuridão e guarda o nosso descanso. Em tuas mãos confiamos nossas vidas, nossas famílias e a nossa comunidade. Concede-nos um sono tranquilo e reparador, bons sonhos e uma noite de paz, longe de todas as ciladas do inimigo, para que, ao despertar de um novo dia, possamos louvar o teu nome e servir-te com alegria. Por Jesus Cristo, teu Filho amado. Amém.
+  </p>
+
+  <hr>
+
+  <h1>Hino de recolhida</h1>
+
+  <p><strong>De bons poderes sinto-me cercado</strong></p>
+  <p class="red"><em>Dietrich Bonhoeffer</em></p>
+
+  <p>
+  <audio controls preload="metadata">
+    <source src="debonspoderes.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  </p>
+
+  <p>
+  1. De bons poderes sinto-me cercado,<br>
+  bem protegido e bem consolado.<br>
+  Assim desejo eu passar os dias<br>
+  e ter convosco um ano de alegrias.
+  </p>
+
+  <p>
+  <strong><em>Estr. Por bons poderes muito bem guardados,<br>
+  confiantes esperamos o que há de vir.<br>
+  Deus é conosco sempre noite e dia.<br>
+  Assim é certa hoje sua alegrias.</em></strong>
+  </p>
+
+  <p>
+  2. Ainda o antigo nos tortura<br>
+  o peso de maus dias dá amargura<br>
+  Senhor, dá a nossas almas acuadas<br>
+  a salvação à qual são preparadas.
+  </p>
+
+  <p>
+  3. Estende-nos o cálice amargo<br>
+  da dor e o bebermos sem embargo,<br>
+  Porque nos vem de tuas mãos divinas.<br>
+  Até com gratidão sofre ensinas.
+  </p>
+
+  <p>
+  4. E se quiseres dar-nos alegrias<br>
+  ainda sob o sol dos breves dias<br>
+  Então nos lembraremos do passado<br>
+  e entregamo-nos ao teu cuidado.
+  </p>
+
+  <p>
+  5. Quando o silêncio se espalhar profundo<br>
+  todo ao redor deste pequeno mundo<br>
+  Repleto de adoração ecoa<br>
+  o canto que a ti teus filhos entoam.
+  </p>
+
+  <hr>
+
+  <h1>Encerramento</h1>
+
+  <h2>Bênção Final</h2>
+
+  <p class="red"><em>Dirigente</em></p>
+
+  <p>
+  O Senhor nos abençoe e nos guarde.<br>
+  O Senhor faça resplandecer o seu rosto sobre nós e tenha misericórdia de nós.<br>
+  O Senhor sobre nós levante o seu rosto e nos dê a paz.<br>
+  Em nome do Pai, do Filho e do Espírito Santo. Amém.
+  </p>
+
+  <p class="topo">
+    <a href="#topo">↑ voltar ao topo</a>
+  </p>
+
+</div>
+
+<script>
+// Mapeamento automático dos Salmos de proteção e descanso para cada dia da semana
+const salmosNoite = {
+  0: { 
+    ref: "Salmo 91:1-11", 
+    titulo: "Salmo 91 — O abrigo no Altíssimo (Domingo)", 
+    texto: "Aquele que habita no esconderijo do Altíssimo, à sombra do Omnipotente descansará.<br>Direi do Senhor: Ele é o meu Deus, o meu refúgio, a minha fortaleza, e nele confiarei.<br>Porque ele te livrará do laço do passarinheiro, e da peste perniciosa.<br>Ele te cobrirá com as suas penas, e debaixo das suas asas te confiarás; a sua verdade será o teu escudo e broquel.<br>Não terás medo do terror de noite nem da seta que voa de dia,<br>Nem da peste que anda na escuridão, nem da mortandade que assola ao meio-dia.<br>Um mil cairão ao teu lado, e dez mil à tua direita, mas não chegará a ti.<br>Porque aos seus anjos dará ordem a teu respeito, para te guardarem em todos os teus caminhos." 
+  },
+  1: { 
+    ref: "Salmo 4:1-8", 
+    titulo: "Salmo 4 — Oração da noite e paz no descanso (Segunda-feira)", 
+    texto: "Ouve-me quando eu clamo, ó Deus da minha justiça; na angústia me deste largueza; tem misericórdia de mim e ouve a minha oração.<br>Sabei, pois, que o Senhor separou para si aquele que é piedoso; o Senhor ouvirá quando eu clamar a ele.<br>Perturbai-vos e não pequeis; falai com o vosso coração sobre o vosso leito, e calai-vos.<br>Oferecei sacrifícios de justiça, e confiai no Senhor.<br>Em paz também me deitarei e dormirei, porque só tu, Senhor, me fazes habitar em segurança." 
+  },
+  2: { 
+    ref: "Salmo 23:1-6", 
+    titulo: "Salmo 23 — O bom Pastor que nos guia (Terça-feira)", 
+    texto: "O Senhor é o meu pastor, nada me faltará.<br>Deitar-me faz em verdes pastos, guia-me suavemente a águas tranquilas.<br>Refrigera a minha alma; guia-me pelas veredas da justiça, por amor do seu nome.<br>Ainda que eu nests andar pelo vale da sombra da morte, não temeria mal algum, porque tu estás comigo; a tua vara e o teu cajado me consolam.<br>Preparas uma mesa perante mim na presença dos meus inimigos, unges a minha cabeça com óleo, o meu cálice transborda.<br>Certamente que a bondade e a misericórdia me seguirão todos os dias da minha vida; e habitarei na casa do Senhor por longos dias." 
+  },
+  3: { 
+    ref: "Salmo 121:1-8", 
+    titulo: "Salmo 121 — O guarda de Israel não dorme (Quarta-feira)", 
+    texto: "Elevo os olhos para os montes: de onde me virá o socorro?<br>O meu socorro vem do Senhor, que fez o céu e a terra.<br>Não deixará vacilar o teu pé; aquele que te guarda não tosquenejará.<br>Eis que não tosquenejará nem dormirá o guarda de Israel.<br>O Senhor é quem te guarda; o Senhor é a tua sombra à tua direita.<br>O sol não te molestará de dia nem a lua de noite.<br>O Senhor te guardará de todo o mal; guardará a tua alma.<br>O Senhor guardará a tua saída e a tua entrada, desde agora e para sempre." 
+  },
+  4: { 
+    ref: "Salmo 27:1-5", 
+    titulo: "Salmo 27 — O Senhor é a minha luz e salvação (Quinta-feira)", 
+    texto: "O Senhor é a minha luz e a minha salvação; a quem temerei? O Senhor é a força da minha vida; de quem me recearei?<br>Uma coisa pedi ao Senhor, e a buscarei: que possa morar na casa do Senhor todos os dias da minha vida, para contemplar a formosura do Senhor, e aprender no seu templo.<br>Porque no dia da adversidade me esconderá no seu pavilhão; no oculto do seu tabernáculo me esconderá; pôr-me-á sobre uma rocha.<br>Agora, pois, será exaltada a minha cabeça sobre os meus inimigos que estão ao redor de mim; por isso oferecerei no seu tabernáculo sacrifícios de júbilo; cantarei, sim, cantarei louvores ao Senhor." 
+  },
+  5: { 
+    ref: "Salmo 134:1-3", 
+    titulo: "Salmo 134 — Louvor noturno no Santuário (Sexta-feira)", 
+    texto: "Eis aqui, bendizei ao Senhor todos os servos do Senhor, que assistis na casa do Senhor pelas noites.<br>Levantai as vossas mãos no santuário, e bendizei ao Senhor.<br>O Senhor que fez o céu e a terra te abençoe desde Sião." 
+  },
+  6: { 
+    ref: "Salmo 16:1-11", 
+    titulo: "Salmo 16 — Herança segura e repouso tranquilo (Sábado)", 
+    texto: "Guarda-me, ó Deus, porque em ti confio.<br>A minha alma disse ao Senhor: Tu és o meu Senhor, a minha bondade não chega à tua presença.<br>O Senhor é a porção da minha herança e do meu cálice; tu sustentas a minha sorte.<br>Bendirei ao Senhor que me aconselhou; até os meus rins me instruem de noite.<br>Tenho posto o Senhor continuamente diante de mim; por isso que ele está à minha direita, não serei abalado.<br>Portanto está alegre o meu coração e se regozija a minha glória; também a minha carne repousará segura.<br>Pois não deixarás a minha alma no inferno, nem permitirás que o teu Santo veja corrupção.<br>Far-me-ás ver a vereda da vida; na tua presença há fartura de alegrias; à tua direita há delícias perpetuamente." 
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hoje = new Date();
+  const diaSemana = hoje.getDay();
+  const salmoHoje = salmosNoite[diaSemana];
+
+  const containerSalmo = document.getElementById("salmo-noite");
+  containerSalmo.innerHTML = `
+    <h2>${salmoHoje.titulo}</h2>
+    <p>${salmoHoje.texto}</p>
+  `;
+});
+</script>
 </body>
-
 </html>
