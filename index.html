@@ -2,79 +2,110 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ofício Diário</title>
 
 <style>
-
-body{
-    max-width:700px;
-    margin:auto;
-    padding:50px;
-
-    background:#f5f1e8;
-    color:#222;
-
-    font-family:"Times New Roman", serif;
-    font-size:22px;
-    line-height:1.8;
-
-    text-align:center;
+/* Estilos alinhados com o Ofício Diário */
+body {
+    background: rgba(255, 247, 230, 1.0);
+    font-size: 1.4em;
+    font-family: "Times New Roman", Times, serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
 }
 
-h1{
-    font-size:42px;
-    font-weight:normal;
+#stuffing {
+    padding: 20px 2px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-a{
-
-    display:block;
-
-    margin:30px auto;
-
-    padding:15px;
-
-    border:1px solid #555;
-
-    width:250px;
-
-    color:#222;
-
-    text-decoration:none;
-
+h1 {
+    font-size: 130%;
+    color: rgba(255, 0, 0, 1);
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    text-align: center;
 }
 
-a:hover{
-
-    background:#ddd;
-
+p.subtitulo {
+    font-size: 100%;
+    margin: 0 10% 30px 10%;
+    line-height: 150%;
+    text-align: center;
 }
 
+.red {
+    color: rgba(255, 0, 0, 1);
+}
+
+/* Links em formato de botões / cards estilizados */
+.btn-oficio {
+    display: block;
+    margin: 20px 10%;
+    padding: 20px;
+    background: #fff8eb;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-left: 5px solid rgba(255, 0, 0, 0.8);
+    color: #222;
+    text-decoration: none;
+    font-size: 105%;
+    line-height: 140%;
+    text-align: left;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-oficio:hover {
+    background: #fff0d6;
+    border-color: rgba(255, 0, 0, 0.8);
+    text-decoration: none;
+}
+
+.btn-oficio strong {
+    color: rgba(255, 0, 0, 1);
+    display: block;
+    font-size: 110%;
+    margin-bottom: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 0, 0, 0.5);
+    margin: 30px 10%;
+}
+
+@media only screen and (max-width: 480px) {
+    h1 { margin-left: 2px; margin-right: 2px; }
+    p.subtitulo { margin-left: 2px; margin-right: 2px; }
+    .btn-oficio { margin: 15px 0%; }
+    hr { margin: 25px 0%; }
+}
 </style>
-
 </head>
 
-
 <body>
+<div id="stuffing">
 
+  <h1>Ofício Diário</h1>
+  
+  <p class="subtitulo red"><em>"O Senhor seja a tua luz e a tua salvação."</em></p>
 
-<h1>Ofício Diário</h1>
+  <a href="manha.html" class="btn-oficio">
+    <strong>Ofício Diário (com leituras)</strong>
+    Roteiro completo para a oração matutina e leituras bíblicas do lecionário.
+  </a>
 
+  <a href="noite.html" class="btn-oficio">
+    <strong>Breve Ofício para Encerrar o Dia</strong>
+    Oração vespertina/noturna para recolhimento, reflexão e descanso.
+  </a>
 
-<a href="manha.html">
-Ofício diário (com leituras)
-</a>
-
-
-<a href="noite.html">
-Breve ofício para encerrar o dia
-</a>
-
-
+</div>
 </body>
 
 </html>
