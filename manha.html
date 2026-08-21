@@ -9,93 +9,103 @@
 
 <style>
 
-body{
-
-    max-width:850px;
-    margin:auto;
-    padding:40px;
-
-    background:#f5f1e8;
-    color:#222;
-
-    font-family:Georgia, "Times New Roman", serif;
-    line-height:1.8;
+/* Base do estilo extraída do layout de referência */
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #faf8f5;
+    color: #1a1a1a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.7;
 }
 
-h1,h2,h3{
-    font-weight:normal;
+/* Títulos */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: normal;
+    color: #000;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 10px;
 }
 
-h1{
-    text-align:center;
-    font-size:42px;
+h2 {
+    font-size: 24px;
+    font-weight: normal;
+    color: #8b0000;
+    margin-top: 45px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
 }
 
-h2{
-
-    margin-top:60px;
-
-    border-bottom:1px solid #999;
-
-    padding-bottom:8px;
+h3 {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: italic;
+    color: #333;
+    margin-top: 25px;
 }
 
-nav{
-
-    border:1px solid #999;
-
-    padding:20px;
-
-    background:white;
-
-    margin:40px 0;
+/* Links */
+a {
+    color: #8b0000;
+    text-decoration: none;
 }
 
-nav a{
-
-    display:inline-block;
-
-    margin:4px;
-
-    padding:8px 12px;
-
-    color:#000;
-
-    text-decoration:none;
-
-    border:1px solid #999;
+a:hover {
+    text-decoration: underline;
 }
 
-nav a:hover{
-
-    background:#ddd;
+/* Citações e blocos de oração */
+blockquote {
+    margin-left: 20px;
+    margin-right: 0;
+    padding-left: 15px;
+    border-left: 3px solid #8b0000;
+    color: #2b2b2b;
 }
 
-blockquote{
-
-    margin-left:30px;
-
-    color:#444;
+/* Classe para rubricas/instruções em vermelho (característica do estilo) */
+.red, .rubrica {
+    color: #8b0000;
+    font-style: italic;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-hr{
-
-    margin:50px 0;
+.oracao {
+    margin-left: 25px;
 }
 
-.topo{
-
-    text-align:right;
+/* Recuos do estilo original */
+.indent {
+    margin-left: 25px;
 }
 
-.topo a{
-
-    text-decoration:none;
+.indent2 {
+    margin-left: 45px;
 }
 
-.oracao{
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 40px 0;
+}
 
-    margin-left:25px;
+.topo {
+    text-align: right;
+    font-size: 15px;
+}
+
+iframe {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 </style>
@@ -113,42 +123,30 @@ Em nome do Pai, do Filho e do Espírito Santo.<br>
 
 <h2 id="abertura">Abertura</h2>
 
+<p class="rubrica"><em>O Dirigente diz:</em></p>
 <p>
-
 Senhor, abre os meus lábios.
-
 </p>
 
 <p class="oracao">
-
 E a minha boca anunciará o teu louvor.
-
 </p>
 
 <p>
-
 Ó Deus, vem em meu auxílio.
-
 </p>
 
 <p class="oracao">
-
 Senhor, apressa-te em socorrer-me.
-
 </p>
 
 <p>
-
 Glória ao Pai, ao Filho e ao Espírito Santo.
-
 </p>
 
 <p class="oracao">
-
 Como era no princípio, agora e sempre.
-
 Amém.
-
 </p>
 
 <div class="topo">
@@ -158,14 +156,10 @@ Amém.
 <hr>
 
 <h2 id="canticos">
-
 Cânticos Bíblicos
-
 </h2>
 
-<p>
-Escolha o cântico correspondente ao dia da semana:
-</p>
+<p class="rubrica"><em>Escolha o cântico correspondente ao dia da semana:</em></p>
 
 <p style="text-align:center;">
 
@@ -207,8 +201,6 @@ Tu os introduzirás e os plantarás no monte da tua herança, no lugar que tu, �
 O Senhor reinará eterna e perpetuamente.
 </blockquote>
 
-</blockquote>
-
 <p style="text-align:center;">
 <a href="#salmos">➡ Continuar o Ofício</a>
 </p>
@@ -236,8 +228,6 @@ Os pés dos seus santos guardará, porém os ímpios ficarão mudos nas trevas; 
 Os que contendem com o Senhor serão quebrantados; desde os céus trovejará sobre eles; o Senhor julgará as extremidades da terra, e dará força ao seu rei, e exaltará o poder do seu ungido.
 </blockquote>
 
-</blockquote>
-
 <p style="text-align:center;">
 <a href="#salmos">➡ Continuar o Ofício</a>
 </p>
@@ -263,8 +253,6 @@ Depôs dos tronos os poderosos, e elevou os humildes.<br><br>
 Encheu de bens os famintos, e despediu vazios os ricos.<br><br>
 Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br><br>
 Como falou a nossos pais, para com Abraão e sua posteridade, para sempre.
-</blockquote>
-
 </blockquote>
 
 <p style="text-align:center;">
@@ -295,8 +283,6 @@ Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos vi
 Para alumiar aos que estão assentados em trevas e sombra de morte; a fim de dirigir os nossos pés pelo caminho da paz.
 </blockquote>
 
-</blockquote>
-
 <p style="text-align:center;">
 <a href="#salmos">➡ Continuar o Ofício</a>
 </p>
@@ -315,8 +301,6 @@ Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br><br>
 Pois já os meus olhos viram a tua salvação,<br><br>
 A qual tu preparaste perante a face de todos os povos;<br><br>
 Luz para alumiar as nações, e para glória de teu povo Israel.
-</blockquote>
-
 </blockquote>
 
 <p style="text-align:center;">
@@ -340,8 +324,6 @@ Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br><br>
 Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos.
 </blockquote>
 
-</blockquote>
-
 <p style="text-align:center;">
 <a href="#salmos">➡ Continuar o Ofício</a>
 </p>
@@ -359,7 +341,7 @@ Porque só tu és santo; por isso todas as nações virão e se prostrarão dian
 E cantavam um novo cântico, dizendo:<br><br>
 Digno és de tomar o livro e de abrir os seus selos; porque foste morto, e com o teu sangue compraste para Deus homens de toda tribo, e língua, e povo, e nação;<br><br>
 E para o nosso Deus os fizeste reis e sacerdotes; e eles reinarão sobre a terra.<br><br>
-E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos anciãos; e era o número deles milhões de milhões e milhares de milhares,<br><br>
+E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos区分anciãos; e era o número deles milhões de milhões e milhares de milhares,<br><br>
 Que com grande voz diziam:<br><br>
 Digno é o Cordeiro, que foi morto, de receber o poder, e riquezas, e sabedoria, e força, e honra, e glória, e ações de graças.<br><br>
 E ouvi a toda criatura que está no céu, e na terra, e debaixo da terra, e que está no mar, e a todas as coisas que neles há, dizer:<br><br>
@@ -373,90 +355,46 @@ E os quatro animais diziam: Amém. E os vinte e quatro anciãos prostraram-se e 
 
 <hr>
 
-
 <h2 id="salmos">
-
 Salmos
-
 </h2>
 
-
 <p>
-
 Leia diariamente um ou mais Salmos seguindo a ordem do Saltério.
-
 </p>
 
-
-<p>
-
-Sugestão de ritmo:
-
-</p>
-
+<p class="rubrica"><em>Sugestão de ritmo:</em></p>
 
 <ul>
-
-<li>
-Dias 1 a 30: Salmos 1–41
-</li>
-
-<li>
-Dias 31 a 60: Salmos 42–72
-</li>
-
-<li>
-Dias 61 a 90: Salmos 73–89
-</li>
-
-<li>
-Dias 91 a 120: Salmos 90–118
-</li>
-
-<li>
-Dias 121 a 150: Salmos 119–150
-</li>
-
+<li>Dias 1 a 30: Salmos 1–41</li>
+<li>Dias 31 a 60: Salmos 42–72</li>
+<li>Dias 61 a 90: Salmos 73–89</li>
+<li>Dias 91 a 120: Salmos 90–118</li>
+<li>Dias 121 a 150: Salmos 119–150</li>
 </ul>
 
-
-<p>
-
-Antes da leitura:
-
-</p>
-
+<p class="rubrica"><em>Antes da leitura:</em></p>
 
 <blockquote>
-
 Senhor, ensina-me o caminho dos teus estatutos,
 e guardarei até o fim.
-
 <br><br>
-
 Dá-me entendimento,
 para que eu guarde a tua lei
 e a cumpra de todo o coração.
-
 </blockquote>
-
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
 
-
-
 <hr>
-
 
 <h2 id="leituras">
 Leituras das Escrituras
 </h2>
 
-<p>
-Antes da leitura:
-</p>
+<p class="rubrica"><em>Antes da leitura:</em></p>
 
 <blockquote>
 Abre os meus olhos,
@@ -466,18 +404,16 @@ Que a tua Palavra habite ricamente em mim
 e transforme meu coração.
 </blockquote>
 
-<!-- Janela que exibe as leituras do dia do RCL diretamente na interface -->
+<!-- Janela das leituras RCL integradas -->
 <div style="margin: 30px 0; width: 100%;">
   <iframe 
     src="https://www.biblegateway.com/reading-plans/revised-common-lectionary-complementary/today" 
-    style="width: 100%; height: 600px; border: 1px solid #999; background: #fff; border-radius: 4px;"
+    style="width: 100%; height: 600px; border: 1px solid #ccc; background: #fff; border-radius: 4px;"
     title="Leituras RCL do Dia">
   </iframe>
 </div>
 
-<p>
-Após a leitura:
-</p>
+<p class="rubrica"><em>Após a leitura:</em></p>
 
 <blockquote>
 Graças te damos, ó Deus,
@@ -491,104 +427,57 @@ Amém.
 <a href="#topo">↑ voltar ao topo</a>
 </div>
 
+<hr>
 
 <h2 id="confissao">
-
 Confissão de Pecados
-
 </h2>
 
+<p class="rubrica"><em>Todos juntos:</em></p>
 
 <blockquote>
-
 Deus misericordioso e Pai de toda compaixão,
-
 confesso diante de ti que pequei em pensamentos,
 palavras e atitudes.
-
 <br><br>
-
 Pequei pelo mal que pratiquei
 e pelo bem que deixei de fazer.
-
 <br><br>
-
 Tenho falhado em amar-te acima de todas as coisas
 e em amar o meu próximo como a mim mesmo.
-
 <br><br>
-
 Reconheço minha fraqueza
 e venho diante de ti buscando tua misericórdia.
-
 <br><br>
-
 Perdoa os meus pecados por amor de Jesus Cristo.
-
 <br><br>
-
 Purifica o meu coração,
 renova o meu espírito
 e conduz-me pelo caminho da santidade.
-
 <br><br>
-
 Que eu abandone aquilo que desagrada a ti
 e viva para tua glória.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-<p>
-
-Momento de silêncio para confissão pessoal:
-
-</p>
-
-
-<p>
-
-__________________________________________________
-
-</p>
-
-<p>
-
-__________________________________________________
-
-</p>
-
-<p>
-
-__________________________________________________
-
-</p>
-
+<p class="rubrica"><em>Momento de silêncio para confissão pessoal.</em></p>
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
 
-
 <hr>
 
-
 <h2 id="credo">
-
 Credo Apostólico
-
 </h2>
 
+<p class="rubrica"><em>Em pé:</em></p>
 
 <blockquote>
-
 Creio em Deus, Pai todo-poderoso,
 Criador do céu e da terra.
-
 E em Jesus Cristo, seu Filho unigênito, nosso Senhor,
 o qual foi concebido pelo Espírito Santo,
 nasceu da virgem Maria,
@@ -599,7 +488,6 @@ ressuscitou no terceiro dia,
 subiu ao céu,
 e está sentado à direita de Deus Pai, todo-poderoso,
 de onde virá para julgar os vivos e os mortos.
-
 Creio no Espírito Santo,
 na santa Igreja cristã,
 a comunhão dos santos,
@@ -607,26 +495,19 @@ na remissão dos pecados,
 na ressurreição do corpo
 e na vida eterna.
 Amém.
-
-
 </blockquote>
-
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
+
 <hr>
 
-
 <h2 id="painosso">
-
 Pai Nosso
-
 </h2>
 
-
 <blockquote>
-
 Pai nosso que estás nos céus.
 Santificado seja o teu nome.
 Venha o teu reino.
@@ -636,558 +517,235 @@ E perdoa-nos as nossas dívidas, assim como nós também perdoamos aos nossos de
 E não nos deixes cair em tentação.
 Mas livra-nos do mal.
 Pois, teu é o reino, o poder e a glória, para sempre. Amém.
-    
-
 </blockquote>
-
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
 
-
-
 <hr>
-
 
 <h2 id="peticoes">
-
 Orações de Petição
-
 </h2>
 
+<p class="rubrica"><em>Apresente ao Senhor suas necessidades e as necessidades do mundo.</em></p>
 
-<p>
-
-Apresente ao Senhor suas necessidades e as necessidades do mundo.
-
-</p>
-
-
-<h3>
-
-Pela Igreja
-
-</h3>
-
+<h3>Pela Igreja</h3>
 
 <blockquote>
-
 Senhor Jesus Cristo,
-
 guarda tua Igreja na verdade do evangelho.
-
 Concede aos pastores sabedoria,
-
 aos servos humildade
-
 e a todos os cristãos fidelidade.
-
 <br><br>
-
 Que tua Igreja seja instrumento de misericórdia,
-
 justiça e esperança no mundo.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pela Justiça
-
-</h3>
-
+<h3>Pela Justiça</h3>
 
 <blockquote>
-
 Deus justo e santo,
-
 estabelece a justiça entre os povos.
-
 <br><br>
-
 Dá sabedoria aos governantes,
-
 honestidade aos magistrados
-
 e coragem aos que defendem os oprimidos.
-
 <br><br>
-
 Livra os inocentes da violência,
-
 revela a verdade escondida
-
 e faz prevalecer aquilo que é correto.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pela Paz
-
-</h3>
-
+<h3>Pela Paz</h3>
 
 <blockquote>
-
 Senhor da paz,
-
 acalma os conflitos deste mundo.
-
 <br><br>
-
 Onde houver guerra, traz reconciliação.
-
 <br><br>
-
 Onde houver ódio, planta amor.
-
 <br><br>
-
 Onde houver divisão, cria unidade.
-
 <br><br>
-
 Faz de nós instrumentos da tua paz.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pelos Pobres e Necessitados
-
-</h3>
-
+<h3>Pelos Pobres e Necessitados</h3>
 
 <blockquote>
-
 Pai de misericórdia,
-
 lembra-te dos pobres,
-
 dos famintos,
-
 dos sem lar,
-
 dos perseguidos
-
 e de todos os que sofrem.
-
 <br><br>
-
 Abre nossos olhos para suas necessidades
-
 e nossas mãos para servir.
-
 <br><br>
-
 Que ninguém seja esquecido diante de ti.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pelos Enfermos e Aflitos
-
-</h3>
-
+<h3>Pelos Enfermos e Aflitos</h3>
 
 <blockquote>
-
 Senhor Deus,
-
 visita com tua graça todos os que estão enfermos,
-
 abatidos ou passando por dificuldades.
-
 <br><br>
-
 Concede cura quando for tua vontade,
-
 força para suportar as provações
-
 e esperança em tua presença.
-
 <br><br>
-
 Consola os corações aflitos.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pelos Governantes
-
-</h3>
-
+<h3>Pelos Governantes</h3>
 
 <blockquote>
-
 Deus, fonte de toda autoridade,
-
 guia aqueles que exercem governo.
-
 <br><br>
-
 Concede-lhes prudência,
-
 humildade
-
 e compromisso com o bem comum.
-
 <br><br>
-
 Que busquem a justiça,
-
 protejam os vulneráveis
-
 e ajam com sabedoria.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pela Família
-
-</h3>
-
+<h3>Pela Família</h3>
 
 <blockquote>
-
 Senhor,
-
 abençoa minha família e aqueles que amo.
-
 <br><br>
-
 Guarda-nos em amor,
-
 ensina-nos a perdoar,
-
 fortalece nossos vínculos
-
 e conduz-nos no caminho da fé.
-
 <br><br>
-
 Que nosso lar seja lugar de paz e gratidão.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pela Santificação Pessoal
-
-</h3>
-
+<h3>Pela Santificação Pessoal</h3>
 
 <blockquote>
-
 Espírito Santo,
-
 transforma meu coração.
-
 <br><br>
-
 Livra-me do pecado,
-
 vence minhas tentações
-
 e forma em mim o caráter de Cristo.
-
 <br><br>
-
 Que meus pensamentos,
-
 palavras e ações glorifiquem a Deus.
-
 <br><br>
-
 Amém.
-
 </blockquote>
 
-
-
-<h3>
-
-Pelos Inimigos e Pela Reconciliação
-
-</h3>
-
+<h3>Pelos Inimigos e Pela Reconciliação</h3>
 
 <blockquote>
-
 Senhor Jesus,
-
 ensina-me a amar aqueles que me ferem.
-
 <br><br>
-
 Remove de mim toda amargura,
-
 ressentimento e desejo de vingança.
-
 <br><br>
-
 Dá-me graça para perdoar
-
 e buscar reconciliação quando possível.
-
 <br><br>
-
 Amém.
-
 </blockquote>
-
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
 
-
-
 <hr>
-
 
 <h2>
-
 Orações Pessoais
-
 </h2>
 
-
-<p>
-
-Minhas próprias intenções diante de Deus:
-
-</p>
-
-
-<p>
-__________________________________________________
-</p>
-
-<p>
-__________________________________________________
-</p>
-
-<p>
-__________________________________________________
-</p>
-
-<p>
-__________________________________________________
-</p>
-
+<p class="rubrica"><em>Apresente suas próprias intenções diante de Deus.</em></p>
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
 
-
-
 <hr>
-
 
 <h2 id="gratidao">
-
 Ação de Graças
-
 </h2>
 
-
 <blockquote>
-
 Senhor meu Deus,
-
 dou-te graças por tua bondade,
-
 por tua criação,
-
 por tua providência
-
 e pela salvação concedida em Jesus Cristo.
-
 <br><br>
-
 Obrigado pelas bênçãos recebidas,
-
 pelas lições aprendidas
-
 e pela tua presença em todos os momentos.
-
 <br><br>
-
 Ensina-me a viver com coração agradecido
-
 e a reconhecer tua mão em todas as coisas.
-
 <br><br>
-
 Amém.
-
 </blockquote>
-
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
-
 
 <hr>
 
-
 <h2 id="bencao">
-
 Bênção Final
-
 </h2>
 
-
 <blockquote>
-
 O Senhor me abençoe e me guarde.
-
 <br><br>
-
 O Senhor faça resplandecer o seu rosto sobre mim
-
 e tenha misericórdia de mim.
-
 <br><br>
-
 O Senhor sobre mim levante o seu rosto
-
 e me dê a paz.
-
 <br><br>
-
 Em nome do Pai,
-
 do Filho
-
 e do Espírito Santo.
-
 <br><br>
-
 Amém.
-
 </blockquote>
-
 
 <div class="topo">
 <a href="#topo">↑ voltar ao topo</a>
 </div>
 
-<script>
-  // Exemplo de plano de leitura do lecionário (Referência -> API)
-  // Altere ou expanda este mapa com os dias do seu interesse:
-  const leiturasRCL = {
-    // Domingo
-    0: { at: "Isaias 55:1-11", nt: "2 Corintios 4:5-12" },
-    // Segunda-feira
-    1: { at: "Salmos 19:1-14", nt: "Romanos 12:1-8" },
-    // Terça-feira
-    2: { at: "Proverbios 3:1-12", nt: "1 Joao 4:7-21" },
-    // Quarta-feira
-    3: { at: "Jeremias 31:31-34", nt: "Hebreus 8:8-12" },
-    // Quinta-feira
-    4: { at: "Ezequiel 36:24-28", nt: "Efésios 4:17-32" },
-    // Sexta-feira
-    5: { at: "Isaias 53:1-12", nt: "1 Pedro 2:21-25" },
-    // Sábado
-    6: { at: "Salmos 103:1-22", nt: "Colossenses 3:12-17" }
-  };
-
-  async function buscarTextoBiblico(referencia) {
-    try {
-      // Faz requisição para a API bible-api na versão Almeida em Português
-      const response = await fetch(`https://bible-api.com/${encodeURIComponent(referencia)}?translation=almeida`);
-      if (!response.ok) throw new Error("Erro na busca");
-      const data = await response.json();
-      return data.text || "Texto não disponível.";
-    } catch (e) {
-      return "Não foi possível carregar o texto bíblico no momento.";
-    }
-  }
-
-  async function carregarLeiturasDoDia() {
-    const container = document.getElementById("container-leituras");
-    const hoje = new Date();
-    const diaDaSemana = hoje.getDay(); // 0 = Domingo, 1 = Segunda, etc.
-    
-    const referencias = leiturasRCL[diaDaSemana];
-
-    if (!referencias) {
-      container.innerHTML = "<p>Nenhuma leitura cadastrada para hoje.</p>";
-      return;
-    }
-
-    container.innerHTML = "<p style='text-align:center;'><em>Buscando textos das Escrituras...</em></p>";
-
-    // Busca os textos em paralelo
-    const [textoAT, textoNT] = await Promise.all([
-      buscarTextoBiblico(referencias.at),
-      buscarTextoBiblico(referencias.nt)
-    ]);
-
-    // Monta a interface diretamente no seu HTML
-    container.innerHTML = `
-      <h3>Antigo Testamento: ${referencias.at}</h3>
-      <blockquote>${textoAT.replace(/\n/g, '<br>')}</blockquote>
-
-      <h3>Novo Testamento: ${referencias.nt}</h3>
-      <blockquote>${textoNT.replace(/\n/g, '<br>')}</blockquote>
-    `;
-  }
-
-  document.addEventListener("DOMContentLoaded", carregarLeiturasDoDia);
-</script>
-    
 </body>
-
-</html>
+</html> 
