@@ -5,17 +5,22 @@
 <title>Ofício Diário - RCL Vanderbilt (Ano A)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* Força Times New Roman em toda a página */
 body {
     background: rgba(255, 247, 230, 1.0);
     font-size: 1.4em;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Força Times New Roman também nos campos de formulário e seletores */
+input, select, button, textarea {
+    font-family: "Times New Roman", Times, serif;
 }
 
 #stuffing {
     padding: 2px;
     background: rgba(255, 247, 230, 1.0);
 }
-
 h1 {
     font-size: 106%;
     color: rgba(255, 0, 0, 1);
@@ -80,13 +85,13 @@ hr {
 }
 
 .seletor-data input {
-    font-family: Georgia, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 1em;
     padding: 4px;
     background: #fff;
     border: 1px solid rgba(255, 0, 0, 0.5);
 }
-
+    
 .card-domingo {
     background: #fff8eb;
     border-left: 4px solid rgba(255, 0, 0, 0.8);
@@ -225,7 +230,7 @@ function atualizarDomingoFesta(dataChave) {
 <div id="conteudo-semana">
   <h1>Ofício Diário</h1>
 
-  <p class="red">Todos juntos</p>
+  <p class="red"><em>Todos juntos</em></p>
   <p>
   Em nome do Pai, do Filho e do Espírito Santo.<br>
   <strong>Amém.</strong>
@@ -239,19 +244,19 @@ function atualizarDomingoFesta(dataChave) {
 
   <h2>Orações Iniciais</h2>
 
-  <p class="red">Dirigente</p>
+  <p class="red"><em>Dirigente</em></p>
   <p>Senhor, abre os meus lábios.</p>
 
-  <p class="red">Resposta</p>
+  <p class="red"><em>Resposta</em></p>
   <p>E a minha boca anunciará o teu louvor.</p>
 
-  <p class="red">Dirigente</p>
+  <p class="red"><em>Dirigente</em></p>
   <p>Ó Deus, vem em meu auxílio.</p>
 
-  <p class="red">Resposta</p>
+  <p class="red"><em>Resposta</em></p>
   <p>Senhor, apressa-te em socorrer-me.</p>
 
-  <p class="red">Todos juntos</p>
+  <p class="red"><em>Todos juntos</em></p>
   <p>
   Glória ao Pai, ao Filho e ao Espírito Santo:<br>
   como era no princípio, agora e sempre. Amém.
@@ -269,7 +274,7 @@ function atualizarDomingoFesta(dataChave) {
 
   <h1>Salmos</h1>
 
-  <p class="red">Antes da leitura do Salmo</p>
+  <p class="red"><em>Antes da leitura do Salmo</em></p>
   <p>
 Ó Deus bondoso e misericordioso, que pela tua santa Palavra guias os passos do teu povo no caminho da vida: concede-nos bom entendimento de teus ensinamentos. Abre os nossos olhos e corações para que conheçamos os teus mandamentos e os guardemos com fidelidade até o fim, por Jesus Cristo, nosso Senhor. Amém.
   </p>
@@ -282,7 +287,7 @@ function atualizarDomingoFesta(dataChave) {
 
   <h1>Leituras das Escrituras</h1>
 
-  <p class="red">Antes das leituras</p>
+  <p class="red"><em>Antes das leituras</em></p>
   <p>
 Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a graça do teu Reino: ilumina a nossa mente e abre o nosso coração. Concede que a tua Palavra habite ricamente em nós, transforme a nossa vida e nos conduza em verdadeira fé e obediência, por Jesus Cristo, nosso Salvador. Amém.
   </p>
@@ -291,7 +296,7 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
     <p class="red">Carregando leituras...</p>
   </div>
 
-  <p class="red">Após as leituras</p>
+  <p class="red"><em>Após as leituras</em></p>
   <p>
   Rendemos-te graças, ó Deus de infinita bondade, pela tua santa Palavra revelada a nós. Dá-nos a tua graça para que a semente da tua verdade frutifique em nossas atitudes diárias, para o louvor do teu santo nome e o serviço ao nosso próximo, por Jesus Cristo, nosso Senhor. Amém.
   </p>
@@ -300,12 +305,12 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <h1>Confissão de Pecados</h1>
 
-  <p class="red">Dirigente</p>
+  <p class="red"><em>Dirigente</em></p>
   <p>Confessemos os nossos pecados a Deus, nosso Pai.</p>
 
-  <p class="red">Momento de silêncio para reflexão pessoal.</p>
+  <p class="red"><em>Momento de silêncio para reflexão pessoal.</em></p>
 
-  <p class="red">Todos juntos, ajoelhados ou curvados:</p>
+  <p class="red"><em>Todos juntos, ajoelhados ou curvados:</em></p>
   <p>
   Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pecamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
   </p>
@@ -314,25 +319,25 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <h1>O Credo Apostólico</h1>
 
-  <p class="red">Todos em pé</p>
+  <p class="red"><em>Todos em pé</em></p>
   <p>
-  Creio em Deus, Pai todo-poderoso,<br>
-  <span class="indent">Criador do céu e da terra.</span><br>
-  E em Jesus Cristo, seu Filho unigênito, nosso Senhor,<br>
-  <span class="indent">o qual foi concebido pelo Espírito Santo,</span><br>
-  <span class="indent2">nasceu da virgem Maria,</span><br>
-  <span class="indent">padeceu sob o poder de Pôncio Pilatos,</span><br>
-  <span class="indent2">foi crucificado, morto e sepultado,</span><br>
-  <span class="indent">desceu ao mundo dos mortos,</span><br>
-  <span class="indent">ressuscitou no terceiro dia,</span><br>
-  <span class="indent">subiu ao céu,</span><br>
-  <span class="indent2">e está sentado à direita de Deus Pai, todo-poderoso,</span><br>
-  <span class="indent">de onde virá para julgar os vivos e os mortos.</span><br>
-  Creio no Espírito Santo,<br>
-  <span class="indent">na santa Igreja cristã,</span><br>
-  <span class="indent">a comunhão dos santos,</span><br>
-  <span class="indent">na remissão dos pecados,</span><br>
-  <span class="indent">na ressurreição do corpo,</span><br>
+  Creio em Deus, Pai todo-poderoso,
+  <span class="indent">Criador do céu e da terra.</span>
+  E em Jesus Cristo, seu Filho unigênito, nosso Senhor,
+  <span class="indent">o qual foi concebido pelo Espírito Santo,</span>
+  <span class="indent2">nasceu da virgem Maria,</span>
+  <span class="indent">padeceu sob o poder de Pôncio Pilatos,</span>
+  <span class="indent2">foi crucificado, morto e sepultado,</span>
+  <span class="indent">desceu ao mundo dos mortos,</span>
+  <span class="indent">ressuscitou no terceiro dia,</span>
+  <span class="indent">subiu ao céu,</span>
+  <span class="indent2">e está sentado à direita de Deus Pai, todo-poderoso,</span>
+  <span class="indent">de onde virá para julgar os vivos e os mortos.</span>
+  Creio no Espírito Santo,
+  <span class="indent">na santa Igreja cristã,</span>
+  <span class="indent">a comunhão dos santos,</span>
+  <span class="indent">na remissão dos pecados,</span>
+  <span class="indent">na ressurreição do corpo,</span>
   <span class="indent">e na vida eterna. Amém.</span>
   </p>
 
@@ -340,45 +345,46 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <h1>As Orações</h1>
 
-  <p class="red">Dirigente</p>
+  <p class="red"><em>Dirigente</em></p>
   <p>O Senhor seja convosco.</p>
 
-  <p class="red">Resposta</p>
+  <p class="red"><em>Resposta</em></p>
   <p>E com o teu espírito.</p>
 
-  <p class="red">Dirigente</p>
+  <p class="red"><em>Dirigente</em></p>
   <p>Oremos.</p>
 
   <h2>Pai Nosso</h2>
   <p>
   Pai nosso que estás nos céus,<br>
-  <span class="indent">santificado seja o teu nome,</span><br>
-  <span class="indent">venha o teu reino,</span><br>
-  <span class="indent">seja feita a tua vontade,</span><br>
-  <span class="indent2">assim na terra como no céu.</span><br>
-  O pão nosso de cada dia nos dá hoje.<br>
-  Perdoa-nos as nossas dívidas<br>
-  <span class="indent">assim como nós perdoamos</span><br>
-  <span class="indent3">aos nossos devedores.</span><br>
-  E não nos deixes cair em tentação,<br>
-  <span class="indent">mas livra-nos do mal.</span><br>
+  <span class="indent">santificado seja o teu nome,</span>
+  <span class="indent">venha o teu reino,</span>
+  <span class="indent">seja feita a tua vontade,</span>
+  <span class="indent2">assim na terra como no céu.</span>
+  O pão nosso de cada dia nos dá hoje.
+  Perdoa-nos as nossas dívidas
+  <span class="indent">assim como nós perdoamos</span>
+  <span class="indent3">aos nossos devedores.</span>
+  E não nos deixes cair em tentação,
+  <span class="indent">mas livra-nos do mal.</span>
   Pois teu é o reino, o poder<br>
+    
   <span class="indent">e a glória para sempre. Amém.</span>
   </p>
 
   <h2>Orações de Petição</h2>
 
-  <p class="red">Pela Igreja</p>
+  <p class="red"><em>Pela Igreja</em></p>
   <p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: nem sempre temos sido fieis ao teu chamado e muitas vezes nos acomodamos e nos calamos em vez de anunciar com coragem o teu Evangelho. Rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministros e ministras, os sínodos, presbitérios e cada comunidade e paróquia. Perdoa a nossa falta de empenho e faze-nos uma comunidade viva, acolhedora e verdadeiramente diaconal, que serve com alegria ao próximo e testemunha a Teu Evangelho reconciliador. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
 
-  <p class="red">Pela Justiça e Paz</p>
+  <p class="red"><em>Pela Justiça e Paz</em></p>
 <p>Soberano e compassivo Deus, Criador de todas as coisas, que nos confiaste o cuidado do teu mundo e nos chamas a promover a paz: olhamos para a nossa sociedade e reconhecemos, com contrição, a nossa própria omissão diante da injustiça, da violência e do sofrimento dos mais vulneráveis. Muitas vezes nos omitimos, calamos o nosso protesto e nos beneficiamos de estruturas que oprimem. Oramos pelas autoridades para que governem com sabedoria, mas pedimos também por nós: desperta-nos do nosso comodismo, concede-nos coragem para denunciar os males que ferem a dignidade humana e capacita-nos a agir ativamente em favor dos empobrecidos, da paz e do cuidado com a Criação. Por Jesus Cristo, nosso Salvador. Amém.</p>
-  <p class="red">Pelos Aflitos e Necessitados</p>
+  <p class="red"><em>Pelos Aflitos e Necessitados</em></p>
   <p>Deus de amor e refúgio bem presente nas tribulações, que em Jesus Cristo assumiste a nossa dor e te compadeceste das multidões: confessamos que frequentemente passamos ao largo do sofrimento alheio, fechando os nossos olhos e corações para aqueles que clamam por socorro. Tem misericórdia de todas as pessoas enlutadas, enfermas, solitárias, desempregadas, famintas e desamparadas. Derrama sobre elas o teu Consolador e move-nos a nós mesmos para que não ofereçamos apenas palavras, mas sejamos tuas mãos estendidas em solidariedade concreta, consolo e serviço amoroso. Por amor de teu Filho amado, Jesus Cristo. Amém. 
   </p>
 
   <h2>Orações Pessoais</h2>
-  <p class="red">Espaço para intenções pessoais em silêncio.</p>
+  <p class="red"><em>Espaço para intenções pessoais em silêncio.</em></p>
 
   <h2>Ação de Graças</h2>
   <p>
@@ -389,7 +395,7 @@ Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalme
   <h1>Encerramento</h1>
 
   <h2>Bênção Final</h2>
-  <p class="red">Dirigente</p>
+  <p class="red"><em>Dirigente</em></p>
   <p>
   O Senhor nos abençoe e nos guarde.<br>
   O Senhor faça resplandecer o seu rosto sobre nós e tenha misericórdia de nós.<br>
