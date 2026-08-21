@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Ofício Diário</title>
+<title>Ofício Diário - RCL Vanderbilt (Ano A)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -10,28 +10,99 @@ body {
     font-size: 1.4em;
     font-family: Georgia, "Times New Roman", serif;
 }
-#stuffing { padding: 2px; background: rgba(255, 247, 230, 1.0); }
-h1 { font-size: 106%; color: rgba(255, 0, 0, 1); margin: 2% 10%; }
-h2 { font-size: 104%; margin: 2% 10% 1%; }
-h3 { font-size: 102%; margin: 1% 2% 0.5% 10%; }
-p { font-size: 100%; margin: 0 30% 1% 10%; line-height: 150%; }
-.red { color: rgba(255, 0, 0, 1); }
+
+#stuffing {
+    padding: 2px;
+    background: rgba(255, 247, 230, 1.0);
+}
+
+h1 {
+    font-size: 106%;
+    color: rgba(255, 0, 0, 1);
+    margin-top:2%;
+    margin-right:10%;
+    margin-left:10%;
+    margin-bottom:2%;
+}
+
+h2 {
+    font-size: 104%;
+    margin-top:2%;
+    margin-right:10%;
+    margin-left:10%;
+    margin-bottom:1%;
+}
+
+h3 {
+    font-size: 102%;
+    margin-top:1%;
+    margin-right:2%;
+    margin-left:10%;
+    margin-bottom:.5%;
+}
+
+p {
+    font-size: 100%;
+    margin-top:0;
+    margin-right:30%;
+    margin-left:10%;
+    margin-bottom:1%;
+    line-height:150%;
+}
+
+.red {
+    color: rgba(255, 0, 0, 1);
+}
+
 .indent { padding-left: 2%; display: block; }
 .indent2 { padding-left: 4%; display: block; }
 .indent3 { padding-left: 6%; display: block; }
-a:link, a:visited { color: rgba(51, 102, 255, 1); text-decoration:none; }
-a:hover { color: rgba(51, 102, 255, 1); text-decoration:underline; }
-hr { border: none; border-top: 1px solid rgba(255, 0, 0, 0.5); margin: 20px 10%; }
+
+a:link, a:visited {
+    color: rgba(51, 102, 255, 1);
+    text-decoration:none;
+}
+
+a:hover {
+    color: rgba(51, 102, 255, 1);
+    text-decoration:underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 0, 0, 0.5);
+    margin: 20px 10%;
+}
+
+.seletor-data {
+    margin: 10px 10%;
+    font-size: 80%;
+}
+
+.seletor-data input {
+    font-family: Georgia, serif;
+    font-size: 1em;
+    padding: 4px;
+    background: #fff;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
 @media only screen and (max-width: 480px) {
     p { margin-right: 1%; margin-left: 0%; }
     h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
+    .seletor-data { margin: 10px 0%; }
 }
 </style>
 </head>
 <body>
 <div id="stuffing">
 
-<p class="red" id="data-cabecalho">Carregando data de hoje...</p>
+<div class="seletor-data">
+  <label for="test-date" class="red"><strong>Selecionar Data do Ofício (Ano A): </strong></label>
+  <input type="date" id="test-date" onchange="testarData(this.value)">
+</div>
+
+<p class="red" id="data-cabecalho">Carregando data...</p>
 
 <h1>Ofício Diário</h1>
 
@@ -42,16 +113,21 @@ Em nome do Pai, do Filho e do Espírito Santo.<br>
 </p>
 
 <h1>Abertura</h1>
+
 <h2>Orações Iniciais</h2>
 
 <p class="red">Dirigente</p>
 <p>Senhor, abre os meus lábios.</p>
+
 <p class="red">Resposta</p>
 <p>E a minha boca anunciará o teu louvor.</p>
+
 <p class="red">Dirigente</p>
 <p>Ó Deus, vem em meu auxílio.</p>
+
 <p class="red">Resposta</p>
 <p>Senhor, apressa-te em socorrer-me.</p>
+
 <p class="red">Todos juntos</p>
 <p>
 Glória ao Pai, ao Filho e ao Espírito Santo:<br>
@@ -61,32 +137,35 @@ como era no princípio, agora e sempre. Amém.
 <hr>
 
 <h1>Cântico Bíblico do Dia</h1>
+
 <div id="cantico-diario">
-  <p class="red">Carregando o cântico correspondente ao dia de hoje...</p>
+  <p class="red">Carregando cântico...</p>
 </div>
 
 <hr>
 
 <h1>Salmos</h1>
+
 <p class="red">Antes da leitura do Salmo</p>
 <p>
 Ó Deus, bondoso e misericordioso, que por tua graça nos guias através das Tuas Santas Escrituras: envia sobre nós o teu Santo Espírito ao meditar neste Salmo. Dá-nos bom entendimento da tua vontade, para que, consolados pela tua promessa, guardemos os teus ensinamentos e vivamos como povo da tua aliança. Por Jesus Cristo, nosso Senhor. Amém.
 </p>
 
 <div id="container-salmo-rcl">
-  <p class="red">Buscando o Salmo do lecionário de hoje...</p>
+  <p class="red">Carregando Salmo...</p>
 </div>
 
 <hr>
 
 <h1>Leituras das Escrituras</h1>
+
 <p class="red">Antes das leituras</p>
 <p>
 Trino Deus — Pai, Filho e Espírito Santo —, que nos reúnes no amor do teu Evangelho e nos alimentas com a tua Palavra: ilumina a nossa mente e abre os nossos corações nesta hora. Faze com que a tua Palavra habite ricamente em nós, desperte a nossa fé e nos conduza em amor e obediência à tua vontade. Por Jesus Cristo, nosso Salvador. Amém.
 </p>
 
 <div id="container-leituras">
-  <p class="red">Buscando as leituras de hoje no lecionário...</p>
+  <p class="red">Carregando leituras...</p>
 </div>
 
 <p class="red">Após as leituras</p>
@@ -97,9 +176,12 @@ Rendemos-te graças, ó Deus de amor, pela boa nova do teu Evangelho que hoje ou
 <hr>
 
 <h1>Confissão de Pecados</h1>
+
 <p class="red">Dirigente</p>
 <p>Confessemos os nossos pecados a Deus, nosso Pai.</p>
+
 <p class="red">Momento de silêncio para reflexão pessoal.</p>
+
 <p class="red">Todos juntos, ajoelhados ou curvados:</p>
 <p>
 Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pechamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
@@ -108,6 +190,7 @@ Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos dia
 <hr>
 
 <h1>O Credo Apostólico</h1>
+
 <p class="red">Todos em pé</p>
 <p>
 Creio em Deus, Pai todo-poderoso,<br>
@@ -133,10 +216,13 @@ Creio no Espírito Santo,<br>
 <hr>
 
 <h1>As Orações</h1>
+
 <p class="red">Dirigente</p>
 <p>O Senhor seja convosco.</p>
+
 <p class="red">Resposta</p>
 <p>E com o teu espírito.</p>
+
 <p class="red">Dirigente</p>
 <p>Oremos.</p>
 
@@ -158,11 +244,12 @@ Pois teu é o reino, o poder<br>
 </p>
 
 <h2>Orações de Petição</h2>
+
 <p class="red">Pela Igreja</p>
 <p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministérios, os presbitérios e cada comunidade. Fortalece o nosso testemunho do Evangelho e concede que sejamos uma comunidade acolhedora, inclusiva e diaconal, a serviço do teu Reino de paz e justiça. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
 
 <p class="red">Pela Justiça e Paz</p>
-<p>Soberano e bondoso Deus, Criador de todas as coisas, que nos chamas a cuidar da integridade da tua criação e a promover a paz: olha para o nosso mundo marcado pelas injustiças, pelas divisões e pela violência. Concede sabedoria e discernment às autoridades, para que governem com responsabilidade, promovendo a dignidade e a justiça social. Dá coragem à tua Igreja para denunciar as opressões e estar ao lado dos empobrecidos e marginalizados. Que a tua paz, que excede todo o entendimento, habite em nossos corações e em nossa sociedade. Por Jesus Cristo, nosso Salvador. Amém.</p>
+<p>Soberano e bondoso Deus, Criador de todas as coisas, que nos chamas a cuidar da integridade da tua criação e a promover a paz: olha para o nosso mundo marcado pelas injustiças, pelas divisões e pela violência. Concede sabedoria e discernimento às autoridades, para que governem com responsabilidade, promovendo a dignidade e a justiça social. Dá coragem à tua Igreja para denunciar as opressões e estar ao lado dos empobrecidos e marginalizados. Que a tua paz, que excede todo o entendimento, habite em nossos corações e em nossa sociedade. Por Jesus Cristo, nosso Salvador. Amém.</p>
 
 <p class="red">Pelos Aflitos e Necessitados</p>
 <p>Misericordioso Deus e Pai, refúgio e socorro em tempos de aflição: volta o teu olhar compassivo para todas as pessoas que passam por provações, enfermidades, luto, solidão ou desamparo. Derrama o teu Espírito Consolador sobre elas, concede-lhes alívio, saúde e esperança. Desperta em nossa comunidade a verdadeira vocação diaconal, para que sejamos mãos estendidas do teu amor e do teu cuidado no mundo. Por amor de teu Filho amado, Jesus Cristo. Amém.</p>
@@ -191,25 +278,343 @@ Em nome do Pai, do Filho e do Espírito Santo. Amém.
 </div>
 
 <script>
-// Tradução dos livros
-const traducaoLivros = {
-  "Genesis": "Gênesis", "Exodus": "Êxodo", "Leviticus": "Levítico", "Numbers": "Números", "Deuteronomy": "Deuteronômio",
-  "Joshua": "Josué", "Judges": "Juízes", "Ruth": "Rute", "1 Samuel": "1 Samuel", "2 Samuel": "2 Samuel",
-  "1 Kings": "1 Reis", "2 Kings": "2 Reis", "1 Chronicles": "1 Crônicas", "2 Chronicles": "2 Crônicas",
-  "Ezra": "Esdras", "Nehemiah": "Neemias", "Esther": "Ester", "Job": "Jó", "Psalm": "Salmos", "Psalms": "Salmos",
-  "Proverbs": "Provérbios", "Ecclesiastes": "Eclesiastes", "Song of Solomon": "Cantares", "Isaiah": "Isaías",
-  "Jeremiah": "Jeremias", "Lamentations": "Lamentações", "Ezekiel": "Ezequiel", "Daniel": "Daniel",
-  "Hosea": "Oséias", "Joel": "Joel", "Amos": "Amós", "Obadiah": "Obadias", "Jonah": "Jonas", "Micah": "Miquéias",
-  "Nahum": "Naum", "Habakkuk": "Habacuque", "Zephaniah": "Sofonias", "Haggai": "Ageu", "Zechariah": "Zacarias", "Malachi": "Malaquias",
-  "Matthew": "Mateus", "Mark": "Marcos", "Luke": "Lucas", "John": "João", "Acts": "Atos", "Romans": "Romanos",
-  "1 Corinthians": "1 Coríntios", "2 Corinthians": "2 Coríntios", "Galatians": "Gálatas", "Ephesians": "Efésios",
-  "Philippians": "Filipenses", "Colossians": "Colossenses", "1 Thessalonians": "1 Tessalonicenses", "2 Thessalonians": "2 Tessalonicenses",
-  "1 Timothy": "1 Timóteo", "2 Timothy": "2 Timóteo", "Titus": "Tito", "Philemon": "Filemom", "Hebrews": "Hebreus",
-  "James": "Tiago", "1 Peter": "1 Pedro", "2 Peter": "2 Pedro", "1 John": "1 João", "2 John": "2 João", "3 John": "3 João",
-  "Jude": "Judas", "Revelation": "Apocalipse"
+const CONFIG_ANO = {
+  dataInicio: "2025-11-27",
+  dataFim: "2026-11-25"
 };
 
-function traduzirParaExibicao(refIngles) {
+// Base completa de leituras do Ano A (2025-2026)
+const BASE_LEITURAS = {
+  "2025-11-27": { salmo: "Psalm 122", at: "Daniel 9:15-19", nt: "James 4:1-10" },
+  "2025-11-28": { salmo: "Psalm 122", at: "Genesis 6:1-10", nt: "Hebrews 11:1-7" },
+  "2025-11-29": { salmo: "Psalm 122", at: "Genesis 6:11-22", nt: "Matthew 24:1-22" },
+  "2025-12-01": { salmo: "Psalm 124", at: "Genesis 8:1-19", nt: "Romans 6:1-11" },
+  "2025-12-02": { salmo: "Psalm 124", at: "Genesis 9:1-17", nt: "Hebrews 11:32-40" },
+  "2025-12-03": { salmo: "Psalm 124", at: "Isaiah 54:1-10", nt: "Matthew 24:23-35" },
+  "2025-12-04": { salmo: "Psalm 72:1-7, 18-19", at: "Isaiah 4:2-6", nt: "Acts 1:12-17, 21-26" },
+  "2025-12-05": { salmo: "Psalm 72:1-7, 18-19", at: "Isaiah 30:19-26", nt: "Acts 13:16-25" },
+  "2025-12-06": { salmo: "Psalm 72:1-7, 18-19", at: "Isaiah 40:1-11", nt: "John 1:19-28" },
+  "2025-12-08": { salmo: "Psalm 21", at: "Isaiah 24:1-16a", nt: "1 Thessalonians 4:1-12" },
+  "2025-12-09": { salmo: "Psalm 21", at: "Isaiah 41:14-20", nt: "Romans 15:14-21" },
+  "2025-12-10": { salmo: "Psalm 21", at: "Genesis 15:1-18", nt: "Matthew 12:33-37" },
+  "2025-12-11": { salmo: "Psalm 146:5-10", at: "Ruth 1:6-18", nt: "2 Peter 3:1-10" },
+  "2025-12-12": { salmo: "Psalm 146:5-10", at: "Ruth 4:13-17", nt: "2 Peter 3:11-18" },
+  "2025-12-13": { salmo: "Psalm 146:5-10", at: "1 Samuel 2:1-8", nt: "Luke 3:1-18" },
+  "2025-12-15": { salmo: "Psalm 42", at: "Isaiah 29:17-24", nt: "Acts 5:12-16" },
+  "2025-12-16": { salmo: "Psalm 42", at: "Ezekiel 47:1-12", nt: "Jude 1:17-25" },
+  "2025-12-17": { salmo: "Psalm 42", at: "Zechariah 8:1-17", nt: "Matthew 8:14-17, 28-34" },
+  "2025-12-18": { salmo: "Psalm 80:1-7, 17-19", at: "2 Samuel 7:1-17", nt: "Galatians 3:23-29" },
+  "2025-12-19": { salmo: "Psalm 80:1-7, 17-19", at: "2 Samuel 7:18-22", nt: "Galatians 4:1-7" },
+  "2025-12-20": { salmo: "Psalm 80:1-7, 17-19", at: "2 Samuel 7:23-29", nt: "John 3:31-36" },
+  "2025-12-22": { salmo: "Luke 1:46b-55", at: "Isaiah 33:17-22", nt: "Revelation 22:6-7, 18-20" },
+  "2025-12-23": { salmo: "Luke 1:46b-55", at: "2 Samuel 7:18, 23-29", nt: "Galatians 3:6-14" },
+  "2025-12-26": { salmo: "Psalm 148", at: "Wisdom 4:7-15", nt: "Acts 7:59-8:8" },
+  "2025-12-27": { salmo: "Psalm 148", at: "Proverbs 8:22-31", nt: "1 John 5:1-12" },
+  "2025-12-29": { salmo: "Psalm 20", at: "Jeremiah 31:15-22", nt: "Luke 19:41-44" },
+  "2025-12-30": { salmo: "Psalm 20", at: "Isaiah 26:1-9", nt: "2 Corinthians 4:16-18" },
+  "2025-12-31": { salmo: "Psalm 20", at: "1 Kings 3:5-14", nt: "John 8:12-19" },
+  "2026-01-02": { salmo: "Psalm 20", at: "Genesis 12:1-7", nt: "Hebrews 11:1-12" },
+  "2026-01-03": { salmo: "Psalm 72", at: "Genesis 28:10-22", nt: "Hebrews 11:13-22" },
+  "2026-01-05": { salmo: "Psalm 72", at: "Joshua 1:1-9", nt: "Hebrews 11:32-12:2" },
+  "2026-01-07": { salmo: "Psalm 72", at: "1 Kings 10:1-13", nt: "Ephesians 3:14-21" },
+  "2026-01-08": { salmo: "Psalm 29", at: "1 Samuel 3:1-9", nt: "Acts 9:1-9" },
+  "2026-01-09": { salmo: "Psalm 29", at: "1 Samuel 3:10-4:1a", nt: "Acts 9:10-19a" },
+  "2026-01-10": { salmo: "Psalm 29", at: "1 Samuel 7:3-17", nt: "Acts 9:19b-31" },
+  "2026-01-12": { salmo: "Psalm 89:5-37", at: "Genesis 35:1-15", nt: "Acts 10:44-48" },
+  "2026-01-13": { salmo: "Psalm 89:5-37", at: "Jeremiah 1:4-10", nt: "Acts 8:4-13" },
+  "2026-01-14": { salmo: "Psalm 89:5-37", at: "Isaiah 51:1-16", nt: "Matthew 12:15-21" },
+  "2026-01-15": { salmo: "Psalm 40:1-11", at: "Isaiah 22:15-25", nt: "Galatians 1:6-12" },
+  "2026-01-16": { salmo: "Psalm 40:1-11", at: "Genesis 27:30-38", nt: "Acts 1:1-5" },
+  "2026-01-17": { salmo: "Psalm 40:1-11", at: "1 Kings 19:19-21", nt: "Luke 5:1-11" },
+  "2026-01-19": { salmo: "Psalm 40:6-17", at: "Exodus 12:1-13, 21-28", nt: "Acts 8:26-40" },
+  "2026-01-20": { salmo: "Psalm 40:6-17", at: "Isaiah 53:1-12", nt: "Hebrews 10:1-4" },
+  "2026-01-21": { salmo: "Psalm 40:6-17", at: "Isaiah 48:12-21", nt: "Matthew 9:14-17" },
+  "2026-01-22": { salmo: "Psalm 27:1-6", at: "1 Samuel 1:1-20", nt: "Galatians 1:11-24" },
+  "2026-01-23": { salmo: "Psalm 27:1-6", at: "1 Samuel 9:27-10:8", nt: "Galatians 2:1-10" },
+  "2026-01-24": { salmo: "Psalm 27:1-6", at: "1 Samuel 15:34-16:13", nt: "Luke 5:27-32" },
+  "2026-01-26": { salmo: "Psalm 27:7-14", at: "Judges 6:11-24", nt: "Ephesians 5:6-14" },
+  "2026-01-27": { salmo: "Psalm 27:7-14", at: "Judges 7:12-22", nt: "Philippians 2:12-18" },
+  "2026-01-28": { salmo: "Psalm 27:7-14", at: "Genesis 49:1-2, 8-13, 21-26", nt: "Luke 1:67-79" },
+  "2026-01-29": { salmo: "Psalm 15", at: "Deuteronomy 16:18-20", nt: "1 Peter 3:8-12" },
+  "2026-01-30": { salmo: "Psalm 15", at: "Deuteronomy 24:17-25:4", nt: "1 Timothy 5:17-24" },
+  "2026-01-31": { salmo: "Psalm 15", at: "Micah 3:1-4", nt: "John 13:31-35" },
+  "2026-02-02": { salmo: "Psalm 37:1-17", at: "Ruth 1:1-18", nt: "Philemon 1-25" },
+  "2026-02-03": { salmo: "Psalm 37:1-17", at: "Ruth 2:1-16", nt: "James 5:1-6" },
+  "2026-02-04": { salmo: "Psalm 37:1-17", at: "Ruth 3:1-13; 4:13-22", nt: "Luke 6:17-26" },
+  "2026-02-05": { salmo: "Psalm 112:1-9", at: "Deuteronomy 4:1-14", nt: "1 John 5:1-5" },
+  "2026-02-06": { salmo: "Psalm 112:1-9", at: "Isaiah 29:1-12", nt: "James 3:13-18" },
+  "2026-02-07": { salmo: "Psalm 112:1-9", at: "Isaiah 29:13-16", nt: "Mark 7:1-8" },
+  "2026-02-09": { salmo: "Psalm 119:105-112", at: "2 Kings 22:3-20", nt: "Romans 11:2-10" },
+  "2026-02-10": { salmo: "Psalm 119:105-112", at: "2 Kings 23:1-8, 21-25", nt: "2 Corinthians 4:1-12" },
+  "2026-02-11": { salmo: "Psalm 119:105-112", at: "Proverbs 6:6-23", nt: "John 8:12-30" },
+  "2026-02-12": { salmo: "Psalm 2", at: "Exodus 6:2-9", nt: "Hebrews 8:1-7" },
+  "2026-02-13": { salmo: "Psalm 2", at: "Exodus 19:9b-25", nt: "Hebrews 11:23-28" },
+  "2026-02-14": { salmo: "Psalm 2", at: "1 Kings 21:20-29", nt: "Mark 9:9-13" },
+  "2026-02-16": { salmo: "Psalm 78:17-20, 52-55", at: "Exodus 33:7-23", nt: "Acts 7:30-34" },
+  "2026-02-17": { salmo: "Psalm 78:17-20, 52-55", at: "1 Kings 19:9-18", nt: "Romans 11:1-6" },
+  "2026-02-19": { salmo: "Psalm 51", at: "Jonah 3:1-10", nt: "Romans 1:1-7" },
+  "2026-02-20": { salmo: "Psalm 51", at: "Jonah 4:1-11", nt: "Romans 1:8-17" },
+  "2026-02-21": { salmo: "Psalm 51", at: "Isaiah 58:1-12", nt: "Matthew 18:1-7" },
+  "2026-02-23": { salmo: "Psalm 32", at: "1 Kings 19:1-8", nt: "Hebrews 2:10-18" },
+  "2026-02-24": { salmo: "Psalm 32", at: "Genesis 4:1-16", nt: "Hebrews 4:14-5:10" },
+  "2026-02-25": { salmo: "Psalm 32", at: "Exodus 34:1-9, 27-28", nt: "Matthew 18:10-14" },
+  "2026-02-26": { salmo: "Psalm 121", at: "Isaiah 51:1-3", nt: "2 Timothy 1:3-7" },
+  "2026-02-27": { salmo: "Psalm 121", at: "Micah 7:18-20", nt: "Romans 3:21-31" },
+  "2026-02-28": { salmo: "Psalm 121", at: "Isaiah 51:4-8", nt: "Luke 7:1-10" },
+  "2026-03-02": { salmo: "Psalm 128", at: "Numbers 21:4-9", nt: "Hebrews 3:1-6" },
+  "2026-03-03": { salmo: "Psalm 128", at: "Isaiah 65:17-25", nt: "Romans 4:6-13" },
+  "2026-03-04": { salmo: "Psalm 128", at: "Ezekiel 36:22-32", nt: "John 7:53-8:11" },
+  "2026-03-05": { salmo: "Psalm 95", at: "Exodus 16:1-8", nt: "Colossians 1:15-23" },
+  "2026-03-06": { salmo: "Psalm 95", at: "Exodus 16:9-21", nt: "Ephesians 2:11-22" },
+  "2026-03-07": { salmo: "Psalm 95", at: "Exodus 16:27-35", nt: "John 4:1-6" },
+  "2026-03-09": { salmo: "Psalm 81", at: "Genesis 24:1-27", nt: "2 John 1:1-13" },
+  "2026-03-10": { salmo: "Psalm 81", at: "Genesis 29:1-14", nt: "1 Corinthians 10:1-4" },
+  "2026-03-11": { salmo: "Psalm 81", at: "Jeremiah 2:4-13", nt: "John 7:14-31, 37-39" },
+  "2026-03-12": { salmo: "Psalm 23", at: "1 Samuel 15:10-21", nt: "Ephesians 4:25-32" },
+  "2026-03-13": { salmo: "Psalm 23", at: "1 Samuel 15:22-31", nt: "Ephesians 5:1-9" },
+  "2026-03-14": { salmo: "Psalm 23", at: "1 Samuel 15:32-34", nt: "John 1:1-9" },
+  "2026-03-16": { salmo: "Psalm 146", at: "Isaiah 59:9-19", nt: "Acts 9:1-20" },
+  "2026-03-17": { salmo: "Psalm 146", at: "Isaiah 42:14-21", nt: "Colossians 1:9-14" },
+  "2026-03-18": { salmo: "Psalm 146", at: "Isaiah 60:17-22", nt: "Matthew 9:27-34" },
+  "2026-03-19": { salmo: "Psalm 130", at: "Ezekiel 1:1-3, 2:8-3:3", nt: "Revelation 10:1-11" },
+  "2026-03-20": { salmo: "Psalm 130", at: "Ezekiel 33:10-16", nt: "Revelation 11:15-19" },
+  "2026-03-21": { salmo: "Psalm 130", at: "Ezekiel 36:8-15", nt: "Luke 24:44-53" },
+  "2026-03-23": { salmo: "Psalm 143", at: "1 Kings 17:17-24", nt: "Acts 20:7-12" },
+  "2026-03-24": { salmo: "Psalm 143", at: "2 Kings 4:18-37", nt: "Ephesians 2:1-10" },
+  "2026-03-25": { salmo: "Psalm 143", at: "Jeremiah 32:1-9, 36-41", nt: "Matthew 22:23-33" },
+  "2026-03-26": { salmo: "Psalm 31:9-16", at: "1 Samuel 16:11-13", nt: "Philippians 1:1-11" },
+  "2026-03-27": { salmo: "Psalm 31:9-16", at: "Job 13:13-19", nt: "Philippians 1:21-30" },
+  "2026-03-28": { salmo: "Psalm 31:9-16", at: "Lamentations 3:55-66", nt: "Mark 10:32-34" },
+  "2026-04-06": { salmo: "Psalm 118:1-2, 14-24", at: "Exodus 14:10-31; 15:20-21", nt: "Colossians 3:5-11" },
+  "2026-04-07": { salmo: "Psalm 118:1-2, 14-24", at: "Exodus 15:1-18", nt: "Colossians 3:12-17" },
+  "2026-04-08": { salmo: "Psalm 118:1-2, 14-24", at: "Joshua 3:1-17", nt: "Matthew 28:1-10" },
+  "2026-04-09": { salmo: "Psalm 16", at: "Song of Solomon 2:8-15", nt: "Colossians 4:2-5" },
+  "2026-04-10": { salmo: "Psalm 16", at: "Song of Solomon 5:9-6:3", nt: "1 Corinthians 15:1-11" },
+  "2026-04-11": { salmo: "Psalm 16", at: "Song of Solomon 8:6-7", nt: "John 20:11-20" },
+  "2026-04-13": { salmo: "Psalm 114", at: "Judges 6:36-40", nt: "1 Corinthians 15:12-20" },
+  "2026-04-14": { salmo: "Psalm 114", at: "Jonah 1:1-17", nt: "1 Corinthians 15:19-28" },
+  "2026-04-15": { salmo: "Psalm 114", at: "Jonah 2:1-10", nt: "Matthew 12:38-42" },
+  "2026-04-16": { salmo: "Psalm 116:1-4, 12-19", at: "Isaiah 25:1-5", nt: "1 Peter 1:8b-12" },
+  "2026-04-17": { salmo: "Psalm 116:1-4, 12-19", at: "Isaiah 26:1-4", nt: "1 Peter 1:13-16" },
+  "2026-04-18": { salmo: "Psalm 116:1-4, 12-19", at: "Isaiah 25:6-9", nt: "Luke 14:12-14" },
+  "2026-04-20": { salmo: "Psalm 134", at: "Genesis 18:1-14", nt: "1 Peter 1:23-25" },
+  "2026-04-21": { salmo: "Psalm 134", at: "Proverbs 8:32-9:6", nt: "1 Peter 2:1-3" },
+  "2026-04-22": { salmo: "Psalm 134", at: "Exodus 24:1-11", nt: "John 21:1-14" },
+  "2026-04-23": { salmo: "Psalm 23", at: "Exodus 2:15b-25", nt: "1 Peter 2:9-12" },
+  "2026-04-24": { salmo: "Psalm 23", at: "Exodus 3:16-22, 4:18-20", nt: "1 Peter 2:13-17" },
+  "2026-04-25": { salmo: "Psalm 23", at: "Ezekiel 34:1-16", nt: "Luke 15:1-7" },
+  "2026-04-27": { salmo: "Psalm 100", at: "Ezekiel 34:17-23", nt: "1 Peter 5:1-5" },
+  "2026-04-28": { salmo: "Psalm 100", at: "Ezekiel 34:23-31", nt: "Hebrews 13:20-21" },
+  "2026-04-29": { salmo: "Psalm 100", at: "Jeremiah 23:1-8", nt: "Matthew 20:17-28" },
+  "2026-04-30": { salmo: "Psalm 31:1-5, 15-16", at: "Genesis 12:1-3", nt: "Acts 6:8-15" },
+  "2026-05-01": { salmo: "Psalm 31:1-5, 15-16", at: "Exodus 3:1-12", nt: "Acts 7:1-16" },
+  "2026-05-02": { salmo: "Psalm 31:1-5, 15-16", at: "Jeremiah 26:20-24", nt: "John 8:48-59" },
+  "2026-05-04": { salmo: "Psalm 102:1-17", at: "Exodus 13:17-22", nt: "Acts 7:17-40" },
+  "2026-05-05": { salmo: "Psalm 102:1-17", at: "Proverbs 3:5-12", nt: "Acts 7:44-56" },
+  "2026-05-06": { salmo: "Psalm 102:1-17", at: "Proverbs 3:13-18", nt: "John 8:31-38" },
+  "2026-05-07": { salmo: "Psalm 66:8-20", at: "Genesis 6:5-22", nt: "Acts 27:1-12" },
+  "2026-05-08": { salmo: "Psalm 66:8-20", at: "Genesis 7:1-24", nt: "Acts 27:13-38" },
+  "2026-05-09": { salmo: "Psalm 66:8-20", at: "Genesis 8:13-19", nt: "John 14:27-29" },
+  "2026-05-11": { salmo: "Psalm 93", at: "Genesis 9:8-17", nt: "Acts 27:39-44" },
+  "2026-05-12": { salmo: "Psalm 93", at: "Deuteronomy 5:22-33", nt: "1 Peter 3:8-12" },
+  "2026-05-13": { salmo: "Psalm 93", at: "Deuteronomy 31:1-13", nt: "John 16:16-24" },
+  "2026-05-15": { salmo: "Psalm 93", at: "2 Kings 2:1-12", nt: "Ephesians 2:1-7" },
+  "2026-05-16": { salmo: "Psalm 93", at: "2 Kings 2:13-15", nt: "John 8:21-30" },
+  "2026-05-18": { salmo: "Psalm 99", at: "Leviticus 9:1-11, 22-24", nt: "1 Peter 4:1-6" },
+  "2026-05-19": { salmo: "Psalm 99", at: "Numbers 16:41-50", nt: "1 Peter 4:7-11" },
+  "2026-05-20": { salmo: "Psalm 99", at: "1 Kings 8:54-65", nt: "John 3:31-36" },
+  "2026-05-21": { salmo: "Psalm 33:12-22", at: "Exodus 19:1-9a", nt: "Acts 2:1-11" },
+  "2026-05-22": { salmo: "Psalm 33:12-22", at: "Exodus 19:16-25", nt: "Romans 8:14-17" },
+  "2026-05-23": { salmo: "Psalm 33:12-22", at: "Exodus 20:1-21", nt: "Matthew 5:1-12" },
+  "2026-05-25": { salmo: "Psalm 104:24-34, 35b", at: "Joel 2:18-29", nt: "Romans 8:18-24" },
+  "2026-05-26": { salmo: "Psalm 104:24-34, 35b", at: "Ezekiel 39:7-8, 21-29", nt: "Romans 8:26-27" },
+  "2026-05-27": { salmo: "Psalm 104:24-34, 35b", at: "Numbers 11:24-30", nt: "John 7:37-39" },
+  "2026-05-28": { salmo: "Psalm 8", at: "Job 38:1-11", nt: "2 Timothy 1:8-12a" },
+  "2026-05-29": { salmo: "Psalm 8", at: "Job 38:12-21", nt: "2 Timothy 1:12b-14" },
+  "2026-05-30": { salmo: "Psalm 8", at: "Job 38:22-38", nt: "John 14:15-17" },
+  "2026-06-01": { salmo: "Psalm 29", at: "Job 38:39-39:12", nt: "1 Corinthians 12:1-3" },
+  "2026-06-02": { salmo: "Psalm 29", at: "Job 39:13-25", nt: "1 Corinthians 12:4-13" },
+  "2026-06-03": { salmo: "Psalm 29", at: "Job 39:26-40:5", nt: "John 14:25-26" },
+  "2026-06-04": { salmo: "Psalm 50:7-15", at: "Lamentations 1:7-11", nt: "2 Peter 2:17-22" },
+  "2026-06-05": { salmo: "Psalm 50:7-15", at: "Lamentations 3:40-58", nt: "Acts 28:1-10" },
+  "2026-06-06": { salmo: "Psalm 50:7-15", at: "Exodus 34:1-9", nt: "Matthew 9:27-34" },
+  "2026-06-08": { salmo: "Psalm 40:1-8", at: "Leviticus 15:25-31; 22:1-9", nt: "2 Corinthians 6:14-7:2" },
+  "2026-06-09": { salmo: "Psalm 40:1-8", at: "Hosea 8:11-14; 10:1-2", nt: "Hebrews 13:1-16" },
+  "2026-06-10": { salmo: "Psalm 40:1-8", at: "Hosea 14:1-9", nt: "Matthew 12:1-8" },
+  "2026-06-11": { salmo: "Psalm 100", at: "Exodus 4:18-23", nt: "Hebrews 3:1-6" },
+  "2026-06-12": { salmo: "Psalm 100", at: "Exodus 4:27-31", nt: "Acts 7:35-43" },
+  "2026-06-13": { salmo: "Psalm 100", at: "Exodus 6:28-7:13", nt: "Mark 7:1-13" },
+  "2026-06-15": { salmo: "Psalm 105:1-11, 37-45", at: "Joshua 1:1-11", nt: "1 Thessalonians 3:1-5" },
+  "2026-06-16": { salmo: "Psalm 105:1-11, 37-45", at: "1 Samuel 3:1-9", nt: "2 Thessalonians 2:13-3:5" },
+  "2026-06-17": { salmo: "Psalm 105:1-11, 37-45", at: "Proverbs 4:10-27", nt: "Luke 6:12-19" },
+  "2026-06-18": { salmo: "Psalm 69:7-10, 16-18", at: "Jeremiah 18:12-17", nt: "Hebrews 2:5-9" },
+  "2026-06-19": { salmo: "Psalm 69:7-10, 16-18", at: "Jeremiah 18:18-23", nt: "Acts 5:17-26" },
+  "2026-06-20": { salmo: "Psalm 69:7-10, 16-18", at: "Jeremiah 20:1-6", nt: "Luke 11:53-12:3" },
+  "2026-06-22": { salmo: "Psalm 6", at: "Micah 7:1-7", nt: "Revelation 2:1-7" },
+  "2026-06-23": { salmo: "Psalm 6", at: "Jeremiah 26:1-12", nt: "Revelation 2:8-11" },
+  "2026-06-24": { salmo: "Psalm 6", at: "Jeremiah 38:1-13", nt: "Matthew 10:5-23" },
+  "2026-06-25": { salmo: "Psalm 89:1-4, 15-18", at: "Jeremiah 25:1-7", nt: "Galatians 5:2-6" },
+  "2026-06-26": { salmo: "Psalm 89:1-4, 15-18", at: "Jeremiah 25:8-14", nt: "Galatians 5:7-12" },
+  "2026-06-27": { salmo: "Psalm 89:1-4, 15-18", at: "Jeremiah 28:1-4", nt: "Luke 17:1-4" },
+  "2026-06-29": { salmo: "Psalm 119:161-168", at: "1 Kings 21:1-16", nt: "1 Thessalonians 4:9-12" },
+  "2026-06-30": { salmo: "Psalm 119:161-168", at: "1 Kings 21:17-29", nt: "1 John 4:1-6" },
+  "2026-07-01": { salmo: "Psalm 119:161-168", at: "Jeremiah 18:1-11", nt: "Matthew 11:20-24" },
+  "2026-07-02": { salmo: "Psalm 145:8-14", at: "Zechariah 1:1-6", nt: "Romans 7:1-6" },
+  "2026-07-03": { salmo: "Psalm 145:8-14", at: "Zechariah 2:6-13", nt: "Romans 7:7-20" },
+  "2026-07-04": { salmo: "Psalm 145:8-14", at: "Zechariah 4:1-7", nt: "Luke 10:21-24" },
+  "2026-07-06": { salmo: "Psalm 131", at: "Jeremiah 27:1-11, 16-22", nt: "Romans 1:18-25" },
+  "2026-07-07": { salmo: "Psalm 131", at: "Jeremiah 28:10-17", nt: "Romans 3:1-8" },
+  "2026-07-08": { salmo: "Psalm 131", at: "Jeremiah 13:1-11", nt: "John 13:1-17" },
+  "2026-07-09": { salmo: "Psalm 65:9-13", at: "Isaiah 48:1-5", nt: "Romans 2:12-16" },
+  "2026-07-10": { salmo: "Psalm 65:9-13", at: "Isaiah 48:6-11", nt: "Romans 15:14-21" },
+  "2026-07-11": { salmo: "Psalm 65:9-13", at: "Isaiah 52:1-6", nt: "John 12:44-50" },
+  "2026-07-13": { salmo: "Psalm 92", at: "Leviticus 26:3-20", nt: "1 Thessalonians 4:1-8" },
+  "2026-07-14": { salmo: "Psalm 92", at: "Deuteronomy 28:1-14", nt: "Ephesians 4:17-5:2" },
+  "2026-07-15": { salmo: "Psalm 92", at: "Proverbs 11:23-30", nt: "Matthew 13:10-17" },
+  "2026-07-16": { salmo: "Psalm 86:11-17", at: "Isaiah 41:21-29", nt: "Hebrews 2:1-9" },
+  "2026-07-17": { salmo: "Psalm 86:11-17", at: "Isaiah 44:9-17", nt: "Hebrews 6:13-20" },
+  "2026-07-18": { salmo: "Psalm 86:11-17", at: "Isaiah 44:18-20", nt: "Matthew 7:15-20" },
+  "2026-07-20": { salmo: "Psalm 75", at: "Nahum 1:1-13", nt: "Revelation 14:12-20" },
+  "2026-07-21": { salmo: "Psalm 75", at: "Zephaniah 3:1-13", nt: "Galatians 4:21-5:1" },
+  "2026-07-22": { salmo: "Psalm 75", at: "Daniel 12:1-13", nt: "Matthew 12:15-21" },
+  "2026-07-23": { salmo: "Psalm 119:129-136", at: "1 Kings 1:28-37", nt: "1 Corinthians 4:14-20" },
+  "2026-07-24": { salmo: "Psalm 119:129-136", at: "1 Kings 1:38-48", nt: "Acts 7:44-53" },
+  "2026-07-25": { salmo: "Psalm 119:129-136", at: "1 Kings 2:1-4", nt: "Matthew 12:38-42" },
+  "2026-07-27": { salmo: "Psalm 119:121-128", at: "1 Kings 3:16-28", nt: "James 3:13-18" },
+  "2026-07-28": { salmo: "Psalm 119:121-128", at: "1 Kings 4:29-34", nt: "Ephesians 6:10-18" },
+  "2026-07-29": { salmo: "Psalm 119:121-128", at: "Proverbs 1:1-7, 20-33", nt: "Mark 4:30-34" },
+  "2026-07-30": { salmo: "Psalm 145:8-9, 14-21", at: "Proverbs 10:1-5", nt: "Philippians 4:10-15" },
+  "2026-07-31": { salmo: "Psalm 145:8-9, 14-21", at: "Isaiah 51:17-23", nt: "Romans 9:6-13" },
+  "2026-08-01": { salmo: "Psalm 145:8-9, 14-21", at: "Isaiah 44:1-5", nt: "Matthew 7:7-11" },
+  "2026-08-03": { salmo: "Psalm 78:1-8, 17-29", at: "Deuteronomy 8:1-10", nt: "Romans 1:8-15" },
+  "2026-08-04": { salmo: "Psalm 78:1-8, 17-29", at: "Deuteronomy 26:1-15", nt: "Acts 2:37-47" },
+  "2026-08-05": { salmo: "Psalm 78:1-8, 17-29", at: "Exodus 16:2-15, 31-35", nt: "Matthew 15:32-39" },
+  "2026-08-06": { salmo: "Psalm 85:8-13", at: "1 Kings 18:1-16", nt: "Acts 17:10-15" },
+  "2026-08-07": { salmo: "Psalm 85:8-13", at: "1 Kings 18:17-19, 30-40", nt: "Acts 18:24-28" },
+  "2026-08-08": { salmo: "Psalm 85:8-13", at: "1 Kings 18:41-46", nt: "Matthew 16:1-4" },
+  "2026-08-10": { salmo: "Psalm 18:1-19", at: "Genesis 7:11-8:5", nt: "2 Peter 2:4-10" },
+  "2026-08-11": { salmo: "Psalm 18:1-19", at: "Genesis 19:1-29", nt: "Romans 9:14-29" },
+  "2026-08-12": { salmo: "Psalm 18:1-19", at: "Job 36:24-33; 37:14-24", nt: "Matthew 8:23-27" },
+  "2026-08-13": { salmo: "Psalm 67", at: "Isaiah 45:20-25", nt: "Revelation 15:1-4" },
+  "2026-08-14": { salmo: "Psalm 67", at: "Isaiah 63:15-19", nt: "Acts 14:19-28" },
+  "2026-08-15": { salmo: "Psalm 67", at: "Isaiah 56:1-5", nt: "Matthew 14:34-36" },
+  "2026-08-17": { salmo: "Psalm 87", at: "2 Kings 5:1-14", nt: "Acts 15:1-21" },
+  "2026-08-18": { salmo: "Psalm 87", at: "Isaiah 43:8-13", nt: "Romans 11:13-29" },
+  "2026-08-19": { salmo: "Psalm 87", at: "Isaiah 66:18-23", nt: "Matthew 8:1-13" },
+  "2026-08-20": { salmo: "Psalm 138", at: "Ezekiel 28:11-19", nt: "1 Corinthians 6:1-11" },
+  "2026-08-21": { salmo: "Psalm 138", at: "Ezekiel 31:15-18", nt: "2 Corinthians 10:12-18" },
+  "2026-08-22": { salmo: "Psalm 138", at: "Ezekiel 36:33-38", nt: "Matthew 16:5-12" },
+  "2026-08-24": { salmo: "Psalm 18:1-3, 20-32", at: "1 Samuel 7:3-13", nt: "Romans 2:1-11" },
+  "2026-08-25": { salmo: "Psalm 18:1-3, 20-32", at: "Deuteronomy 32:18-20, 28-39", nt: "Romans 11:33-36" },
+  "2026-08-26": { salmo: "Psalm 18:1-3, 20-32", at: "Isaiah 28:14-22", nt: "Matthew 26:6-13" },
+  "2026-08-27": { salmo: "Psalm 26:1-8", at: "Jeremiah 14:13-18", nt: "Ephesians 5:1-6" },
+  "2026-08-28": { salmo: "Psalm 26:1-8", at: "Jeremiah 15:1-9", nt: "2 Thessalonians 2:7-12" },
+  "2026-08-29": { salmo: "Psalm 26:1-8", at: "Jeremiah 15:10-14", nt: "Matthew 8:14-17" },
+  "2026-08-31": { salmo: "Psalm 17", at: "2 Samuel 11:2-26", nt: "Revelation 3:1-6" },
+  "2026-09-01": { salmo: "Psalm 17", at: "2 Samuel 11:27b-12:15", nt: "Revelation 3:7-13" },
+  "2026-09-02": { salmo: "Psalm 17", at: "Jeremiah 17:5-18", nt: "Matthew 12:22-32" },
+  "2026-09-03": { salmo: "Psalm 119:33-40", at: "Ezekiel 24:1-14", nt: "2 Corinthians 12:11-21" },
+  "2026-09-04": { salmo: "Psalm 119:33-40", at: "Ezekiel 24:15-27", nt: "Romans 10:15b-21" },
+  "2026-09-05": { salmo: "Psalm 119:33-40", at: "Ezekiel 33:1-6", nt: "Matthew 23:29-36" },
+  "2026-09-07": { salmo: "Psalm 119:65-72", at: "Leviticus 4:27-31; 5:14-16", nt: "1 Peter 2:11-17" },
+  "2026-09-08": { salmo: "Psalm 119:65-72", at: "Deuteronomy 17:2-13", nt: "Romans 13:1-7" },
+  "2026-09-09": { salmo: "Psalm 119:65-72", at: "Leviticus 16:1-5, 20-28", nt: "Matthew 21:18-22" },
+  "2026-09-10": { salmo: "Psalm 103:8-13", at: "Genesis 37:12-36", nt: "1 John 3:11-16" },
+  "2026-09-11": { salmo: "Psalm 103:8-13", at: "Genesis 41:53-42:17", nt: "Acts 7:9-16" },
+  "2026-09-12": { salmo: "Psalm 103:8-13", at: "Genesis 45:1-20", nt: "Matthew 6:7-15" },
+  "2026-09-14": { salmo: "Psalm 133", at: "Genesis 48:8-22", nt: "Hebrews 11:23-29" },
+  "2026-09-15": { salmo: "Psalm 133", at: "Genesis 49:29-50:14", nt: "Romans 14:13-15:2" },
+  "2026-09-16": { salmo: "Psalm 133", at: "Genesis 50:22-26", nt: "Mark 11:20-25" },
+  "2026-09-17": { salmo: "Psalm 145:1-8", at: "Nahum 1:1, 14-2:2", nt: "2 Corinthians 13:1-4" },
+  "2026-09-18": { salmo: "Psalm 145:1-8", at: "Nahum 2:3-13", nt: "2 Corinthians 13:5-10" },
+  "2026-09-19": { salmo: "Psalm 145:1-8", at: "Zephaniah 2:13-15", nt: "Matthew 19:23-30" },
+  "2026-09-21": { salmo: "Psalm 106:1-12", at: "Genesis 27:1-29", nt: "Romans 16:1-16" },
+  "2026-09-22": { salmo: "Psalm 106:1-12", at: "Genesis 28:10-17", nt: "Romans 16:17-20" },
+  "2026-09-23": { salmo: "Psalm 106:1-12", at: "Isaiah 41:1-13", nt: "Matthew 18:1-5" },
+  "2026-09-24": { salmo: "Psalm 25:1-9", at: "Ezekiel 12:17-28", nt: "James 4:11-16" },
+  "2026-09-25": { salmo: "Psalm 25:1-9", at: "Ezekiel 18:5-18", nt: "Acts 13:32-41" },
+  "2026-09-26": { salmo: "Psalm 25:1-9", at: "Ezekiel 18:19-24", nt: "Mark 11:27-33" },
+  "2026-09-28": { salmo: "Psalm 28", at: "Judges 14:1-20", nt: "Philippians 1:3-14" },
+  "2026-09-29": { salmo: "Psalm 28", at: "Judges 16:1-22", nt: "Philippians 1:15-21" },
+  "2026-09-30": { salmo: "Psalm 28", at: "Judges 16:23-31", nt: "Matthew 9:2-8" },
+  "2026-10-01": { salmo: "Psalm 80:7-15", at: "Jeremiah 2:14-22", nt: "Colossians 2:16-23" },
+  "2026-10-02": { salmo: "Psalm 80:7-15", at: "Jeremiah 2:23-37", nt: "Philippians 2:14-18; 3:1-4a" },
+  "2026-10-03": { salmo: "Psalm 80:7-15", at: "Jeremiah 6:1-10", nt: "John 7:40-52" },
+  "2026-10-05": { salmo: "Psalm 144", at: "Ezekiel 19:10-14", nt: "1 Peter 2:4-10" },
+  "2026-10-06": { salmo: "Psalm 144", at: "Isaiah 27:1-6", nt: "2 Corinthians 5:17-21" },
+  "2026-10-07": { salmo: "Psalm 144", at: "Song of Solomon 8:5-14", nt: "John 11:45-57" },
+  "2026-10-08": { salmo: "Psalm 23", at: "Isaiah 22:1-8a", nt: "1 Peter 5:1-5, 12-14" },
+  "2026-10-09": { salmo: "Psalm 23", at: "Isaiah 22:8b-14", nt: "James 4:4-10" },
+  "2026-10-10": { salmo: "Psalm 23", at: "Isaiah 24:17-23", nt: "Mark 2:18-22" },
+  "2026-10-12": { salmo: "Psalm 34", at: "Exodus 19:7-20", nt: "Jude 17-25" },
+  "2026-10-13": { salmo: "Psalm 34", at: "Amos 9:5-15", nt: "Philippians 3:13-4:1" },
+  "2026-10-14": { salmo: "Psalm 34", at: "Song of Solomon 7:10-8:4", nt: "John 6:25-35" },
+  "2026-10-15": { salmo: "Psalm 96:1-9", at: "Judges 17:1-6", nt: "3 John 9-12" },
+  "2026-10-16": { salmo: "Psalm 96:1-9", at: "Deuteronomy 17:14-20", nt: "1 Peter 5:1-5" },
+  "2026-10-17": { salmo: "Psalm 96:1-9", at: "Isaiah 14:3-11", nt: "Matthew 14:1-12" },
+  "2026-10-19": { salmo: "Psalm 98", at: "Daniel 3:1-18", nt: "Revelation 18:1-10, 19-20" },
+  "2026-10-20": { salmo: "Psalm 98", at: "Daniel 3:19-30", nt: "Revelation 18:21-24" },
+  "2026-10-21": { salmo: "Psalm 98", at: "Daniel 6:1-28", nt: "Matthew 17:22-27" },
+  "2026-10-22": { salmo: "Psalm 1", at: "Numbers 5:5-10", nt: "Titus 1:5-16" },
+  "2026-10-23": { salmo: "Psalm 1", at: "Deuteronomy 9:25-10:5", nt: "Titus 2:7-8, 11-15" },
+  "2026-10-24": { salmo: "Psalm 1", at: "Proverbs 24:23-34", nt: "John 5:39-47" },
+  "2026-10-26": { salmo: "Psalm 119:41-48", at: "Deuteronomy 6:1-9, 20-25", nt: "James 2:8-13" },
+  "2026-10-27": { salmo: "Psalm 119:41-48", at: "Deuteronomy 10:10-22", nt: "James 2:14-26" },
+  "2026-10-28": { salmo: "Psalm 119:41-48", at: "Proverbs 16:1-20", nt: "Matthew 19:16-22" },
+  "2026-10-29": { salmo: "Psalm 43", at: "1 Samuel 2:27-36", nt: "Romans 2:17-29" },
+  "2026-10-30": { salmo: "Psalm 43", at: "Ezekiel 13:1-16", nt: "2 Peter 2:1-3" },
+  "2026-10-31": { salmo: "Psalm 43", at: "Malachi 1:6-2:9", nt: "Matthew 23:13-28" },
+  "2026-11-02": { salmo: "Psalm 5", at: "Jeremiah 5:18-31", nt: "1 Thessalonians 2:13-20" },
+  "2026-11-03": { salmo: "Psalm 5", at: "Lamentations 2:13-17", nt: "Acts 13:1-12" },
+  "2026-11-04": { salmo: "Psalm 5", at: "Proverbs 16:21-33", nt: "Matthew 15:1-9" },
+  "2026-11-05": { salmo: "Psalm 70", at: "Amos 1:1-2:5", nt: "Revelation 8:6-9:12" },
+  "2026-11-06": { salmo: "Psalm 70", at: "Amos 3:1-12", nt: "Revelation 9:13-21" },
+  "2026-11-07": { salmo: "Psalm 70", at: "Amos 4:6-13", nt: "Matthew 24:1-14" },
+  "2026-11-09": { salmo: "Psalm 63", at: "Amos 8:7-14", nt: "1 Corinthians 14:20-25" },
+  "2026-11-10": { salmo: "Psalm 63", at: "Joel 1:1-14", nt: "1 Thessalonians 3:6-13" },
+  "2026-11-11": { salmo: "Psalm 63", at: "Joel 3:9-21", nt: "Matthew 24:29-35" },
+  "2026-11-12": { salmo: "Psalm 90:1-8, 12", at: "Ezekiel 6:1-14", nt: "Revelation 16:1-7" },
+  "2026-11-13": { salmo: "Psalm 90:1-8, 12", at: "Ezekiel 7:1-9", nt: "Revelation 16:8-21" },
+  "2026-11-14": { salmo: "Psalm 90:1-8, 12", at: "Ezekiel 7:10-27", nt: "Matthew 12:43-45" },
+  "2026-11-16": { salmo: "Psalm 9:1-14", at: "Zechariah 1:7-17", nt: "Romans 2:1-11" },
+  "2026-11-17": { salmo: "Psalm 9:1-14", at: "Zechariah 2:1-5; 5:1-4", nt: "1 Thessalonians 5:12-18" },
+  "2026-11-18": { salmo: "Psalm 9:1-14", at: "Job 16:1-21", nt: "Matthew 24:45-51" },
+  "2026-11-19": { salmo: "Psalm 95:1-7a", at: "1 Kings 22:13-23", nt: "Revelation 14:1-11" },
+  "2026-11-20": { salmo: "Psalm 95:1-7a", at: "1 Chronicles 17:1-15", nt: "Revelation 22:1-9" },
+  "2026-11-21": { salmo: "Psalm 95:1-7a", at: "Isaiah 44:21-28", nt: "Matthew 12:46-50" },
+  "2026-11-23": { salmo: "Psalm 7", at: "Esther 2:1-18", nt: "2 Timothy 2:8-13" },
+  "2026-11-24": { salmo: "Psalm 7", at: "Esther 8:3-17", nt: "Revelation 19:1-9" },
+  "2026-11-25": { salmo: "Psalm 7", at: "Ezekiel 33:7-20", nt: "John 5:19-40" }
+};
+
+const canticosSemana = {
+  0: { titulo: "Cântico do Domingo: Digno é o Cordeiro (Apocalipse 5:9–14)", texto: "E cantavam um novo cântico, dizendo:<br>Digno és de tomar o livro e de abrir os seus selos; porque foste morto, e com o teu sangue compraste para Deus homens de toda tribo, e língua, e povo, e nação;<br>E para o nosso Deus os fizeste reis e sacerdotes; e eles reinarão sobre a terra.<br>E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos anciãos; e era o número deles milhões de milhões e milhares de milhares,<br>Que com grande voz diziam:<br>Digno é o Cordeiro, que foi morto, de receber o poder, e riquezas, e sabedoria, e força, e honra, e glória, e ações de graças.<br>E ouvi a toda criatura que está no céu, e na terra, e debaixo da terra, e que está no mar, e a todas as coisas que neles há, dizer:<br>Ao que está assentado sobre o trono, e ao Cordeiro, sejam dadas ações de graças, e honra, e glória, e poder para todo o sempre.<br>E os quatro animais diziam: Amém. E os vinte e quatro anciãos prostraram-se e adoraram ao que vive para todo o sempre." },
+  1: { titulo: "Cântico de Segunda-feira: Cântico de Moisés (Êxodo 15:1–18)", texto: "Cantarei ao Senhor, porque gloriosamente triunfou; lançou no mar o cavalo e o seu cavaleiro.<br>O Senhor é a minha força e o meu cântico; ele me foi por salvação; este é o meu Deus, portanto lhe farei uma habitação; ele é o Deus de meu pai, por isso o exaltarei.<br>O Senhor é homem de guerra; o Senhor é o seu nome.<br>Lançou no mar os carros de Faraó e o seu exército; e os seus capitães afogaram-se no mar Vermelho.<br>Os abismos os cobriram; desceram às profundezas como pedra.<br>A tua destra, ó Senhor, se tem glorificado em poder; a tua destra, ó Senhor, tem despedaçado o inimigo.<br>Tu, com a tua beneficência, guiaste este povo que salvaste; com a tua força o levaste à habitação da tua santidade.<br>O Senhor reinará eterna e perpetuamente." },
+  2: { titulo: "Cântico de Terça-feira: Cântico de Ana (1 Samuel 2:1–10)", texto: "O meu coração exulta no Senhor, o meu poder está exaltado no Senhor; a minha boca se dilatou sobre os meus inimigos, porquanto me alegro na tua salvação.<br>Não há santo como o Senhor; porque não há outro fora de ti; e rocha nenhuma há como o nosso Deus.<br>O arco dos fortes foi quebrado, e os que tropeçavam foram cingidos de força.<br>O Senhor é o que tira a vida e a dá; faz descer à sepultura e faz tornar a subir dela.<br>O Senhor empobrece e enriquece; abaixa e também exalta.<br>Levanta o pobre do pó e, desde o monturo, exalta o necessitado, para o fazer assentar entre os príncipes, para o fazer herdar o trono de glória." },
+  3: { titulo: "Cântico de Quarta-feira: Magnificat (Lucas 1:46–55)", texto: "A minha alma engrandece ao Senhor,<br>E o meu espírito se alegra em Deus meu Salvador,<br>Porque atentou na baixeza de sua serva; pois eis que desde agora todas as gerações me chamarão bem-aventurada,<br>Porque me fez grandes coisas o Poderoso; e santo é o seu nome.<br>E a sua misericórdia é de geração em geração sobre os que o temem.<br>Com o seu braço agiu valorosamente; dissipou os soberbos no pensamento de seus corações.<br>Depôs dos tronos os poderosos, e elevou os humildes.<br>Encheu de bens os famintos, e despediu vazios os ricos.<br>Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br>Como falou a nossos pais, para com Abraão e sua posteridade, para sempre." },
+  4: { titulo: "Cântico de Quinta-feira: Benedictus (Lucas 1:68–79)", texto: "Bendito o Senhor Deus de Israel, porque visitou e remiu o seu povo,<br>E nos levantou uma salvação poderosa na casa de Davi seu servo,<br>Como falou pela boca dos seus santos profetas, desde o princípio do mundo;<br>Para nos livrar dos nossos inimigos e da mão de todos os que nos aborrecem;<br>Para manifestar misericórdia a nossos pais, e lembrar-se do seu santo concerto,<br>E tu, ó menino, serás chamado profeta do Altíssimo, porque hás de ir ante a face do Senhor, a preparar os seus caminhos;<br>Para dar ao seu povo conhecimento da salvação, na remissão dos seus pecados;<br>Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos visitou." },
+  5: { titulo: "Cântico de Sexta-feira: Nunc Dimittis (Lucas 2:29–32)", texto: "Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>Pois já os meus olhos viram a tua salvação,<br>A qual tu preparaste perante a face de todos os povos;<br>Luz para alumiar as nações, e para glória de teu povo Israel." },
+  6: { titulo: "Cântico de Sábado: Cântico do Cordeiro (Apocalipse 15:3–4)", texto: "Grandes e maravilhosas são as tuas obras, Senhor Deus Todo-Poderoso!<br>Justos e verdadeiros são os teus caminhos, ó Rei dos santos.<br>Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br>Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos." }
+};
+
+const traducaoLivros = {
+  "Genesis": "Genesis", "Exodus": "Exodo", "Leviticus": "Levitico", "Numbers": "Numeros", "Deuteronomy": "Deuteronomio",
+  "Joshua": "Josue", "Judges": "Juizes", "Ruth": "Rute", "1 Samuel": "1 Samuel", "2 Samuel": "2 Samuel",
+  "1 Kings": "1 Reis", "2 Kings": "2 Reis", "1 Chronicles": "1 Cronicas", "2 Chronicles": "2 Cronicas",
+  "Ezra": "Esdras", "Nehemiah": "Neemias", "Esther": "Ester", "Job": "Jo", "Psalm": "Salmos", "Psalms": "Salmos",
+  "Proverbs": "Proverbios", "Ecclesiastes": "Eclesiastes", "Song of Solomon": "Cantares", "Isaiah": "Isaias",
+  "Jeremiah": "Jeremias", "Lamentations": "Lamentacoes", "Ezekiel": "Ezequiel", "Daniel": "Daniel",
+  "Hosea": "Oseias", "Joel": "Joel", "Amos": "Amos", "Obadiah": "Obadias", "Jonah": "Jonas", "Micah": "Miqueias",
+  "Nahum": "Naum", "Habakkuk": "Habacuc", "Zephaniah": "Sofonias", "Haggai": "Ageu", "Zechariah": "Zacarias", "Malachi": "Malaquias",
+  "Matthew": "Mateus", "Mark": "Marcos", "Luke": "Lucas", "John": "Joao", "Acts": "Atos", "Romans": "Romanos",
+  "1 Corinthians": "1 Corintios", "2 Corinthians": "2 Corintios", "Galatians": "Galatas", "Ephesians": "Efesios",
+  "Philippians": "Filipenses", "Colossians": "Colossenses", "1 Thessalonians": "1 Tessalonicenses", "2 Thessalonians": "2 Tessalonicenses",
+  "1 Timothy": "1 Timoteo", "2 Timothy": "2 Timoteo", "Titus": "Tito", "Philemon": "Filemom", "Hebrews": "Hebreus",
+  "James": "Tiago", "1 Peter": "1 Pedro", "2 Peter": "2 Pedro", "1 John": "1 Joao", "2 John": "2 Joao", "3 John": "3 Joao",
+  "Jude": "Judas", "Revelation": "Apocalipse", "Wisdom": "Sabedoria"
+};
+
+function traduzirReferencia(refIngles) {
   if (!refIngles) return "";
   let refLimpa = refIngles.trim();
   for (let en in traducaoLivros) {
@@ -220,33 +625,11 @@ function traduzirParaExibicao(refIngles) {
   return refLimpa;
 }
 
-// Busca a leitura diária (RCL Daily Complementary) por data exata no rcl.json
-async function consultarLeituraDiaria(dataObj) {
-  const ano = dataObj.getFullYear();
-  const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
-  const dia = String(dataObj.getDate()).padStart(2, '0');
-  const dataIso = `${ano}-${mes}-${dia}`;
-
+async function buscarTextoBiblico(referencia) {
+  if (!referencia) return "Referência não encontrada.";
+  const refTraduzida = traduzirReferencia(referencia);
   try {
-    const res = await fetch("./rcl.json");
-    if (res.ok) {
-      const db = await res.json();
-      if (db[dataIso]) {
-        return {
-          salmo: db[dataIso].psalm || db[dataIso].psalms,
-          at: db[dataIso].first_reading || db[dataIso].old_testament,
-          nt: db[dataIso].second_reading || db[dataIso].gospel
-        };
-      }
-    }
-  } catch(e) {}
-  return null;
-}
-
-async function buscarTextoBiblico(referenciaIngles) {
-  if (!referenciaIngles) return "Referência não disponível.";
-  try {
-    const res = await fetch(`https://bible-api.com/${encodeURIComponent(referenciaIngles)}?translation=almeida`);
+    const res = await fetch(`https://bible-api.com/${encodeURIComponent(refTraduzida)}?translation=almeida`);
     if (!res.ok) throw new Error();
     const data = await res.json();
     return data.text || "Texto não disponível nesta tradução.";
@@ -255,12 +638,16 @@ async function buscarTextoBiblico(referenciaIngles) {
   }
 }
 
-async function atualizarPaginaDiaria() {
-  const hoje = new Date();
-  const diaSemana = hoje.getDay();
-
+async function carregarLiturgiaParaData(dataAlvo) {
+  const diaSemana = dataAlvo.getDay();
+  const ano = dataAlvo.getFullYear();
+  const mes = String(dataAlvo.getMonth() + 1).padStart(2, '0');
+  const dia = String(dataAlvo.getDate()).padStart(2, '0');
+  const dataChave = `${ano}-${mes}-${dia}`;
+  
   const opcoesData = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  document.getElementById("data-cabecalho").innerHTML = hoje.toLocaleDateString('pt-BR', opcoesData);
+  document.getElementById("data-cabecalho").innerHTML = dataAlvo.toLocaleDateString('pt-BR', opcoesData);
+  document.getElementById("test-date").value = dataChave;
 
   const cantico = canticosSemana[diaSemana];
   document.getElementById("cantico-diario").innerHTML = `
@@ -271,36 +658,58 @@ async function atualizarPaginaDiaria() {
   const containerSalmo = document.getElementById("container-salmo-rcl");
   const containerLeituras = document.getElementById("container-leituras");
 
-  containerSalmo.innerHTML = `<p class="red">Buscando o Salmo de hoje do lecionário...</p>`;
-  containerLeituras.innerHTML = `<p class="red">Buscando as leituras de hoje do lecionário...</p>`;
+  const refs = BASE_LEITURAS[dataChave];
 
-  const refs = await consultarLeituraDiaria(hoje);
-
-  if (refs && (refs.salmo || refs.at)) {
-    const [textoSalmo, textoAT, textoNT] = await Promise.all([
-      buscarTextoBiblico(refs.salmo),
-      buscarTextoBiblico(refs.at),
-      buscarTextoBiblico(refs.nt)
-    ]);
-
-    containerSalmo.innerHTML = `
-      <h2>${traduzirParaExibicao(refs.salmo)}</h2>
-      <p>${textoSalmo.replace(/\n/g, '<br>')}</p>
-    `;
-
-    containerLeituras.innerHTML = `
-      <h2>Primeira Leitura (AT): ${traduzirParaExibicao(refs.at)}</h2>
-      <p>${textoAT.replace(/\n/g, '<br>')}</p>
-      <h2>Segunda Leitura (NT): ${traduzirParaExibicao(refs.nt)}</h2>
-      <p>${textoNT.replace(/\n/g, '<br>')}</p>
-    `;
-  } else {
-    containerSalmo.innerHTML = `<p class="red">Não foi possível carregar a leitura para a data de hoje.</p>`;
-    containerLeituras.innerHTML = `<p class="red">Não foi possível carregar a leitura para a data de hoje.</p>`;
+  if (!refs) {
+    containerSalmo.innerHTML = `<p class="red">Não há leituras diárias cadastradas para esta data (<strong>${dataChave}</strong>).</p>`;
+    containerLeituras.innerHTML = `<p class="red">Selecione uma data dentro do período do Ano A (${CONFIG_ANO.dataInicio} a ${CONFIG_ANO.dataFim}).</p>`;
+    return;
   }
+
+  containerSalmo.innerHTML = `<p class="red">Buscando Salmo na API da Bíblia...</p>`;
+  containerLeituras.innerHTML = `<p class="red">Buscando leituras na API da Bíblia...</p>`;
+
+  const [textoSalmo, textoAT, textoNT] = await Promise.all([
+    buscarTextoBiblico(refs.salmo),
+    buscarTextoBiblico(refs.at),
+    buscarTextoBiblico(refs.nt)
+  ]);
+
+  containerSalmo.innerHTML = `
+    <h2>${traduzirReferencia(refs.salmo)}</h2>
+    <p>${textoSalmo.replace(/\n/g, '<br>')}</p>
+  `;
+
+  containerLeituras.innerHTML = `
+    <h2>Primeira Leitura (AT): ${traduzirReferencia(refs.at)}</h2>
+    <p>${textoAT.replace(/\n/g, '<br>')}</p>
+    <h2>Segunda Leitura (NT): ${traduzirReferencia(refs.nt)}</h2>
+    <p>${textoNT.replace(/\n/g, '<br>')}</p>
+  `;
 }
 
-document.addEventListener("DOMContentLoaded", atualizarPaginaDiaria);
+function testarData(dataStr) {
+  if (!dataStr) return;
+  const partes = dataStr.split('-');
+  const dataSelecionada = new Date(partes[0], partes[1] - 1, partes[2], 12, 0, 0);
+  carregarLiturgiaParaData(dataSelecionada);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const inputDate = document.getElementById("test-date");
+  inputDate.setAttribute("min", CONFIG_ANO.dataInicio);
+  inputDate.setAttribute("max", CONFIG_ANO.dataFim);
+
+  let dataInicial = new Date();
+  const minDate = new Date(CONFIG_ANO.dataInicio);
+  const maxDate = new Date(CONFIG_ANO.dataFim);
+
+  if (dataInicial < minDate || dataInicial > maxDate) {
+    dataInicial = minDate;
+  }
+
+  carregarLiturgiaParaData(dataInicial);
+});
 </script>
 </body>
 </html>
