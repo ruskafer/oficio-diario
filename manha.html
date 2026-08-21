@@ -91,7 +91,7 @@ hr {
     background: #fff;
     border: 1px solid rgba(255, 0, 0, 0.5);
 }
-    
+
 .card-domingo {
     background: #fff8eb;
     border-left: 4px solid rgba(255, 0, 0, 0.8);
@@ -150,9 +150,12 @@ hr {
 <div id="conteudo-domingo" style="display: none;">
   <div class="card-domingo">
     <h2>Dia do Senhor (Domingo)</h2>
+    
+    <!-- Elemento para exibir o nome litúrgico em português -->
+    <p class="red" id="domingo-festa-nome" style="font-size: 1.1em;"></p>
+
     <p><strong>Alegrai-vos! Hoje é o Dia da Ressurreição.</strong></p>
     
-    <!-- Nome da festa ou domingo do calendário litúrgico (dinâmico) -->
     <p>Na tradição cristã e na IECLB, o Domingo é o dia da celebração comunitária, dia em que a comunidade celebra a vitória de Cristo sobre a morte. É o momento em que nos reunimos como corpo de Cristo para ouvir a Palavra anunciada e celebrar o Sacramento da Santa Ceia na comunhão dos irmãos e irmãs.</p>
     <p><em>"Pois onde estiverem dois ou três reunidos em meu nome, ali estou eu no meio deles." (Mateus 18:20)</em></p>
     <p>As leituras diárias do Lecionário Comum Revisado nos preparam de segunda a sábado. No domingo, somos convidados e convidadas a participar do <strong>Culto Comunitário</strong> em nossa comunidade local.</p>
@@ -378,7 +381,7 @@ Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalme
 
   <h2>Sobre este Projeto</h2>
   <p>
-    Esta plataforma foi criada com o intuito de oferecer um roteiro simples, acessível e estruturado para o <strong>Ofício Diário</strong>. Em um mundo marcado pelo ritmo acelerado e por constantes distrações virtuais e diárias, manter uma disciplina de oração e leitura bíblica pode ser um desafio. O objetivo deste projeto é auxiliar principalmente irmãs e irmãos luteranos — e a quem mais desejar — a cultivar uma vida de oração mais litúrgica, focada e ancorada nas leituras bíblicas semanais.
+    Esta plataforma foi criada com o intuito de oferecer um roteiro simples, acessível e estruturado para o <strong>Ofício Diário</strong>. Em um mundo marcado pelo ritmo acelerado e por constantes distrações virtuais e diárias, manter uma disciplina de oração e leitura bíblica pode ser um desafio. O objetivo deste projeto é auxiliar principalmente luteranas e luteranos — e a quem mais desejar — a cultivar uma vida de oração mais litúrgica, focada e ancorada nas leituras bíblicas semanais.
   </p>
   <p>
     <strong>O projeto não é oficialmente vinculado à IECLB:</strong> Esclarecemos que este é um projeto independente de iniciativa pessoal e <u>não possui nenhum vínculo oficial ou institucional</u> com a Igreja Evangélica de Confissão Luterana no Brasil (IECLB). No entanto, o projeto foi elaborado com profundo carinho e respeito pela tradição e espiritualidade luterana, servindo como uma ferramenta complementar de devoção individual, familiar ou em pequenos grupos.
@@ -414,27 +417,29 @@ Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalme
 </div>
 
 <script>
-// Mapeamento de domingos e datas festivas do Ano A (IECLB)
+// Mapeamento de domingos e datas festivas do Ano A traduzidos integralmente para o Português
 const FESTAS_DOMINGO = {
-  "2025-11-30": "1º Domingo de Advento",
-  "2025-12-07": "2º Domingo de Advento",
-  "2025-12-14": "3º Domingo de Advento",
-  "2025-12-21": "4º Domingo de Advento",
+  "2025-11-30": "1º Domingo do Advento",
+  "2025-12-07": "2º Domingo do Advento",
+  "2025-12-14": "3º Domingo do Advento",
+  "2025-12-21": "4º Domingo do Advento",
+  "2025-12-24": "Véspera de Natal (Natividade do Senhor - Próprio I)",
+  "2025-12-25": "Natividade do Senhor (Dia de Natal)",
   "2025-12-28": "1º Domingo após o Natal",
   "2026-01-04": "2º Domingo após o Natal",
   "2026-01-11": "Batismo do Senhor",
-  "2026-01-18": "2º Domingo após Epifania",
-  "2026-01-25": "3º Domingo após Epifania",
-  "2026-02-01": "4º Domingo após Epifania",
-  "2026-02-08": "5º Domingo após Epifania",
+  "2026-01-18": "2º Domingo após a Epifania",
+  "2026-01-25": "3º Domingo após a Epifania",
+  "2026-02-01": "4º Domingo após a Epifania",
+  "2026-02-08": "5º Domingo após a Epifania",
   "2026-02-15": "Domingo da Transfiguração",
   "2026-02-22": "1º Domingo na Quaresma",
   "2026-03-01": "2º Domingo na Quaresma",
   "2026-03-08": "3º Domingo na Quaresma",
   "2026-03-15": "4º Domingo na Quaresma",
   "2026-03-22": "5º Domingo na Quaresma",
-  "2026-03-29": "Domingo de Ramos e da Paixão",
-  "2026-04-05": "Domingo da Ressurreição (Páscoa)",
+  "2026-03-29": "Domingo de Ramos / Domingo da Paixão",
+  "2026-04-05": "Domingo da Ressurreição (Dia de Páscoa)",
   "2026-04-12": "2º Domingo de Páscoa",
   "2026-04-19": "3º Domingo de Páscoa",
   "2026-04-26": "4º Domingo de Páscoa",
@@ -442,32 +447,32 @@ const FESTAS_DOMINGO = {
   "2026-05-10": "6º Domingo de Páscoa",
   "2026-05-17": "7º Domingo de Páscoa",
   "2026-05-24": "Dia de Pentecostes",
-  "2026-05-31": "Domingo da Santíssima Trindade",
-  "2026-06-07": "10º Domingo do Tempo Comum",
-  "2026-06-14": "11º Domingo do Tempo Comum",
-  "2026-06-21": "12º Domingo do Tempo Comum",
-  "2026-06-28": "13º Domingo do Tempo Comum",
-  "2026-07-05": "14º Domingo do Tempo Comum",
-  "2026-07-12": "15º Domingo do Tempo Comum",
-  "2026-07-19": "16º Domingo do Tempo Comum",
-  "2026-07-26": "17º Domingo do Tempo Comum",
-  "2026-08-02": "18º Domingo do Tempo Comum",
-  "2026-08-09": "19º Domingo do Tempo Comum",
-  "2026-08-16": "20º Domingo do Tempo Comum",
-  "2026-08-23": "21º Domingo do Tempo Comum",
-  "2026-08-30": "22º Domingo do Tempo Comum",
-  "2026-09-06": "23º Domingo do Tempo Comum",
-  "2026-09-13": "24º Domingo do Tempo Comum",
-  "2026-09-20": "25º Domingo do Tempo Comum",
-  "2026-09-27": "26º Domingo do Tempo Comum",
-  "2026-10-04": "27º Domingo do Tempo Comum",
-  "2026-10-11": "28º Domingo do Tempo Comum",
-  "2026-10-18": "29º Domingo do Tempo Comum",
-  "2026-10-25": "30º Domingo do Tempo Comum",
-  "2026-11-01": "Dia de Todos os Santos",
-  "2026-11-08": "32º Domingo do Tempo Comum",
-  "2026-11-15": "33º Domingo do Tempo Comum",
-  "2026-11-22": "Cristo Rei (Último Domingo do Ano Litúrgico)"
+  "2026-05-31": "Domingo da Santíssima Trindade / Visitação de Maria a Isabel",
+  "2026-06-07": "Próprio 5 (10)",
+  "2026-06-14": "Próprio 6 (11)",
+  "2026-06-21": "Próprio 7 (12)",
+  "2026-06-28": "Próprio 8 (13)",
+  "2026-07-05": "Próprio 9 (14)",
+  "2026-07-12": "Próprio 10 (15)",
+  "2026-07-19": "Próprio 11 (16)",
+  "2026-07-26": "Próprio 12 (17)",
+  "2026-08-02": "Próprio 13 (18)",
+  "2026-08-09": "Próprio 14 (19)",
+  "2026-08-16": "Próprio 15 (20)",
+  "2026-08-23": "Próprio 16 (21)",
+  "2026-08-30": "Próprio 17 (22)",
+  "2026-09-06": "Próprio 18 (23)",
+  "2026-09-13": "Próprio 19 (24)",
+  "2026-09-20": "Próprio 20 (25)",
+  "2026-09-27": "Próprio 21 (26)",
+  "2026-10-04": "Próprio 22 (27)",
+  "2026-10-11": "Próprio 23 (28)",
+  "2026-10-18": "Próprio 24 (29)",
+  "2026-10-25": "Próprio 25 (30)",
+  "2026-11-01": "Dia de Todos os Santos / Próprio 26 (31)",
+  "2026-11-08": "Próprio 27 (32)",
+  "2026-11-15": "Próprio 28 (33)",
+  "2026-11-22": "Cristo Rei - Próprio 29 (34)"
 };
 
 function atualizarDomingoFesta(dataChave) {
@@ -480,7 +485,7 @@ function atualizarDomingoFesta(dataChave) {
 
 const CONFIG_ANO = {
   dataInicio: "2025-11-27",
-  dataFim: "2026-11-25"
+  dataFim: "2026-11-26"
 };
 
 // Base de leituras diárias (Segunda a Sábado) do Ano A
@@ -861,6 +866,7 @@ async function carregarLiturgiaParaData(dataAlvo) {
 
   // Se for Domingo (diaSemana === 0), exibe apenas o card e oculta a estrutura do Ofício
   if (diaSemana === 0) {
+    atualizarDomingoFesta(dataChave);
     divDomingo.style.display = "block";
     divSemana.style.display = "none";
     return;
@@ -933,4 +939,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </body>
-</html> 
+</html>
