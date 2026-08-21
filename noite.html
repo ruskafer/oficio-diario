@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Ofício da Noite</title>
+<title>Breve Ofício da Noite</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 /* Estilos alinhados com o Ofício Diário da IECLB */
@@ -57,6 +57,13 @@ p {
     color: rgba(255, 0, 0, 1);
 }
 
+.subcabecalho-info {
+    color: #222;
+    margin: 15px 10%;
+    font-size: 100%;
+    line-height: 140%;
+}
+
 .indent { padding-left: 2%; display: block; }
 .indent2 { padding-left: 4%; display: block; }
 .indent3 { padding-left: 6%; display: block; }
@@ -89,6 +96,7 @@ audio {
 @media only screen and (max-width: 480px) {
     p { margin-right: 1%; margin-left: 0%; }
     h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
+    .subcabecalho-info { margin: 15px 0%; }
     hr { margin: 20px 0%; }
     .topo { margin: 30px 0% 20px 0%; }
 }
@@ -97,7 +105,12 @@ audio {
 <body id="topo">
 <div id="stuffing">
 
-  <h1>Ofício da Noite</h1>
+  <!-- Subcabeçalho em texto preto normal -->
+  <div class="subcabecalho-info" id="subcabecalho-info">
+    Carregando informações do dia...
+  </div>
+
+
 
   <p class="red"><em>Todos juntos</em></p>
   <p>
@@ -105,7 +118,6 @@ audio {
   <strong>Amém.</strong>
   </p>
 
-  <hr>
 
   <h1>Abertura</h1>
 
@@ -129,7 +141,6 @@ audio {
   como era no princípio, agora e sempre. Amém.
   </p>
 
-  <hr>
 
   <h1>Cântico da Noite</h1>
 
@@ -142,15 +153,12 @@ audio {
   Luz para alumiar nações, e para glória de teu povo Israel.
   </p>
 
-  <hr>
-
   <h1>Salmo do Dia</h1>
 
   <div id="salmo-noite">
     <p class="red">Carregando Salmo da noite...</p>
   </div>
 
-  <hr>
 
   <h1>Exame do Dia e Confissão</h1>
 
@@ -162,8 +170,6 @@ audio {
   Deus de infinita misericórdia, ao encerrar este dia, colocamo-nos diante da tua presença com o coração contrito. Confessamos que nem sempre vivemos de acordo com a tua vontade: falhamos no amor a ti e no serviço ao nosso próximo, omitindo-nos diante da necessidade alheia e pecando por pensamentos, palavras e ações. Perdoa a nossa culpa, renova em nós a esperança e concede-nos descansar no abraço da tua graça e do teu amor incondicional, revelados em Jesus Cristo, nosso Salvador. Amém.
   </p>
 
-  <hr>
-
   <h1>Oração da Noite de Martim Lutero</h1>
 
   <p class="red"><em>Oração de devoção pessoal e familiar do Catecismo Menor:</em></p>
@@ -172,7 +178,6 @@ audio {
   Agradeço-te meu Pai celeste, por Jesus Cristo, teu filho amado, que bondosamente me guardaste nesse dia. E peço-te, queiras perdoar-me todos os pecados e injustiças que cometi, e guardar-me misericordiosamente nesta noite. Pois confio a mim, meu corpo e minha alma, e tudo em tuas mãos. Teu santo anjo esteja comigo, para que o mau adversário não se apodere de mim. Amém.
   </p>
 
-  <hr>
 
   <h1>As Orações</h1>
 
@@ -208,7 +213,6 @@ audio {
   Permanece conosco, Senhor, pois a noite se aproxima e o dia já declina. Sê o nosso guia, ilumina a nossa escuridão e guarda o nosso descanso. Em tuas mãos confiamos nossas vidas, nossas famílias e a nossa comunidade. Concede-nos um sono tranquilo e reparador, bons sonhos e uma noite de paz, longe de todas as ciladas do inimigo, para que, ao despertar de um novo dia, possamos louvar o teu nome e servir-te com alegria. Por Jesus Cristo, teu Filho amado. Amém.
   </p>
 
-  <hr>
 
   <h1>Hino de recolhida</h1>
 
@@ -264,7 +268,6 @@ audio {
   o canto que a ti teus filhos entoam.
   </p>
 
-  <hr>
 
   <h1>Encerramento</h1>
 
@@ -286,7 +289,100 @@ audio {
 </div>
 
 <script>
-// Mapeamento automático dos Salmos de proteção e descanso para cada dia da semana
+// Tabela de domingos e festas do Ano A para identificar o Próprio/Tempo Litúrgico
+const FESTAS_DOMINGO = {
+  "2025-11-30": "1º Domingo do Advento",
+  "2025-12-07": "2º Domingo do Advento",
+  "2025-12-14": "3º Domingo do Advento",
+  "2025-12-21": "4º Domingo do Advento",
+  "2025-12-24": "Véspera de Natal (Natividade do Senhor - Próprio I)",
+  "2025-12-25": "Natividade do Senhor (Dia de Natal)",
+  "2025-12-28": "1º Domingo após o Natal",
+  "2026-01-04": "2º Domingo após o Natal",
+  "2026-01-11": "Batismo do Senhor",
+  "2026-01-18": "2º Domingo após a Epifania",
+  "2026-01-25": "3º Domingo após a Epifania",
+  "2026-02-01": "4º Domingo após a Epifania",
+  "2026-02-08": "5º Domingo após a Epifania",
+  "2026-02-15": "Domingo da Transfiguração",
+  "2026-02-22": "1º Domingo na Quaresma",
+  "2026-03-01": "2º Domingo na Quaresma",
+  "2026-03-08": "3º Domingo na Quaresma",
+  "2026-03-15": "4º Domingo na Quaresma",
+  "2026-03-22": "5º Domingo na Quaresma",
+  "2026-03-29": "Domingo de Ramos / Domingo da Paixão",
+  "2026-04-05": "Domingo da Ressurreição (Dia de Páscoa)",
+  "2026-04-12": "2º Domingo de Páscoa",
+  "2026-04-19": "3º Domingo de Páscoa",
+  "2026-04-26": "4º Domingo de Páscoa",
+  "2026-05-03": "5º Domingo de Páscoa",
+  "2026-05-10": "6º Domingo de Páscoa",
+  "2026-05-17": "7º Domingo de Páscoa",
+  "2026-05-24": "Dia de Pentecostes",
+  "2026-05-31": "Domingo da Santíssima Trindade / Visitação de Maria a Isabel",
+  "2026-06-07": "Próprio 5 (10)",
+  "2026-06-14": "Próprio 6 (11)",
+  "2026-06-21": "Próprio 7 (12)",
+  "2026-06-28": "Próprio 8 (13)",
+  "2026-07-05": "Próprio 9 (14)",
+  "2026-07-12": "Próprio 10 (15)",
+  "2026-07-19": "Próprio 11 (16)",
+  "2026-07-26": "Próprio 12 (17)",
+  "2026-08-02": "Próprio 13 (18)",
+  "2026-08-09": "Próprio 14 (19)",
+  "2026-08-16": "Próprio 15 (20)",
+  "2026-08-23": "Próprio 16 (21)",
+  "2026-08-30": "Próprio 17 (22)",
+  "2026-09-06": "Próprio 18 (23)",
+  "2026-09-13": "Próprio 19 (24)",
+  "2026-09-20": "Próprio 20 (25)",
+  "2026-09-27": "Próprio 21 (26)",
+  "2026-10-04": "Próprio 22 (27)",
+  "2026-10-11": "Próprio 23 (28)",
+  "2026-10-18": "Próprio 24 (29)",
+  "2026-10-25": "Próprio 25 (30)",
+  "2026-11-01": "Dia de Todos os Santos / Próprio 26 (31)",
+  "2026-11-08": "Próprio 27 (32)",
+  "2026-11-15": "Próprio 28 (33)",
+  "2026-11-22": "Reinado de Cristo / Cristo Rei - Próprio 29 (34)"
+};
+
+const LISTA_DATAS_ORDENADAS = Object.keys(FESTAS_DOMINGO).sort();
+
+function obterProprioOuFesta(dataAlvo) {
+  const ano = dataAlvo.getFullYear();
+  const mes = String(dataAlvo.getMonth() + 1).padStart(2, '0');
+  const dia = String(dataAlvo.getDate()).padStart(2, '0');
+  const dataChave = `${ano}-${mes}-${dia}`;
+
+  if (FESTAS_DOMINGO[dataChave]) {
+    return FESTAS_DOMINGO[dataChave];
+  }
+
+  let ultimoNome = "Tempo Comum";
+  for (let i = 0; i < LISTA_DATAS_ORDENADAS.length; i++) {
+    const dataFestaStr = LISTA_DATAS_ORDENADAS[i];
+    if (dataChave >= dataFestaStr) {
+      ultimoNome = FESTAS_DOMINGO[dataFestaStr];
+    } else {
+      break;
+    }
+  }
+  return ultimoNome;
+}
+
+function atualizarSubcabecalho(dataAlvo) {
+  const diaSemanaNome = dataAlvo.toLocaleDateString('pt-BR', { weekday: 'long' });
+  const diaSemanaCapitalizado = diaSemanaNome.charAt(0).toUpperCase() + diaSemanaNome.slice(1);
+  const proprioOuFesta = obterProprioOuFesta(dataAlvo);
+
+  const elSub = document.getElementById("subcabecalho-info");
+  if (elSub) {
+    elSub.innerHTML = `${diaSemanaCapitalizado}<br>Breve Ofício da Noite<br>${proprioOuFesta}`;
+  }
+}
+
+// Mapeamento dos Salmos de proteção para cada dia da semana
 const salmosNoite = {
   0: { 
     ref: "Salmo 91:1-11", 
@@ -327,6 +423,11 @@ const salmosNoite = {
 
 document.addEventListener("DOMContentLoaded", () => {
   const hoje = new Date();
+  
+  // Atualiza as informações do subcabeçalho
+  atualizarSubcabecalho(hoje);
+
+  // Carrega o Salmo do dia
   const diaSemana = hoje.getDay();
   const salmoHoje = salmosNoite[diaSemana];
 
@@ -339,3 +440,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
