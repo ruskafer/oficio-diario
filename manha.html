@@ -87,10 +87,18 @@ hr {
     border: 1px solid rgba(255, 0, 0, 0.5);
 }
 
+.card-domingo {
+    background: #fff8eb;
+    border-left: 4px solid rgba(255, 0, 0, 0.8);
+    padding: 15px;
+    margin: 15px 10% 15px 10%;
+}
+
 @media only screen and (max-width: 480px) {
     p { margin-right: 1%; margin-left: 0%; }
     h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
     .seletor-data { margin: 10px 0%; }
+    .card-domingo { margin: 15px 0%; }
 }
 </style>
 </head>
@@ -104,176 +112,287 @@ hr {
 
 <p class="red" id="data-cabecalho">Carregando data...</p>
 
-<h1>Ofício Diário</h1>
+<!-- Container para o conteúdo do Domingo -->
+<!-- Container para o conteúdo do Domingo -->
+<div id="conteudo-domingo" style="display: none;">
+  <div class="card-domingo">
+    <h2>Dia do Senhor (Domingo)</h2>
+    <p><strong>Alegrai-vos! Hoje é o Dia da Ressurreição.</strong></p>
+    
+    <!-- Nome da festa ou domingo do calendário litúrgico (dinâmico) -->
+    <p>Na tradição cristã e na IECLB, o Domingo é o dia da celebração comunitária, dia em que a comunidade celebra a vitória de Cristo sobre a morte. É o momento em que nos reunimos como corpo de Cristo para ouvir a Palavra anunciada e celebrar o Sacramento da Santa Ceia na comunhão dos irmãos e irmãs.</p>
+    <p><em>"Pois onde estiverem dois ou três reunidos em meu nome, ali estou eu no meio deles." (Mateus 18:20)</em></p>
+    <p>As leituras diárias do Lecionário Comum Revisado nos preparam de segunda a sábado. No domingo, somos convidados e convidadas a participar do <strong>Culto Comunitário</strong> em nossa comunidade local.</p>
+    
+    <hr style="margin: 20px 0; border-top: 1px solid rgba(255, 0, 0, 0.3);">
 
-<p class="red">Todos juntos</p>
-<p>
-Em nome do Pai, do Filho e do Espírito Santo.<br>
-<strong>Amém.</strong>
-</p>
+    <!-- Momento de Reflexão Pessoal e Pastoral -->
+    <h2>Tempo de reflexão e descanso</h2>
+    <p>
+      Quer você já tenha participado do culto hoje ou ainda esteja se preparando para ir, o Domingo é um dia de desaceleração. Para quem celebra a <strong>Santa Ceia</strong>, no sacramento recebemos verdadeiramente o corpo e o sangue de Jesus para o perdão dos pecados, o fortalecimento da fé e a renovação da esperança.
+    </p>    
 
-<h1>Abertura</h1>
+    <p class="red"><strong>Desejamos um abençoado Domingo e um culto fraterno em sua Comunidade!</strong></p>
 
-<h2>Orações Iniciais</h2>
+    <hr style="margin: 20px 0; border-top: 1px solid rgba(255, 0, 0, 0.3);">
 
-<p class="red">Dirigente</p>
-<p>Senhor, abre os meus lábios.</p>
+    <!-- Hino Luterano e Player incorporado -->
+    <p><strong>LCI 503 — Quem só em Deus, o Pai, confia</strong></p>
 
-<p class="red">Resposta</p>
-<p>E a minha boca anunciará o teu louvor.</p>
+    <div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/4I41k8TUPDo" 
+        title="LCI 503 - Quem só em Deus, o Pai, confia" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
 
-<p class="red">Dirigente</p>
-<p>Ó Deus, vem em meu auxílio.</p>
-
-<p class="red">Resposta</p>
-<p>Senhor, apressa-te em socorrer-me.</p>
-
-<p class="red">Todos juntos</p>
-<p>
-Glória ao Pai, ao Filho e ao Espírito Santo:<br>
-como era no princípio, agora e sempre. Amém.
-</p>
-
-<hr>
-
-<h1>Cântico Bíblico do Dia</h1>
-
-<div id="cantico-diario">
-  <p class="red">Carregando cântico...</p>
+    <p style="margin-top: 10px;">
+      <a href="https://www.youtube.com/watch?v=4I41k8TUPDo" target="_blank" rel="noopener">
+        <strong>Ouvir no YouTube: LCI 503 - Quem só em Deus, o Pai, confia</strong>
+      </a>
+    </p>
+  </div>
 </div>
 
-<hr>
+<script>
+// Mapeamento de domingos e datas festivas do Ano A (IECLB)
+const FESTAS_DOMINGO = {
+  "2025-11-30": "1º Domingo de Advento",
+  "2025-12-07": "2º Domingo de Advento",
+  "2025-12-14": "3º Domingo de Advento",
+  "2025-12-21": "4º Domingo de Advento",
+  "2025-12-28": "1º Domingo após o Natal",
+  "2026-01-04": "2º Domingo após o Natal",
+  "2026-01-11": "Batismo do Senhor",
+  "2026-01-18": "2º Domingo após Epifania",
+  "2026-01-25": "3º Domingo após Epifania",
+  "2026-02-01": "4º Domingo após Epifania",
+  "2026-02-08": "5º Domingo após Epifania",
+  "2026-02-15": "Domingo da Transfiguração",
+  "2026-02-22": "1º Domingo na Quaresma",
+  "2026-03-01": "2º Domingo na Quaresma",
+  "2026-03-08": "3º Domingo na Quaresma",
+  "2026-03-15": "4º Domingo na Quaresma",
+  "2026-03-22": "5º Domingo na Quaresma",
+  "2026-03-29": "Domingo de Ramos e da Paixão",
+  "2026-04-05": "Domingo da Ressurreição (Páscoa)",
+  "2026-04-12": "2º Domingo de Páscoa",
+  "2026-04-19": "3º Domingo de Páscoa",
+  "2026-04-26": "4º Domingo de Páscoa",
+  "2026-05-03": "5º Domingo de Páscoa",
+  "2026-05-10": "6º Domingo de Páscoa",
+  "2026-05-17": "7º Domingo de Páscoa",
+  "2026-05-24": "Dia de Pentecostes",
+  "2026-05-31": "Domingo da Santíssima Trindade",
+  "2026-06-07": "10º Domingo do Tempo Comum",
+  "2026-06-14": "11º Domingo do Tempo Comum",
+  "2026-06-21": "12º Domingo do Tempo Comum",
+  "2026-06-28": "13º Domingo do Tempo Comum",
+  "2026-07-05": "14º Domingo do Tempo Comum",
+  "2026-07-12": "15º Domingo do Tempo Comum",
+  "2026-07-19": "16º Domingo do Tempo Comum",
+  "2026-07-26": "17º Domingo do Tempo Comum",
+  "2026-08-02": "18º Domingo do Tempo Comum",
+  "2026-08-09": "19º Domingo do Tempo Comum",
+  "2026-08-16": "20º Domingo do Tempo Comum",
+  "2026-08-23": "21º Domingo do Tempo Comum",
+  "2026-08-30": "22º Domingo do Tempo Comum",
+  "2026-09-06": "23º Domingo do Tempo Comum",
+  "2026-09-13": "24º Domingo do Tempo Comum",
+  "2026-09-20": "25º Domingo do Tempo Comum",
+  "2026-09-27": "26º Domingo do Tempo Comum",
+  "2026-10-04": "27º Domingo do Tempo Comum",
+  "2026-10-11": "28º Domingo do Tempo Comum",
+  "2026-10-18": "29º Domingo do Tempo Comum",
+  "2026-10-25": "30º Domingo do Tempo Comum",
+  "2026-11-01": "Dia de Todos os Santos",
+  "2026-11-08": "32º Domingo do Tempo Comum",
+  "2026-11-15": "33º Domingo do Tempo Comum",
+  "2026-11-22": "Cristo Rei (Último Domingo do Ano Litúrgico)"
+};
 
-<h1>Salmos</h1>
+function atualizarDomingoFesta(dataChave) {
+  const elFesta = document.getElementById("domingo-festa-nome");
+  if (elFesta) {
+    const nomeFesta = FESTAS_DOMINGO[dataChave] || "Domingo do Ano Litúrgico";
+    elFesta.innerHTML = `<strong>Celebrando: ${nomeFesta}</strong>`;
+  }
+}
+</script>
+<!-- Container para o conteúdo dos Dias da Semana -->
+<div id="conteudo-semana">
+  <h1>Ofício Diário</h1>
 
-<p class="red">Antes da leitura do Salmo</p>
-<p>
-Ó Deus, bondoso e misericordioso, que por tua graça nos guias através das Tuas Santas Escrituras: envia sobre nós o teu Santo Espírito ao meditar neste Salmo. Dá-nos bom entendimento da tua vontade, para que, consolados pela tua promessa, guardemos os teus ensinamentos e vivamos como povo da tua aliança. Por Jesus Cristo, nosso Senhor. Amém.
-</p>
+  <p class="red">Todos juntos</p>
+  <p>
+  Em nome do Pai, do Filho e do Espírito Santo.<br>
+  <strong>Amém.</strong>
+  </p>
 
-<div id="container-salmo-rcl">
-  <p class="red">Carregando Salmo...</p>
+  <h1>Abertura</h1>
+
+  <h2>Orações Iniciais</h2>
+
+  <p class="red">Dirigente</p>
+  <p>Senhor, abre os meus lábios.</p>
+
+  <p class="red">Resposta</p>
+  <p>E a minha boca anunciará o teu louvor.</p>
+
+  <p class="red">Dirigente</p>
+  <p>Ó Deus, vem em meu auxílio.</p>
+
+  <p class="red">Resposta</p>
+  <p>Senhor, apressa-te em socorrer-me.</p>
+
+  <p class="red">Todos juntos</p>
+  <p>
+  Glória ao Pai, ao Filho e ao Espírito Santo:<br>
+  como era no princípio, agora e sempre. Amém.
+  </p>
+
+  <hr>
+
+  <h1>Cântico Bíblico do Dia</h1>
+
+  <div id="cantico-diario">
+    <p class="red">Carregando cântico...</p>
+  </div>
+
+  <hr>
+
+  <h1>Salmos</h1>
+
+  <p class="red">Antes da leitura do Salmo</p>
+  <p>
+Ó Deus bondoso e misericordioso, que pela tua santa Palavra guias os passos do teu povo no caminho da vida: concede-nos bom entendimento de teus ensinamentos. Abre os nossos olhos e corações para que conheçamos os teus mandamentos e os guardemos com fidelidade até o fim, por Jesus Cristo, nosso Senhor. Amém.
+  </p>
+
+  <div id="container-salmo-rcl">
+    <p class="red">Carregando Salmo...</p>
+  </div>
+
+  <hr>
+
+  <h1>Leituras das Escrituras</h1>
+
+  <p class="red">Antes das leituras</p>
+  <p>
+Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a graça do teu Reino: ilumina a nossa mente e abre o nosso coração. Concede que a tua Palavra habite ricamente em nós, transforme a nossa vida e nos conduza em verdadeira fé e obediência, por Jesus Cristo, nosso Salvador. Amém.
+  </p>
+
+  <div id="container-leituras">
+    <p class="red">Carregando leituras...</p>
+  </div>
+
+  <p class="red">Após as leituras</p>
+  <p>
+  Rendemos-te graças, ó Deus de infinita bondade, pela tua santa Palavra revelada a nós. Dá-nos a tua graça para que a semente da tua verdade frutifique em nossas atitudes diárias, para o louvor do teu santo nome e o serviço ao nosso próximo, por Jesus Cristo, nosso Senhor. Amém.
+  </p>
+
+  <hr>
+
+  <h1>Confissão de Pecados</h1>
+
+  <p class="red">Dirigente</p>
+  <p>Confessemos os nossos pecados a Deus, nosso Pai.</p>
+
+  <p class="red">Momento de silêncio para reflexão pessoal.</p>
+
+  <p class="red">Todos juntos, ajoelhados ou curvados:</p>
+  <p>
+  Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pecamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
+  </p>
+
+  <hr>
+
+  <h1>O Credo Apostólico</h1>
+
+  <p class="red">Todos em pé</p>
+  <p>
+  Creio em Deus, Pai todo-poderoso,<br>
+  <span class="indent">Criador do céu e da terra.</span><br>
+  E em Jesus Cristo, seu Filho unigênito, nosso Senhor,<br>
+  <span class="indent">o qual foi concebido pelo Espírito Santo,</span><br>
+  <span class="indent2">nasceu da virgem Maria,</span><br>
+  <span class="indent">padeceu sob o poder de Pôncio Pilatos,</span><br>
+  <span class="indent2">foi crucificado, morto e sepultado,</span><br>
+  <span class="indent">desceu ao mundo dos mortos,</span><br>
+  <span class="indent">ressuscitou no terceiro dia,</span><br>
+  <span class="indent">subiu ao céu,</span><br>
+  <span class="indent2">e está sentado à direita de Deus Pai, todo-poderoso,</span><br>
+  <span class="indent">de onde virá para julgar os vivos e os mortos.</span><br>
+  Creio no Espírito Santo,<br>
+  <span class="indent">na santa Igreja cristã,</span><br>
+  <span class="indent">a comunhão dos santos,</span><br>
+  <span class="indent">na remissão dos pecados,</span><br>
+  <span class="indent">na ressurreição do corpo,</span><br>
+  <span class="indent">e na vida eterna. Amém.</span>
+  </p>
+
+  <hr>
+
+  <h1>As Orações</h1>
+
+  <p class="red">Dirigente</p>
+  <p>O Senhor seja convosco.</p>
+
+  <p class="red">Resposta</p>
+  <p>E com o teu espírito.</p>
+
+  <p class="red">Dirigente</p>
+  <p>Oremos.</p>
+
+  <h2>Pai Nosso</h2>
+  <p>
+  Pai nosso que estás nos céus,<br>
+  <span class="indent">santificado seja o teu nome,</span><br>
+  <span class="indent">venha o teu reino,</span><br>
+  <span class="indent">seja feita a tua vontade,</span><br>
+  <span class="indent2">assim na terra como no céu.</span><br>
+  O pão nosso de cada dia nos dá hoje.<br>
+  Perdoa-nos as nossas dívidas<br>
+  <span class="indent">assim como nós perdoamos</span><br>
+  <span class="indent3">aos nossos devedores.</span><br>
+  E não nos deixes cair em tentação,<br>
+  <span class="indent">mas livra-nos do mal.</span><br>
+  Pois teu é o reino, o poder<br>
+  <span class="indent">e a glória para sempre. Amém.</span>
+  </p>
+
+  <h2>Orações de Petição</h2>
+
+  <p class="red">Pela Igreja</p>
+  <p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: nem sempre temos sido fieis ao teu chamado e muitas vezes nos acomodamos e nos calamos em vez de anunciar com coragem o teu Evangelho. Rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministros e ministras, os sínodos, presbitérios e cada comunidade e paróquia. Perdoa a nossa falta de empenho e faze-nos uma comunidade viva, acolhedora e verdadeiramente diaconal, que serve com alegria ao próximo e testemunha a Teu Evangelho reconciliador. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
+
+  <p class="red">Pela Justiça e Paz</p>
+<p>Soberano e compassivo Deus, Criador de todas as coisas, que nos confiaste o cuidado do teu mundo e nos chamas a promover a paz: olhamos para a nossa sociedade e reconhecemos, com contrição, a nossa própria omissão diante da injustiça, da violência e do sofrimento dos mais vulneráveis. Muitas vezes nos omitimos, calamos o nosso protesto e nos beneficiamos de estruturas que oprimem. Oramos pelas autoridades para que governem com sabedoria, mas pedimos também por nós: desperta-nos do nosso comodismo, concede-nos coragem para denunciar os males que ferem a dignidade humana e capacita-nos a agir ativamente em favor dos empobrecidos, da paz e do cuidado com a Criação. Por Jesus Cristo, nosso Salvador. Amém.</p>
+  <p class="red">Pelos Aflitos e Necessitados</p>
+  <p>Deus de amor e refúgio bem presente nas tribulações, que em Jesus Cristo assumiste a nossa dor e te compadeceste das multidões: confessamos que frequentemente passamos ao largo do sofrimento alheio, fechando os nossos olhos e corações para aqueles que clamam por socorro. Tem misericórdia de todas as pessoas enlutadas, enfermas, solitárias, desempregadas, famintas e desamparadas. Derrama sobre elas o teu Consolador e move-nos a nós mesmos para que não ofereçamos apenas palavras, mas sejamos tuas mãos estendidas em solidariedade concreta, consolo e serviço amoroso. Por amor de teu Filho amado, Jesus Cristo. Amém. 
+  </p>
+
+  <h2>Orações Pessoais</h2>
+  <p class="red">Espaço para intenções pessoais em silêncio.</p>
+
+  <h2>Ação de Graças</h2>
+  <p>
+Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém.  </p>
+
+  <hr>
+
+  <h1>Encerramento</h1>
+
+  <h2>Bênção Final</h2>
+  <p class="red">Dirigente</p>
+  <p>
+  O Senhor nos abençoe e nos guarde.<br>
+  O Senhor faça resplandecer o seu rosto sobre nós e tenha misericórdia de nós.<br>
+  O Senhor sobre nós levante o seu rosto e nos dê a paz.<br>
+  Em nome do Pai, do Filho e do Espírito Santo. Amém.
+  </p>
 </div>
-
-<hr>
-
-<h1>Leituras das Escrituras</h1>
-
-<p class="red">Antes das leituras</p>
-<p>
-Trino Deus — Pai, Filho e Espírito Santo —, que nos reúnes no amor do teu Evangelho e nos alimentas com a tua Palavra: ilumina a nossa mente e abre os nossos corações nesta hora. Faze com que a tua Palavra habite ricamente em nós, desperte a nossa fé e nos conduza em amor e obediência à tua vontade. Por Jesus Cristo, nosso Salvador. Amém.
-</p>
-
-<div id="container-leituras">
-  <p class="red">Carregando leituras...</p>
-</div>
-
-<p class="red">Após as leituras</p>
-<p>
-Rendemos-te graças, ó Deus de amor, pela boa nova do teu Evangelho que hoje ouvimos. Concede-nos a força do teu Espírito para que não sejamos apenas ouvintes, mas praticantes da tua Palavra, testemunhando a tua graça na vida cotidiana e no serviço ao próximo. Por Jesus Cristo, nosso Senhor. Amém.
-</p>
-
-<hr>
-
-<h1>Confissão de Pecados</h1>
-
-<p class="red">Dirigente</p>
-<p>Confessemos os nossos pecados a Deus, nosso Pai.</p>
-
-<p class="red">Momento de silêncio para reflexão pessoal.</p>
-
-<p class="red">Todos juntos, ajoelhados ou curvados:</p>
-<p>
-Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pechamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
-</p>
-
-<hr>
-
-<h1>O Credo Apostólico</h1>
-
-<p class="red">Todos em pé</p>
-<p>
-Creio em Deus, Pai todo-poderoso,<br>
-<span class="indent">Criador do céu e da terra.</span><br>
-E em Jesus Cristo, seu Filho unigênito, nosso Senhor,<br>
-<span class="indent">o qual foi concebido pelo Espírito Santo,</span><br>
-<span class="indent2">nasceu da virgem Maria,</span><br>
-<span class="indent">padeceu sob o poder de Pôncio Pilatos,</span><br>
-<span class="indent2">foi crucificado, morto e sepultado,</span><br>
-<span class="indent">desceu ao mundo dos mortos,</span><br>
-<span class="indent">ressuscitou no terceiro dia,</span><br>
-<span class="indent">subiu ao céu,</span><br>
-<span class="indent2">e está sentado à direita de Deus Pai, todo-poderoso,</span><br>
-<span class="indent">de onde virá para julgar os vivos e os mortos.</span><br>
-Creio no Espírito Santo,<br>
-<span class="indent">na santa Igreja cristã,</span><br>
-<span class="indent">a comunhão dos santos,</span><br>
-<span class="indent">na remissão dos pecados,</span><br>
-<span class="indent">na ressurreição do corpo,</span><br>
-<span class="indent">e na vida eterna. Amém.</span>
-</p>
-
-<hr>
-
-<h1>As Orações</h1>
-
-<p class="red">Dirigente</p>
-<p>O Senhor seja convosco.</p>
-
-<p class="red">Resposta</p>
-<p>E com o teu espírito.</p>
-
-<p class="red">Dirigente</p>
-<p>Oremos.</p>
-
-<h2>Pai Nosso</h2>
-<p>
-Pai nosso que estás nos céus,<br>
-<span class="indent">santificado seja o teu nome,</span><br>
-<span class="indent">venha o teu reino,</span><br>
-<span class="indent">seja feita a tua vontade,</span><br>
-<span class="indent2">assim na terra como no céu.</span><br>
-O pão nosso de cada dia nos dá hoje.<br>
-Perdoa-nos as nossas dívidas<br>
-<span class="indent">assim como nós perdoamos</span><br>
-<span class="indent3">aos nossos devedores.</span><br>
-E não nos deixes cair em tentação,<br>
-<span class="indent">mas livra-nos do mal.</span><br>
-Pois teu é o reino, o poder<br>
-<span class="indent">e a glória para sempre. Amém.</span>
-</p>
-
-<h2>Orações de Petição</h2>
-
-<p class="red">Pela Igreja</p>
-<p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministérios, os presbitérios e cada comunidade. Fortalece o nosso testemunho do Evangelho e concede que sejamos uma comunidade acolhedora, inclusiva e diaconal, a serviço do teu Reino de paz e justiça. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
-
-<p class="red">Pela Justiça e Paz</p>
-<p>Soberano e bondoso Deus, Criador de todas as coisas, que nos chamas a cuidar da integridade da tua criação e a promover a paz: olha para o nosso mundo marcado pelas injustiças, pelas divisões e pela violência. Concede sabedoria e discernimento às autoridades, para que governem com responsabilidade, promovendo a dignidade e a justiça social. Dá coragem à tua Igreja para denunciar as opressões e estar ao lado dos empobrecidos e marginalizados. Que a tua paz, que excede todo o entendimento, habite em nossos corações e em nossa sociedade. Por Jesus Cristo, nosso Salvador. Amém.</p>
-
-<p class="red">Pelos Aflitos e Necessitados</p>
-<p>Misericordioso Deus e Pai, refúgio e socorro em tempos de aflição: volta o teu olhar compassivo para todas as pessoas que passam por provações, enfermidades, luto, solidão ou desamparo. Derrama o teu Espírito Consolador sobre elas, concede-lhes alívio, saúde e esperança. Desperta em nossa comunidade a verdadeira vocação diaconal, para que sejamos mãos estendidas do teu amor e do teu cuidado no mundo. Por amor de teu Filho amado, Jesus Cristo. Amém.</p>
-
-<h2>Orações Pessoais</h2>
-<p class="red">Espaço para intenções pessoais em silêncio.</p>
-
-<h2>Ação de Graças</h2>
-<p>
-Deus de bondade e Pai amoroso, dador de todos os bons dons: rendemos-te graças de todo o coração por tua constante fidelidade, pelo sustento diário, por nossa comunidade e, acima de tudo, pela dádiva da salvação mediante a fé em Jesus Cristo. Acolhe o nosso louvor sincero e faze com que a gratidão pelo teu amor ilimitado se transforme em serviço alegre, partilha generosa e amor ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém.
-</p>
-
-<hr>
-
-<h1>Encerramento</h1>
-
-<h2>Bênção Final</h2>
-<p class="red">Dirigente</p>
-<p>
-O Senhor nos abençoe e nos guarde.<br>
-O Senhor faça resplandecer o seu rosto sobre nós e tenha misericórdia de nós.<br>
-O Senhor sobre nós levante o seu rosto e nos dê a paz.<br>
-Em nome do Pai, do Filho e do Espírito Santo. Amém.
-</p>
 
 </div>
 
@@ -283,7 +402,7 @@ const CONFIG_ANO = {
   dataFim: "2026-11-25"
 };
 
-// Base completa de leituras do Ano A (2025-2026)
+// Base de leituras diárias (Segunda a Sábado) do Ano A
 const BASE_LEITURAS = {
   "2025-11-27": { salmo: "Psalm 122", at: "Daniel 9:15-19", nt: "James 4:1-10" },
   "2025-11-28": { salmo: "Psalm 122", at: "Genesis 6:1-10", nt: "Hebrews 11:1-7" },
@@ -593,7 +712,7 @@ const canticosSemana = {
   2: { titulo: "Cântico de Terça-feira: Cântico de Ana (1 Samuel 2:1–10)", texto: "O meu coração exulta no Senhor, o meu poder está exaltado no Senhor; a minha boca se dilatou sobre os meus inimigos, porquanto me alegro na tua salvação.<br>Não há santo como o Senhor; porque não há outro fora de ti; e rocha nenhuma há como o nosso Deus.<br>O arco dos fortes foi quebrado, e os que tropeçavam foram cingidos de força.<br>O Senhor é o que tira a vida e a dá; faz descer à sepultura e faz tornar a subir dela.<br>O Senhor empobrece e enriquece; abaixa e também exalta.<br>Levanta o pobre do pó e, desde o monturo, exalta o necessitado, para o fazer assentar entre os príncipes, para o fazer herdar o trono de glória." },
   3: { titulo: "Cântico de Quarta-feira: Magnificat (Lucas 1:46–55)", texto: "A minha alma engrandece ao Senhor,<br>E o meu espírito se alegra em Deus meu Salvador,<br>Porque atentou na baixeza de sua serva; pois eis que desde agora todas as gerações me chamarão bem-aventurada,<br>Porque me fez grandes coisas o Poderoso; e santo é o seu nome.<br>E a sua misericórdia é de geração em geração sobre os que o temem.<br>Com o seu braço agiu valorosamente; dissipou os soberbos no pensamento de seus corações.<br>Depôs dos tronos os poderosos, e elevou os humildes.<br>Encheu de bens os famintos, e despediu vazios os ricos.<br>Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br>Como falou a nossos pais, para com Abraão e sua posteridade, para sempre." },
   4: { titulo: "Cântico de Quinta-feira: Benedictus (Lucas 1:68–79)", texto: "Bendito o Senhor Deus de Israel, porque visitou e remiu o seu povo,<br>E nos levantou uma salvação poderosa na casa de Davi seu servo,<br>Como falou pela boca dos seus santos profetas, desde o princípio do mundo;<br>Para nos livrar dos nossos inimigos e da mão de todos os que nos aborrecem;<br>Para manifestar misericórdia a nossos pais, e lembrar-se do seu santo concerto,<br>E tu, ó menino, serás chamado profeta do Altíssimo, porque hás de ir ante a face do Senhor, a preparar os seus caminhos;<br>Para dar ao seu povo conhecimento da salvação, na remissão dos seus pecados;<br>Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos visitou." },
-  5: { titulo: "Cântico de Sexta-feira: Nunc Dimittis (Lucas 2:29–32)", texto: "Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>Pois já os meus olhos viram a tua salvação,<br>A qual tu preparaste perante a face de todos os povos;<br>Luz para alumiar as nações, e para glória de teu povo Israel." },
+  5: { titulo: "Cântico de Sexta-feira: Nunc Dimittis (Lucas 2:29–32)", texto: "Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>Pois já os meus olhos viram a tua salvação,<br>A qual tu preparaste perante a face de todos os povos;<br>Luz para alumiar nações, e para glória de teu povo Israel." },
   6: { titulo: "Cântico de Sábado: Cântico do Cordeiro (Apocalipse 15:3–4)", texto: "Grandes e maravilhosas são as tuas obras, Senhor Deus Todo-Poderoso!<br>Justos e verdadeiros são os teus caminhos, ó Rei dos santos.<br>Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br>Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos." }
 };
 
@@ -625,11 +744,18 @@ function traduzirReferencia(refIngles) {
   return refLimpa;
 }
 
+// Limpa sufixos de versículos com letras (ex: 1-7a -> 1-7) apenas para envio à API
+function limparReferenciaParaAPI(ref) {
+  if (!ref) return "";
+  return ref.replace(/(\d+)[a-zA-Z]+/g, '$1');
+}
+
 async function buscarTextoBiblico(referencia) {
   if (!referencia) return "Referência não encontrada.";
   const refTraduzida = traduzirReferencia(referencia);
+  const refSanitizada = limparReferenciaParaAPI(refTraduzida);
   try {
-    const res = await fetch(`https://bible-api.com/${encodeURIComponent(refTraduzida)}?translation=almeida`);
+    const res = await fetch(`https://bible-api.com/${encodeURIComponent(refSanitizada)}?translation=almeida`);
     if (!res.ok) throw new Error();
     const data = await res.json();
     return data.text || "Texto não disponível nesta tradução.";
@@ -649,6 +775,20 @@ async function carregarLiturgiaParaData(dataAlvo) {
   document.getElementById("data-cabecalho").innerHTML = dataAlvo.toLocaleDateString('pt-BR', opcoesData);
   document.getElementById("test-date").value = dataChave;
 
+  const divDomingo = document.getElementById("conteudo-domingo");
+  const divSemana = document.getElementById("conteudo-semana");
+
+  // Se for Domingo (diaSemana === 0), exibe apenas o card e oculta a estrutura do Ofício
+  if (diaSemana === 0) {
+    divDomingo.style.display = "block";
+    divSemana.style.display = "none";
+    return;
+  }
+
+  // Se for outro dia, exibe a estrutura normal do Ofício
+  divDomingo.style.display = "none";
+  divSemana.style.display = "block";
+
   const cantico = canticosSemana[diaSemana];
   document.getElementById("cantico-diario").innerHTML = `
     <h2>${cantico.titulo}</h2>
@@ -661,8 +801,8 @@ async function carregarLiturgiaParaData(dataAlvo) {
   const refs = BASE_LEITURAS[dataChave];
 
   if (!refs) {
-    containerSalmo.innerHTML = `<p class="red">Não há leituras diárias cadastradas para esta data (<strong>${dataChave}</strong>).</p>`;
-    containerLeituras.innerHTML = `<p class="red">Selecione uma data dentro do período do Ano A (${CONFIG_ANO.dataInicio} a ${CONFIG_ANO.dataFim}).</p>`;
+    containerSalmo.innerHTML = `<p class="red">Não há leituras diárias cadastradas para a data <strong>${dataChave}</strong>.</p>`;
+    containerLeituras.innerHTML = `<p class="red">Selecione uma data válida dentro do período ativo (${CONFIG_ANO.dataInicio} a ${CONFIG_ANO.dataFim}).</p>`;
     return;
   }
 
