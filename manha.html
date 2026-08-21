@@ -1,751 +1,399 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8">
 <title>Ofício Diário</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
-/* Base do estilo extraída do layout de referência */
+/* Estilo exato do Mission St. Clare / play-with.css */
 body {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px 20px;
-    background-color: #faf8f5;
-    color: #1a1a1a;
+    background-color: #ffffff;
+    color: #000000;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 19px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 
-/* Títulos */
+#stuffing {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
 h1 {
-    text-align: center;
-    font-size: 32px;
-    font-weight: normal;
-    color: #000;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #8b0000;
-    padding-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #000000;
 }
 
 h2 {
-    font-size: 24px;
-    font-weight: normal;
-    color: #8b0000;
-    margin-top: 45px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #000000;
 }
 
 h3 {
-    font-size: 20px;
-    font-weight: normal;
-    font-style: italic;
-    color: #333;
-    margin-top: 25px;
-}
-
-/* Links */
-a {
-    color: #8b0000;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Citações e blocos de oração */
-blockquote {
-    margin-left: 20px;
-    margin-right: 0;
-    padding-left: 15px;
-    border-left: 3px solid #8b0000;
-    color: #2b2b2b;
-}
-
-/* Classe para rubricas/instruções em vermelho (característica do estilo) */
-.red, .rubrica {
-    color: #8b0000;
-    font-style: italic;
-    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
     margin-bottom: 5px;
 }
 
-.oracao {
-    margin-left: 25px;
+p {
+    margin-top: 0;
+    margin-bottom: 1em;
 }
 
-/* Recuos do estilo original */
+p.red, span.red, .red {
+    color: #990000;
+    font-style: italic;
+}
+
+blockquote {
+    margin-left: 20px;
+    margin-right: 0;
+    color: #000000;
+}
+
 .indent {
-    margin-left: 25px;
+    margin-left: 20px;
+    display: block;
 }
 
 .indent2 {
-    margin-left: 45px;
+    margin-left: 40px;
+    display: block;
+}
+
+.indent3 {
+    margin-left: 60px;
+    display: block;
+}
+
+a {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #551A8B;
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 40px 0;
+    border: none;
+    border-top: 1px solid #000000;
+    margin: 30px 0;
 }
 
 .topo {
     text-align: right;
-    font-size: 15px;
 }
 
-iframe {
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.oracao {
+    margin-left: 20px;
 }
-
 </style>
-
 </head>
+<body>
+<div id="stuffing">
 
-<body id="topo">
+<p class="red" id="data-cabecalho"><em>Carregando data de hoje...</em></p>
 
 <h1>Ofício Diário</h1>
 
-<p style="text-align:center;">
+<p class="red"><em>Todos juntos</em></p>
+<p>
 Em nome do Pai, do Filho e do Espírito Santo.<br>
 <strong>Amém.</strong>
 </p>
 
-<h2 id="abertura">Abertura</h2>
+<h1 id="abertura">Abertura</h1>
 
-<p class="rubrica"><em>O Dirigente diz:</em></p>
+<h2>Orações Iniciais</h2>
+
+<p class="red"><em>Dirigente</em></p>
+<p>Senhor, abre os meus lábios.</p>
+
+<p class="red"><em>Resposta</em></p>
+<p>E a minha boca anunciará o teu louvor.</p>
+
+<p class="red"><em>Dirigente</em></p>
+<p>Ó Deus, vem em meu auxílio.</p>
+
+<p class="red"><em>Resposta</em></p>
+<p>Senhor, apressa-te em socorrer-me.</p>
+
+<p class="red"><em>Todos juntos</em></p>
 <p>
-Senhor, abre os meus lábios.
+Glória ao Pai, ao Filho e ao Espírito Santo:<br>
+como era no princípio, agora e sempre. Amém.
 </p>
 
-<p class="oracao">
-E a minha boca anunciará o teu louvor.
-</p>
+<hr>
 
-<p>
-Ó Deus, vem em meu auxílio.
-</p>
+<h1>Cântico Bíblico do Dia</h1>
 
-<p class="oracao">
-Senhor, apressa-te em socorrer-me.
-</p>
-
-<p>
-Glória ao Pai, ao Filho e ao Espírito Santo.
-</p>
-
-<p class="oracao">
-Como era no princípio, agora e sempre.
-Amém.
-</p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
+<!-- Bloco dinâmico do Cântico do Dia -->
+<div id="cantico-diario">
+  <p class="red"><em>Carregando o cântico correspondente ao dia de hoje...</em></p>
 </div>
 
 <hr>
 
-<h2 id="canticos">
-Cânticos Bíblicos
-</h2>
+<h1>Salmos</h1>
 
-<p class="rubrica"><em>Escolha o cântico correspondente ao dia da semana:</em></p>
-
-<p style="text-align:center;">
-
-<a href="#segunda">Segunda</a> |
-<a href="#terca">Terça</a> |
-<a href="#quarta">Quarta</a> |
-<a href="#quinta">Quinta</a> |
-<a href="#sexta">Sexta</a> |
-<a href="#sabado">Sábado</a> |
-<a href="#domingo">Domingo</a>
-
-</p>
-
-<hr>
-
-<h2 id="segunda">Segunda-feira</h2>
-
-<h3>Cântico de Moisés (Êxodo 15:1–18)</h3>
-
-<blockquote>
-Então cantou Moisés e os filhos de Israel este cântico ao Senhor, e falaram, dizendo:<br><br>
-Cantarei ao Senhor, porque gloriosamente triunfou; lançou no mar o cavalo e o seu cavaleiro.<br><br>
-O Senhor é a minha força e o meu cântico; ele me foi por salvação; este é o meu Deus, portanto lhe farei uma habitação; ele é o Deus de meu pai, por isso o exaltarei.<br><br>
-O Senhor é homem de guerra; o Senhor é o seu nome.<br><br>
-Lançou no mar os carros de Faraó e o seu exército; e os seus capitães afogaram-se no mar Vermelho.<br><br>
-Os abismos os cobriram; desceram às profundezas como pedra.<br><br>
-A tua destra, ó Senhor, se tem glorificado em poder; a tua destra, ó Senhor, tem despedaçado o inimigo.<br><br>
-E com a grandeza da tua excelência derribaste os que se levantaram contra ti; enviaste o teu furor, que os consumiu como restolho.<br><br>
-E com o assopro dos teus narizes amontoaram-se as águas, as correntes pararam como montão; os abismos coalharam-se no coração do mar.<br><br>
-O inimigo dizia: Perseguirei, alcançarei, repartirei os despojos; fartar-se-á deles a minha alma; arrancarei a minha espada, a minha mão os destruirá.<br><br>
-Sopraste com o teu vento, o mar os cobriu; afundaram-se como chumbo em águas impetuosas.<br><br>
-Ó Senhor, quem é como tu entre os deuses? Quem é como tu, glorificado em santidade, terrível em louvores, obrando maravilhas?<br><br>
-Estendeste a tua destra; a terra os tragou.<br><br>
-Tu, com a tua beneficência, guiaste este povo que salvaste; com a tua força o levaste à habitação da tua santidade.<br><br>
-Os povos o ouviram, eles estremeceram; uma dor se apoderou dos habitantes da Filístia.<br><br>
-Então os príncipes de Edom se perturbaram; dos poderosos de Moabe tremor se apoderou; derreteram-se todos os habitantes de Canaã.<br><br>
-Espanto e pavor caíram sobre eles; pela grandeza do teu braço emudeceram como pedra, até que o teu povo houvesse passado, ó Senhor, até que passasse este povo que adquiriste.<br><br>
-Tu os introduzirás e os plantarás no monte da tua herança, no lugar que tu, ó Senhor, aparelhaste para a tua habitação, no santuário que as tuas mãos estabeleceram, ó Senhor.<br><br>
-O Senhor reinará eterna e perpetuamente.
-</blockquote>
-
-<p style="text-align:center;">
-<a href="#salmos">➡ Continuar o Ofício</a>
-</p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
-
-<hr>
-<h2 id="terca">Terça-feira</h2>
-
-<h3>Cântico de Ana (1 Samuel 2:1–10)</h3>
-
-<blockquote>
-Então, orou Ana e disse:<br><br>
-O meu coração exulta no Senhor, o meu poder está exaltado no Senhor; a minha boca se dilatou sobre os meus inimigos, porquanto me alegro na tua salvação.<br><br>
-Não há santo como o Senhor; porque não há outro fora de ti; e rocha nenhuma há como o nosso Deus.<br><br>
-Não multipliqueis palavras de orgulho, nem saiam coisas arrogantes da vossa boca; porque o Senhor é o Deus da sabedoria, e por ele são as obras pesadas na balança.<br><br>
-O arco dos fortes foi quebrado, e os que tropeçavam foram cingidos de força.<br><br>
-Os que antes eram fartos se alugaram por pão, mas agora cessaram os que andavam famintos; até a estéril teve sete filhos, e a que tinha muitos filhos enfraqueceu.<br><br>
-O Senhor é o que tira a vida e a dá; faz descer à sepultura e faz tornar a subir dela.<br><br>
-O Senhor empobrece e enriquece; abaixa e também exalta.<br><br>
-Levanta o pobre do pó e, desde o monturo, exalta o necessitado, para o fazer assentar entre os príncipes, para o fazer herdar o trono de glória; porque do Senhor são os alicerces da terra, e assentou sobre eles o mundo.<br><br>
-Os pés dos seus santos guardará, porém os ímpios ficarão mudos nas trevas; porque o homem não prevalecerá pela força.<br><br>
-Os que contendem com o Senhor serão quebrantados; desde os céus trovejará sobre eles; o Senhor julgará as extremidades da terra, e dará força ao seu rei, e exaltará o poder do seu ungido.
-</blockquote>
-
-<p style="text-align:center;">
-<a href="#salmos">➡ Continuar o Ofício</a>
-</p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
-
-<hr>
-<h2 id="quarta">Quarta-feira</h2>
-
-<h3>Magnificat (Lucas 1:46–55)</h3>
-
-<blockquote>
-Disse então Maria:<br><br>
-A minha alma engrandece ao Senhor,<br><br>
-E o meu espírito se alegra em Deus meu Salvador,<br><br>
-Porque atentou na baixeza de sua serva; pois eis que desde agora todas as gerações me chamarão bem-aventurada,<br><br>
-Porque me fez grandes coisas o Poderoso; e santo é o seu nome.<br><br>
-E a sua misericórdia é de geração em geração sobre os que o temem.<br><br>
-Com o seu braço agiu valorosamente; dissipou os soberbos no pensamento de seus corações.<br><br>
-Depôs dos tronos os poderosos, e elevou os humildes.<br><br>
-Encheu de bens os famintos, e despediu vazios os ricos.<br><br>
-Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br><br>
-Como falou a nossos pais, para com Abraão e sua posteridade, para sempre.
-</blockquote>
-
-<p style="text-align:center;">
-<a href="#salmos">➡ Continuar o Ofício</a>
-</p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
-
-<hr>
-<h2 id="quinta">Quinta-feira</h2>
-
-<h3>Benedictus (Lucas 1:68–79)</h3>
-
-<blockquote>
-Bendito o Senhor Deus de Israel, porque visitou e remiu o seu povo,<br><br>
-E nos levantou uma salvação poderosa na casa de Davi seu servo,<br><br>
-Como falou pela boca dos seus santos profetas, desde o princípio do mundo;<br><br>
-Para nos livrar dos nossos inimigos e da mão de todos os que nos aborrecem;<br><br>
-Para manifestar misericórdia a nossos pais, e lembrar-se do seu santo concerto,<br><br>
-E do juramento que jurou a Abraão nosso pai,<br><br>
-De conceder-nos que, libertados da mão de nossos inimigos, o serviríamos sem temor,<br><br>
-Em santidade e justiça perante ele, todos os dias da nossa vida.<br><br>
-E tu, ó menino, serás chamado profeta do Altíssimo, porque hás de ir ante a face do Senhor, a preparar os seus caminhos;<br><br>
-Para dar ao seu povo conhecimento da salvação, na remissão dos seus pecados;<br><br>
-Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos visitou;<br><br>
-Para alumiar aos que estão assentados em trevas e sombra de morte; a fim de dirigir os nossos pés pelo caminho da paz.
-</blockquote>
-
-<p style="text-align:center;">
-<a href="#salmos">➡ Continuar o Ofício</a>
-</p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
-
-<hr>
-<h2 id="sexta">Sexta-feira</h2>
-
-<h3>Nunc Dimittis (Lucas 2:29–32)</h3>
-
-<blockquote>
-Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br><br>
-Pois já os meus olhos viram a tua salvação,<br><br>
-A qual tu preparaste perante a face de todos os povos;<br><br>
-Luz para alumiar as nações, e para glória de teu povo Israel.
-</blockquote>
-
-<p style="text-align:center;">
-<a href="#salmos">➡ Continuar o Ofício</a>
-</p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
-
-<hr>
-<h2 id="sabado">Sábado</h2>
-
-<h3>Cântico do Cordeiro (Apocalipse 15:3–4)</h3>
-
-<blockquote>
-E cantavam o cântico de Moisés, servo de Deus, e o cântico do Cordeiro, dizendo:<br><br>
-Grandes e maravilhosas são as tuas obras, Senhor Deus Todo-Poderoso!<br><br>
-Justos e verdadeiros são os teus caminhos, ó Rei dos santos.<br><br>
-Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br><br>
-Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos.
-</blockquote>
-
-<p style="text-align:center;">
-<a href="#salmos">➡ Continuar o Ofício</a>
-</p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
-
-<hr>
-<h2 id="domingo">Domingo</h2>
-
-<h3>Digno é o Cordeiro (Apocalipse 5:9–14)</h3>
-
-<blockquote>
-E cantavam um novo cântico, dizendo:<br><br>
-Digno és de tomar o livro e de abrir os seus selos; porque foste morto, e com o teu sangue compraste para Deus homens de toda tribo, e língua, e povo, e nação;<br><br>
-E para o nosso Deus os fizeste reis e sacerdotes; e eles reinarão sobre a terra.<br><br>
-E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos区分anciãos; e era o número deles milhões de milhões e milhares de milhares,<br><br>
-Que com grande voz diziam:<br><br>
-Digno é o Cordeiro, que foi morto, de receber o poder, e riquezas, e sabedoria, e força, e honra, e glória, e ações de graças.<br><br>
-E ouvi a toda criatura que está no céu, e na terra, e debaixo da terra, e que está no mar, e a todas as coisas que neles há, dizer:<br><br>
-Ao que está assentado sobre o trono, e ao Cordeiro, sejam dadas ações de graças, e honra, e glória, e poder para todo o sempre.<br><br>
-E os quatro animais diziam: Amém. E os vinte e quatro anciãos prostraram-se e adoraram ao que vive para todo o sempre.
-</blockquote>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
-
-<hr>
-
-<h2 id="salmos">
-Salmos
-</h2>
+<p class="red"><em>Leia diariamente um ou mais Salmos seguindo a ordem do Saltério:</em></p>
 
 <p>
-Leia diariamente um ou mais Salmos seguindo a ordem do Saltério.
+• Dias 1 a 30: Salmos 1–41<br>
+• Dias 31 a 60: Salmos 42–72<br>
+• Dias 61 a 90: Salmos 73–89<br>
+• Dias 91 a 120: Salmos 90–118<br>
+• Dias 121 a 150: Salmos 119–150
 </p>
 
-<p class="rubrica"><em>Sugestão de ritmo:</em></p>
-
-<ul>
-<li>Dias 1 a 30: Salmos 1–41</li>
-<li>Dias 31 a 60: Salmos 42–72</li>
-<li>Dias 61 a 90: Salmos 73–89</li>
-<li>Dias 91 a 120: Salmos 90–118</li>
-<li>Dias 121 a 150: Salmos 119–150</li>
-</ul>
-
-<p class="rubrica"><em>Antes da leitura:</em></p>
-
-<blockquote>
-Senhor, ensina-me o caminho dos teus estatutos,
-e guardarei até o fim.
-<br><br>
-Dá-me entendimento,
-para que eu guarde a tua lei
-e a cumpra de todo o coração.
-</blockquote>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+<p class="red"><em>Antes da leitura do Salmo</em></p>
+<p>
+Senhor, ensina-me o caminho dos teus estatutos,<br>
+<span class="indent">e guardarei até o fim.</span><br>
+Dá-me entendimento,<br>
+<span class="indent">para que eu guarde a tua lei e a cumpra de todo o coração.</span>
+</p>
 
 <hr>
 
-<h2 id="leituras">
-Leituras das Escrituras
-</h2>
+<h1>Leituras das Escrituras</h1>
 
-<p class="rubrica"><em>Antes da leitura:</em></p>
+<p class="red"><em>Antes das leituras</em></p>
+<p>
+Abre os meus olhos, para que eu veja as maravilhas da tua lei.<br>
+Que a tua Palavra habite ricamente em mim e transforme meu coração.
+</p>
 
-<blockquote>
-Abre os meus olhos,
-para que eu veja as maravilhas da tua lei.
-<br><br>
-Que a tua Palavra habite ricamente em mim
-e transforme meu coração.
-</blockquote>
-
-<!-- Janela das leituras RCL integradas -->
-<div style="margin: 30px 0; width: 100%;">
-  <iframe 
-    src="https://www.biblegateway.com/reading-plans/revised-common-lectionary-complementary/today" 
-    style="width: 100%; height: 600px; border: 1px solid #ccc; background: #fff; border-radius: 4px;"
-    title="Leituras RCL do Dia">
-  </iframe>
+<!-- Leituras RCL renderizadas diretamente na interface -->
+<div id="container-leituras">
+  <p class="red"><em>Buscando as leituras do dia no lecionário...</em></p>
 </div>
 
-<p class="rubrica"><em>Após a leitura:</em></p>
-
-<blockquote>
-Graças te damos, ó Deus,
-pela tua santa Palavra.
-Que ela produza fruto em minha vida
-e me conduza em fidelidade.
+<p class="red"><em>Após as leituras</em></p>
+<p>
+Graças te damos, ó Deus, pela tua santa Palavra.<br>
+Que ela produza fruto em minha vida e me conduza em fidelidade.<br>
 Amém.
-</blockquote>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+</p>
 
 <hr>
 
-<h2 id="confissao">
-Confissão de Pecados
-</h2>
+<h1>Confissão de Pecados</h1>
 
-<p class="rubrica"><em>Todos juntos:</em></p>
+<p class="red"><em>Dirigente</em></p>
+<p>Confessemos os nossos pecados a Deus, nosso Pai.</p>
 
-<blockquote>
-Deus misericordioso e Pai de toda compaixão,
-confesso diante de ti que pequei em pensamentos,
-palavras e atitudes.
-<br><br>
-Pequei pelo mal que pratiquei
-e pelo bem que deixei de fazer.
-<br><br>
-Tenho falhado em amar-te acima de todas as coisas
-e em amar o meu próximo como a mim mesmo.
-<br><br>
-Reconheço minha fraqueza
-e venho diante de ti buscando tua misericórdia.
-<br><br>
-Perdoa os meus pecados por amor de Jesus Cristo.
-<br><br>
-Purifica o meu coração,
-renova o meu espírito
-e conduz-me pelo caminho da santidade.
-<br><br>
-Que eu abandone aquilo que desagrada a ti
-e viva para tua glória.
-<br><br>
-Amém.
-</blockquote>
+<p class="red"><em>Momento de silêncio para reflexão pessoal.</em></p>
 
-<p class="rubrica"><em>Momento de silêncio para confissão pessoal.</em></p>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+<p class="red"><em>Todos juntos, ajoelhados ou curvados:</em></p>
+<p>
+Deus misericordioso e Pai de toda compaixão,<br>
+confesso diante de ti que pequei em pensamentos, palavras e atitudes.<br>
+Pequei pelo mal que pratiquei e pelo bem que deixei de fazer.<br>
+Tenho falhado em amar-te acima de todas as coisas<br>
+e em amar o meu próximo como a mim mesmo.<br>
+Reconheço minha fraqueza e venho diante de ti buscando tua misericórdia.<br>
+Perdoa os meus pecados por amor de Jesus Cristo.<br>
+Purifica o meu coração, renova o meu espírito<br>
+e conduz-me pelo caminho da santidade.<br>
+Que eu abandone aquilo que desagrada a ti e viva para tua glória. Amém.
+</p>
 
 <hr>
 
-<h2 id="credo">
-Credo Apostólico
-</h2>
+<h1>O Credo Apostólico</h1>
 
-<p class="rubrica"><em>Em pé:</em></p>
-
-<blockquote>
-Creio em Deus, Pai todo-poderoso,
-Criador do céu e da terra.
-E em Jesus Cristo, seu Filho unigênito, nosso Senhor,
-o qual foi concebido pelo Espírito Santo,
-nasceu da virgem Maria,
-padeceu sob o poder de Pôncio Pilatos,
-foi crucificado, morto e sepultado,
-desceu ao mundo dos mortos,
-ressuscitou no terceiro dia,
-subiu ao céu,
-e está sentado à direita de Deus Pai, todo-poderoso,
-de onde virá para julgar os vivos e os mortos.
-Creio no Espírito Santo,
-na santa Igreja cristã,
-a comunhão dos santos,
-na remissão dos pecados,
-na ressurreição do corpo
-e na vida eterna.
-Amém.
-</blockquote>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+<p class="red"><em>Todos em pé</em></p>
+<p>
+Creio em Deus, Pai todo-poderoso,<br>
+<span class="indent">Criador do céu e da terra.</span><br>
+E em Jesus Cristo, seu Filho unigênito, nosso Senhor,<br>
+<span class="indent">o qual foi concebido pelo Espírito Santo,</span><br>
+<span class="indent2">nasceu da virgem Maria,</span><br>
+<span class="indent">padeceu sob o poder de Pôncio Pilatos,</span><br>
+<span class="indent2">foi crucificado, morto e sepultado,</span><br>
+<span class="indent">desceu ao mundo dos mortos,</span><br>
+<span class="indent">ressuscitou no terceiro dia,</span><br>
+<span class="indent">subiu ao céu,</span><br>
+<span class="indent2">e está sentado à direita de Deus Pai, todo-poderoso,</span><br>
+<span class="indent">de onde virá para julgar os vivos e os mortos.</span><br>
+Creio no Espírito Santo,<br>
+<span class="indent">na santa Igreja cristã,</span><br>
+<span class="indent">a comunhão dos santos,</span><br>
+<span class="indent">na remissão dos pecados,</span><br>
+<span class="indent">na ressurreição do corpo,</span><br>
+<span class="indent">e na vida eterna. Amém.</span>
+</p>
 
 <hr>
 
-<h2 id="painosso">
-Pai Nosso
-</h2>
+<h1>As Orações</h1>
 
-<blockquote>
-Pai nosso que estás nos céus.
-Santificado seja o teu nome.
-Venha o teu reino.
-Seja feita a tua vontade, assim na terra como no céu.
-O pão nosso de cada dia nos dá hoje.
-E perdoa-nos as nossas dívidas, assim como nós também perdoamos aos nossos devedores.
-E não nos deixes cair em tentação.
-Mas livra-nos do mal.
-Pois, teu é o reino, o poder e a glória, para sempre. Amém.
-</blockquote>
+<p class="red"><em>Dirigente</em></p>
+<p>O Senhor seja convosco.</p>
 
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+<p class="red"><em>Resposta</em></p>
+<p>E com o teu espírito.</p>
 
-<hr>
+<p class="red"><em>Dirigente</em></p>
+<p>Oremos.</p>
 
-<h2 id="peticoes">
-Orações de Petição
-</h2>
+<h2>Pai Nosso</h2>
+<p>
+Pai nosso que estás nos céus,<br>
+<span class="indent">santificado seja o teu nome,</span><br>
+<span class="indent">venha o teu reino,</span><br>
+<span class="indent">seja feita a tua vontade,</span><br>
+<span class="indent2">assim na terra como no céu.</span><br>
+O pão nosso de cada dia nos dá hoje.<br>
+Perdoa-nos as nossas dívidas<br>
+<span class="indent">assim como nós perdoamos</span><br>
+<span class="indent3">aos nossos devedores.</span><br>
+E não nos deixes cair em tentação,<br>
+<span class="indent">mas livra-nos do mal.</span><br>
+Pois teu é o reino, o poder<br>
+<span class="indent">e a glória para sempre. Amém.</span>
+</p>
 
-<p class="rubrica"><em>Apresente ao Senhor suas necessidades e as necessidades do mundo.</em></p>
+<h2>Orações de Petição</h2>
 
-<h3>Pela Igreja</h3>
+<p class="red"><em>Pela Igreja</em></p>
+<p>Senhor Jesus Cristo, guarda tua Igreja na verdade do evangelho. Concede aos pastores sabedoria, aos servos humildade e a todos os cristãos fidelidade. Que tua Igreja seja instrumento de misericórdia, justiça e esperança no mundo. Amém.</p>
 
-<blockquote>
-Senhor Jesus Cristo,
-guarda tua Igreja na verdade do evangelho.
-Concede aos pastores sabedoria,
-aos servos humildade
-e a todos os cristãos fidelidade.
-<br><br>
-Que tua Igreja seja instrumento de misericórdia,
-justiça e esperança no mundo.
-<br><br>
-Amém.
-</blockquote>
+<p class="red"><em>Pela Justiça e Paz</em></p>
+<p>Deus justo e santo, estabelece a justiça entre os povos. Dá sabedoria aos governantes e coragem aos que defendem os oprimidos. Onde houver guerra, traz reconciliação; onde houver ódio, planta o teu amor. Amém.</p>
 
-<h3>Pela Justiça</h3>
+<p class="red"><em>Pelos Aflitos e Necessitados</em></p>
+<p>Pai de misericórdia, lembra-te dos pobres, dos enfermos e de todos os que sofrem. Concede cura, força para suportar as provações e consolação aos corações abatidos. Amém.</p>
 
-<blockquote>
-Deus justo e santo,
-estabelece a justiça entre os povos.
-<br><br>
-Dá sabedoria aos governantes,
-honestidade aos magistrados
-e coragem aos que defendem os oprimidos.
-<br><br>
-Livra os inocentes da violência,
-revela a verdade escondida
-e faz prevalecer aquilo que é correto.
-<br><br>
-Amém.
-</blockquote>
+<h2>Orações Pessoais</h2>
+<p class="red"><em>Espaço para intenções pessoais em silêncio.</em></p>
 
-<h3>Pela Paz</h3>
-
-<blockquote>
-Senhor da paz,
-acalma os conflitos deste mundo.
-<br><br>
-Onde houver guerra, traz reconciliação.
-<br><br>
-Onde houver ódio, planta amor.
-<br><br>
-Onde houver divisão, cria unidade.
-<br><br>
-Faz de nós instrumentos da tua paz.
-<br><br>
-Amém.
-</blockquote>
-
-<h3>Pelos Pobres e Necessitados</h3>
-
-<blockquote>
-Pai de misericórdia,
-lembra-te dos pobres,
-dos famintos,
-dos sem lar,
-dos perseguidos
-e de todos os que sofrem.
-<br><br>
-Abre nossos olhos para suas necessidades
-e nossas mãos para servir.
-<br><br>
-Que ninguém seja esquecido diante de ti.
-<br><br>
-Amém.
-</blockquote>
-
-<h3>Pelos Enfermos e Aflitos</h3>
-
-<blockquote>
-Senhor Deus,
-visita com tua graça todos os que estão enfermos,
-abatidos ou passando por dificuldades.
-<br><br>
-Concede cura quando for tua vontade,
-força para suportar as provações
-e esperança em tua presença.
-<br><br>
-Consola os corações aflitos.
-<br><br>
-Amém.
-</blockquote>
-
-<h3>Pelos Governantes</h3>
-
-<blockquote>
-Deus, fonte de toda autoridade,
-guia aqueles que exercem governo.
-<br><br>
-Concede-lhes prudência,
-humildade
-e compromisso com o bem comum.
-<br><br>
-Que busquem a justiça,
-protejam os vulneráveis
-e ajam com sabedoria.
-<br><br>
-Amém.
-</blockquote>
-
-<h3>Pela Família</h3>
-
-<blockquote>
-Senhor,
-abençoa minha família e aqueles que amo.
-<br><br>
-Guarda-nos em amor,
-ensina-nos a perdoar,
-fortalece nossos vínculos
-e conduz-nos no caminho da fé.
-<br><br>
-Que nosso lar seja lugar de paz e gratidão.
-<br><br>
-Amém.
-</blockquote>
-
-<h3>Pela Santificação Pessoal</h3>
-
-<blockquote>
-Espírito Santo,
-transforma meu coração.
-<br><br>
-Livra-me do pecado,
-vence minhas tentações
-e forma em mim o caráter de Cristo.
-<br><br>
-Que meus pensamentos,
-palavras e ações glorifiquem a Deus.
-<br><br>
-Amém.
-</blockquote>
-
-<h3>Pelos Inimigos e Pela Reconciliação</h3>
-
-<blockquote>
-Senhor Jesus,
-ensina-me a amar aqueles que me ferem.
-<br><br>
-Remove de mim toda amargura,
-ressentimento e desejo de vingança.
-<br><br>
-Dá-me graça para perdoar
-e buscar reconciliação quando possível.
-<br><br>
-Amém.
-</blockquote>
-
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+<h2>Ação de Graças</h2>
+<p>
+Senhor meu Deus, dou-te graças por tua bondade, criação e pela salvação concedida em Jesus Cristo. Obrigado pelas bênçãos recebidas e por tua presença contínua. Ensina-me a viver com um coração agradecido em todas as coisas. Amém.
+</p>
 
 <hr>
 
-<h2>
-Orações Pessoais
-</h2>
+<h1>Encerramento</h1>
 
-<p class="rubrica"><em>Apresente suas próprias intenções diante de Deus.</em></p>
+<h2>Bênção Final</h2>
+<p class="red"><em>Dirigente</em></p>
+<p>
+O Senhor nos abençoe e nos guarde.<br>
+O Senhor faça resplandecer o seu rosto sobre nós e tenha misericórdia de nós.<br>
+O Senhor sobre nós levante o seu rosto e nos dê a paz.<br>
+Em nome do Pai, do Filho e do Espírito Santo. Amém.
+</p>
 
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
 </div>
 
-<hr>
+<script>
+// Base de dados dos Cânticos Diários
+const canticosSemana = {
+  0: {
+    titulo: "Cântico do Domingo: Digno é o Cordeiro (Apocalipse 5:9–14)",
+    texto: "E cantavam um novo cântico, dizendo:<br>Digno és de tomar o livro e de abrir os seus selos; porque foste morto, e com o teu sangue compraste para Deus homens de toda tribo, e língua, e povo, e nação;<br>E para o nosso Deus os fizeste reis e sacerdotes; e eles reinarão sobre a terra.<br>E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos anciãos; e era o número deles milhões de milhões e milhares de milhares,<br>Que com grande voz diziam:<br>Digno é o Cordeiro, que foi morto, de receber o poder, e riquezas, e sabedoria, e força, e honra, e glória, e ações de graças.<br>E ouvi a toda criatura que está no céu, e na terra, e debaixo da terra, e que está no mar, e a todas as coisas que neles há, dizer:<br>Ao que está assentado sobre o trono, e ao Cordeiro, sejam dadas ações de graças, e honra, e glória, e poder para todo o sempre.<br>E os quatro animais diziam: Amém. E os vinte e quatro anciãos prostraram-se e adoraram ao que vive para todo o sempre."
+  },
+  1: {
+    titulo: "Cântico de Segunda-feira: Cântico de Moisés (Êxodo 15:1–18)",
+    texto: "Cantarei ao Senhor, porque gloriosamente triunfou; lançou no mar o cavalo e o seu cavaleiro.<br>O Senhor é a minha força e o meu cântico; ele me foi por salvação; este é o meu Deus, portanto lhe farei uma habitação; ele é o Deus de meu pai, por isso o exaltarei.<br>O Senhor é homem de guerra; o Senhor é o seu nome.<br>Lançou no mar os carros de Faraó e o seu exército; e os seus capitães afogaram-se no mar Vermelho.<br>Os abismos os cobriram; desceram às profundezas como pedra.<br>A tua destra, ó Senhor, se tem glorificado em poder; a tua destra, ó Senhor, tem despedaçado o inimigo.<br>Tu, com a tua beneficência, guiaste este povo que salvaste; com a tua força o levaste à habitação da tua santidade.<br>O Senhor reinará eterna e perpetuamente."
+  },
+  2: {
+    titulo: "Cântico de Terça-feira: Cântico de Ana (1 Samuel 2:1–10)",
+    texto: "O meu coração exulta no Senhor, o meu poder está exaltado no Senhor; a minha boca se dilatou sobre os meus inimigos, porquanto me alegro na tua salvação.<br>Não há santo como o Senhor; porque não há outro fora de ti; e rocha nenhuma há como o nosso Deus.<br>O arco dos fortes foi quebrado, e os que tropeçavam foram cingidos de força.<br>O Senhor é o que tira a vida e a dá; faz descer à sepultura e faz tornar a subir dela.<br>O Senhor empobrece e enriquece; abaixa e também exalta.<br>Levanta o pobre do pó e, desde o monturo, exalta o necessitado, para o fazer assentar entre os príncipes, para o fazer herdar o trono de glória."
+  },
+  3: {
+    titulo: "Cântico de Quarta-feira: Magnificat (Lucas 1:46–55)",
+    texto: "A minha alma engrandece ao Senhor,<br>E o meu espírito se alegra em Deus meu Salvador,<br>Porque atentou na baixeza de sua serva; pois eis que desde agora todas as gerações me chamarão bem-aventurada,<br>Porque me fez grandes coisas o Poderoso; e santo é o seu nome.<br>E a sua misericórdia é de geração em geração sobre os que o temem.<br>Com o seu braço agiu valorosamente; dissipou os soberbos no pensamento de seus corações.<br>Depôs dos tronos os poderosos, e elevou os humildes.<br>Encheu de bens os famintos, e despediu vazios os ricos.<br>Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br>Como falou a nossos pais, para com Abraão e sua posteridade, para sempre."
+  },
+  4: {
+    titulo: "Cântico de Quinta-feira: Benedictus (Lucas 1:68–79)",
+    texto: "Bendito o Senhor Deus de Israel, porque visitou e remiu o seu povo,<br>E nos levantou uma salvação poderosa na casa de Davi seu servo,<br>Como falou pela boca dos seus santos profetas, desde o princípio do mundo;<br>Para nos livrar dos nossos inimigos e da mão de todos os que nos aborrecem;<br>Para manifestar misericórdia a nossos pais, e lembrar-se do seu santo concerto,<br>E tu, ó menino, serás chamado profeta do Altíssimo, porque hás de ir ante a face do Senhor, a preparar os seus caminhos;<br>Para dar ao seu povo conhecimento da salvação, na remissão dos seus pecados;<br>Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos visitou."
+  },
+  5: {
+    titulo: "Cântico de Sexta-feira: Nunc Dimittis (Lucas 2:29–32)",
+    texto: "Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>Pois já os meus olhos viram a tua salvação,<br>A qual tu preparaste perante a face de todos os povos;<br>Luz para alumiar as nações, e para glória de teu povo Israel."
+  },
+  6: {
+    titulo: "Cântico de Sábado: Cântico do Cordeiro (Apocalipse 15:3–4)",
+    texto: "Grandes e maravilhosas são as tuas obras, Senhor Deus Todo-Poderoso!<br>Justos e verdadeiros são os teus caminhos, ó Rei dos santos.<br>Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br>Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos."
+  }
+};
 
-<h2 id="gratidao">
-Ação de Graças
-</h2>
+// Leituras RCL do dia da semana
+const planoLeiturasSemanal = {
+  0: { at: "Isaias 55:1-11", nt: "2 Corintios 4:5-12" },
+  1: { at: "Salmos 19:1-14", nt: "Romanos 12:1-8" },
+  2: { at: "Proverbios 3:1-12", nt: "1 Joao 4:7-21" },
+  3: { at: "Jeremias 31:31-34", nt: "Hebreus 8:8-12" },
+  4: { at: "Ezequiel 36:24-28", nt: "Efesios 4:17-32" },
+  5: { at: "Isaias 53:1-12", nt: "1 Pedro 2:21-25" },
+  6: { at: "Salmos 103:1-22", nt: "Colossenses 3:12-17" }
+};
 
-<blockquote>
-Senhor meu Deus,
-dou-te graças por tua bondade,
-por tua criação,
-por tua providência
-e pela salvação concedida em Jesus Cristo.
-<br><br>
-Obrigado pelas bênçãos recebidas,
-pelas lições aprendidas
-e pela tua presença em todos os momentos.
-<br><br>
-Ensina-me a viver com coração agradecido
-e a reconhecer tua mão em todas as coisas.
-<br><br>
-Amém.
-</blockquote>
+const nomesDias = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+async function buscarTextoBiblico(referencia) {
+  try {
+    const res = await fetch(`https://bible-api.com/${encodeURIComponent(referencia)}?translation=almeida`);
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    return data.text || "Texto não disponível nesta tradução.";
+  } catch (e) {
+    return "Não foi possível carregar este texto bíblico no momento.";
+  }
+}
 
-<hr>
+async function atualizarPaginaDiaria() {
+  const hoje = new Date();
+  const diaSemana = hoje.getDay();
+  
+  // 1. Atualizar o cabeçalho de data
+  const opcoesData = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById("data-cabecalho").innerHTML = hoje.toLocaleDateString('pt-BR', opcoesData);
 
-<h2 id="bencao">
-Bênção Final
-</h2>
+  // 2. Atualizar o Cântico Diário
+  const cantico = canticosSemana[diaSemana];
+  const containerCantico = document.getElementById("cantico-diario");
+  containerCantico.innerHTML = `
+    <h2>${cantico.titulo}</h2>
+    <p>${cantico.texto}</p>
+  `;
 
-<blockquote>
-O Senhor me abençoe e me guarde.
-<br><br>
-O Senhor faça resplandecer o seu rosto sobre mim
-e tenha misericórdia de mim.
-<br><br>
-O Senhor sobre mim levante o seu rosto
-e me dê a paz.
-<br><br>
-Em nome do Pai,
-do Filho
-e do Espírito Santo.
-<br><br>
-Amém.
-</blockquote>
+  // 3. Buscar e renderizar as Leituras Bíblicas em Português
+  const containerLeituras = document.getElementById("container-leituras");
+  const refs = planoLeiturasSemanal[diaSemana];
 
-<div class="topo">
-<a href="#topo">↑ voltar ao topo</a>
-</div>
+  containerLeituras.innerHTML = `<p class="red"><em>Buscando os textos de ${refs.at} e ${refs.nt} em português...</em></p>`;
 
+  const [textoAT, textoNT] = await Promise.all([
+    buscarTextoBiblico(refs.at),
+    buscarTextoBiblico(refs.nt)
+  ]);
+
+  containerLeituras.innerHTML = `
+    <h2>Antigo Testamento: ${refs.at}</h2>
+    <p>${textoAT.replace(/\n/g, '<br>')}</p>
+    <h2>Novo Testamento: ${refs.nt}</h2>
+    <p>${textoNT.replace(/\n/g, '<br>')}</p>
+  `;
+}
+
+document.addEventListener("DOMContentLoaded", atualizarPaginaDiaria);
+</script>
 </body>
-</html> 
+</html>
