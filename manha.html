@@ -5,131 +5,493 @@
 <title>Ofício Diário</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* Estilo exato do Mission St. Clare / play-with.css */
+/* Estilo exato extraído do CSS do Mission St. Clare */
 body {
-    background-color: #ffffff;
-    color: #000000;
+    background: rgba(255, 247, 230, 1.0);
+    font-size: 1.4em;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
 }
 
 #stuffing {
-    max-width: 650px;
-    margin: 20px auto;
-    padding: 0 15px;
+    padding: 2px;
+    background: rgba(255, 247, 230, 1.0);
 }
 
 h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    color: #000000;
+    font-size: 106%;
+    color: rgba(255, 0, 0, 1);
+    margin-top: 2%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 2%;
 }
 
 h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    color: #000000;
+    font-size: 104%;
+    margin-top: 2%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 1%;
 }
 
 h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    font-size: 102%;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-left: 10%;
+    margin-bottom: .5%;
 }
 
 p {
+    font-size: 100%;
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-right: 30%;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    line-height: 150%;
 }
 
-p.red, span.red, .red {
-    color: #990000;
-    font-style: italic;
+audio {
+    margin-top: .5%;
+    margin-right: 2%;
+    margin-left: 10%;
+    margin-bottom: .25%;
+    border: 3px solid red;
 }
 
-blockquote {
-    margin-left: 20px;
-    margin-right: 0;
-    color: #000000;
+.red {
+    color: rgba(255, 0, 0, 1);
 }
 
 .indent {
-    margin-left: 20px;
+    padding-left: 2%;
     display: block;
 }
 
 .indent2 {
-    margin-left: 40px;
+    padding-left: 4%;
     display: block;
 }
 
 .indent3 {
-    margin-left: 60px;
+    padding-left: 6%;
     display: block;
 }
 
-a {
-    color: #0000EE;
-    text-decoration: underline;
+.psalm-latin {
+    font-size: 90%;
+}
+
+.psalm-ref {
+    font-size: 80%;
+    font-style: italic;
+}
+
+a:link {
+    color: rgba(51, 102, 255, 1);
+    text-decoration: none;
 }
 
 a:visited {
-    color: #551A8B;
+    color: rgba(51, 102, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(51, 102, 255, 1);
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgba(51, 102, 255, 1);
+    text-decoration: none;
+}
+
+@media print {
+    body {
+        background: rgba(255);
+    }
+    .red {
+        color: rgba(0);
+    }
+    h1 {
+        color: rgba(0);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background: rgba(255, 247, 230, 1.0);
+        font-size: 1.4em;
+    }
+    #stuffing {
+        padding: 2px;
+        background: rgba(255, 247, 230, 1.0);
+    }
+    h1 {
+        font-size: 106%;
+        color: rgba(255, 0, 0, 1);
+        margin-top: 2%;
+        margin-right: 2px;
+        margin-left: 0%;
+        margin-bottom: 2%;
+    }
+    h2 {
+        font-size: 104%;
+        margin-top: 2%;
+        margin-right: 6%;
+        margin-left: 0%;
+        margin-bottom: 1%;
+    }
+    h3 {
+        font-size: 102%;
+        margin-top: 1%;
+        margin-right: 2px;
+        margin-left: 0%;
+        margin-bottom: .5%;
+    }
+    p {
+        font-size: 100%;
+        margin-top: 0;
+        margin-right: 1%;
+        margin-left: 0%;
+        margin-bottom: 1%;
+        line-height: 150%;
+    }
+    audio {
+        margin-top: .5%;
+        margin-right: 2%;
+        margin-left: 0%;
+        margin-bottom: .25%;
+        border: 1px solid red;
+    }
+}
+
+@media only screen and (min-width: 568px) {
+    body {
+        background: rgba(255, 247, 230, 1.0);
+        font-size: 1.4em;
+    }
+    #stuffing {
+        padding: 2px;
+        background: rgba(255, 247, 230, 1.0);
+    }
+    h1 {
+        font-size: 106%;
+        color: rgba(255, 0, 0, 1);
+        margin-top: 2%;
+        margin-right: 6%;
+        margin-left: 2%;
+        margin-bottom: 2%;
+    }
+    h2 {
+        font-size: 104%;
+        margin-top: 2%;
+        margin-right: 6%;
+        margin-left: 2%;
+        margin-bottom: 1%;
+    }
+    h3 {
+        font-size: 102%;
+        margin-top: 1%;
+        margin-right: 6%;
+        margin-left: 2%;
+        margin-bottom: .5%;
+    }
+    p {
+        font-size: 100%;
+        margin-top: 0;
+        margin-right: 6%;
+        margin-left: 2%;
+        margin-bottom: 1%;
+        line-height: 150%;
+    }
+    audio {
+        margin-top: .5%;
+        margin-right: 2%;
+        margin-left: 2%;
+        margin-bottom: .25%;
+        border: 1px solid red;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    body {
+        background: rgba(255, 247, 230, 1.0);
+        font-size: 1.4em;
+    }
+    #stuffing {
+        padding: 2px;
+        background: rgba(255, 247, 230, 1.0);
+    }
+    h1 {
+        font-size: 106%;
+        color: rgba(255, 0, 0, 1);
+        margin-top: 2%;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 2%;
+    }
+    h2 {
+        font-size: 104%;
+        margin-top: 2%;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 1%;
+    }
+    h3 {
+        font-size: 102%;
+        margin-top: 1%;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: .5%;
+    }
+    p {
+        font-size: 100%;
+        margin-top: 0;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 1%;
+        line-height: 150%;
+    }
+    audio {
+        margin-top: .5%;
+        margin-right: 2%;
+        margin-left: 4%;
+        margin-bottom: .25%;
+        border: 1px solid red;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        background: rgba(255, 247, 230, 1.0);
+        font-size: 1.4em;
+    }
+    #stuffing {
+        padding: 2px;
+        background: rgba(255, 247, 230, 1.0);
+    }
+    h1 {
+        font-size: 106%;
+        color: rgba(255, 0, 0, 1);
+        margin-top: 2%;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 2%;
+    }
+    h2 {
+        font-size: 104%;
+        margin-top: 2%;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 1%;
+    }
+    h3 {
+        font-size: 102%;
+        margin-top: 1%;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: .5%;
+    }
+    p {
+        font-size: 100%;
+        margin-top: 0;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 1%;
+        line-height: 150%;
+    }
+    audio {
+        margin-top: .5%;
+        margin-right: 2%;
+        margin-left: 4%;
+        margin-bottom: .25%;
+        border: 1px solid red;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    body {
+        background: rgba(255, 247, 230, 1.0);
+        font-size: 1.4em;
+    }
+    #stuffing {
+        padding: 2px;
+        background: rgba(255, 247, 230, 1.0);
+    }
+    h1 {
+        font-size: 106%;
+        color: rgba(255, 0, 0, 1);
+        margin-top: 2%;
+        margin-right: 12%;
+        margin-left: 4%;
+        margin-bottom: 2%;
+    }
+    h2 {
+        font-size: 104%;
+        margin-top: 2%;
+        margin-right: 12%;
+        margin-left: 4%;
+        margin-bottom: 1%;
+    }
+    h3 {
+        font-size: 102%;
+        margin-top: 1%;
+        margin-right: 12%;
+        margin-left: 4%;
+        margin-bottom: .5%;
+    }
+    p {
+        font-size: 100%;
+        margin-top: 0;
+        margin-right: 12%;
+        margin-left: 4%;
+        margin-bottom: 1%;
+        line-height: 150%;
+    }
+    audio {
+        margin-top: .5%;
+        margin-right: 2%;
+        margin-left: 4%;
+        margin-bottom: .25%;
+        border: 1px solid red;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background: rgba(255, 247, 230, 1.0);
+        font-size: 1.4em;
+    }
+    #stuffing {
+        padding: 2px;
+        background: rgba(255, 247, 230, 1.0);
+    }
+    h1 {
+        font-size: 106%;
+        color: rgba(255, 0, 0, 1);
+        margin-top: 2%;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-bottom: 2%;
+    }
+    h2 {
+        font-size: 104%;
+        margin-top: 2%;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-bottom: 1%;
+    }
+    h3 {
+        font-size: 102%;
+        margin-top: 1%;
+        margin-right: 2%;
+        margin-left: 10%;
+        margin-bottom: .5%;
+    }
+    p {
+        font-size: 100%;
+        margin-top: 0;
+        margin-right: 30%;
+        margin-left: 10%;
+        margin-bottom: 1%;
+        line-height: 150%;
+    }
+    audio {
+        margin-top: .5%;
+        margin-right: 2%;
+        margin-left: 10%;
+        margin-bottom: .25%;
+        border: 3px solid red;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        background: rgba(255, 247, 230, 1.0);
+        font-size: 1.4em;
+    }
+    #stuffing {
+        padding: 2px;
+        background: rgba(255, 247, 230, 1.0);
+    }
+    h1 {
+        font-size: 106%;
+        color: rgba(255, 0, 0, 1);
+        margin-top: 2%;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-bottom: 2%;
+    }
+    h2 {
+        font-size: 104%;
+        margin-top: 2%;
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-bottom: 1%;
+    }
+    h3 {
+        font-size: 102%;
+        margin-top: 1%;
+        margin-right: 2%;
+        margin-left: 10%;
+        margin-bottom: .5%;
+    }
+    p {
+        font-size: 100%;
+        margin-top: 0;
+        margin-right: 30%;
+        margin-left: 10%;
+        margin-bottom: 1%;
+        line-height: 150%;
+    }
+    audio {
+        margin-top: .5%;
+        margin-right: 2%;
+        margin-left: 10%;
+        margin-bottom: .25%;
+        border: 3px solid red;
+    }
 }
 
 hr {
     border: none;
-    border-top: 1px solid #000000;
-    margin: 30px 0;
-}
-
-.topo {
-    text-align: right;
-}
-
-.oracao {
-    margin-left: 20px;
+    border-top: 1px solid rgba(255, 0, 0, 0.5);
+    margin: 20px 10%;
 }
 </style>
 </head>
 <body>
 <div id="stuffing">
 
-<p class="red" id="data-cabecalho"><em>Carregando data de hoje...</em></p>
+<p class="red" id="data-cabecalho">Carregando data de hoje...</p>
 
 <h1>Ofício Diário</h1>
 
-<p class="red"><em>Todos juntos</em></p>
+<p class="red">Todos juntos</p>
 <p>
 Em nome do Pai, do Filho e do Espírito Santo.<br>
 <strong>Amém.</strong>
 </p>
 
-<h1 id="abertura">Abertura</h1>
+<h1>Abertura</h1>
 
 <h2>Orações Iniciais</h2>
 
-<p class="red"><em>Dirigente</em></p>
+<p class="red">Dirigente</p>
 <p>Senhor, abre os meus lábios.</p>
 
-<p class="red"><em>Resposta</em></p>
+<p class="red">Resposta</p>
 <p>E a minha boca anunciará o teu louvor.</p>
 
-<p class="red"><em>Dirigente</em></p>
+<p class="red">Dirigente</p>
 <p>Ó Deus, vem em meu auxílio.</p>
 
-<p class="red"><em>Resposta</em></p>
+<p class="red">Resposta</p>
 <p>Senhor, apressa-te em socorrer-me.</p>
 
-<p class="red"><em>Todos juntos</em></p>
+<p class="red">Todos juntos</p>
 <p>
 Glória ao Pai, ao Filho e ao Espírito Santo:<br>
 como era no princípio, agora e sempre. Amém.
@@ -141,14 +503,14 @@ como era no princípio, agora e sempre. Amém.
 
 <!-- Bloco dinâmico do Cântico do Dia -->
 <div id="cantico-diario">
-  <p class="red"><em>Carregando o cântico correspondente ao dia de hoje...</em></p>
+  <p class="red">Carregando o cântico correspondente ao dia de hoje...</p>
 </div>
 
 <hr>
 
 <h1>Salmos</h1>
 
-<p class="red"><em>Leia diariamente um ou mais Salmos seguindo a ordem do Saltério:</em></p>
+<p class="red">Leia diariamente um ou mais Salmos seguindo a ordem do Saltério:</p>
 
 <p>
 • Dias 1 a 30: Salmos 1–41<br>
@@ -158,64 +520,49 @@ como era no princípio, agora e sempre. Amém.
 • Dias 121 a 150: Salmos 119–150
 </p>
 
-<p class="red"><em>Antes da leitura do Salmo</em></p>
+<p class="red">Antes da leitura do Salmo</p>
 <p>
-Senhor, ensina-me o caminho dos teus estatutos,<br>
-<span class="indent">e guardarei até o fim.</span><br>
-Dá-me entendimento,<br>
-<span class="indent">para que eu guarde a tua lei e a cumpra de todo o coração.</span>
+Ó Deus bondoso e misericordioso, que pela tua santa Palavra guias os passos do teu povo no caminho da vida: concede-nos bom entendimento de teus ensinamentos. Abre os nossos olhos e corações para que conheçamos os teus mandamentos e os guardemos com fidelidade até o fim, por Jesus Cristo, nosso Senhor. Amém.
 </p>
 
 <hr>
 
 <h1>Leituras das Escrituras</h1>
 
-<p class="red"><em>Antes das leituras</em></p>
+<p class="red">Antes das leituras</p>
 <p>
-Abre os meus olhos, para que eu veja as maravilhas da tua lei.<br>
-Que a tua Palavra habite ricamente em mim e transforme meu coração.
+Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a graça do teu Reino: ilumina a nossa mente e abre o nosso coração. Concede que a tua Palavra habite ricamente em nós, transforme a nossa vida e nos conduza em verdadeira fé e obediência, por Jesus Cristo, nosso Salvador. Amém.
 </p>
 
 <!-- Leituras RCL renderizadas diretamente na interface -->
 <div id="container-leituras">
-  <p class="red"><em>Buscando as leituras do dia no lecionário...</em></p>
+  <p class="red">Buscando as leituras do dia no lecionário...</p>
 </div>
 
-<p class="red"><em>Após as leituras</em></p>
+<p class="red">Após as leituras</p>
 <p>
-Graças te damos, ó Deus, pela tua santa Palavra.<br>
-Que ela produza fruto em minha vida e me conduza em fidelidade.<br>
-Amém.
+Rendemos-te graças, ó Deus de amor, pela tua santa Palavra revelada à nós. Concede-nos a força do teu Espírito para que não sejamos apenas ouvintes, mas praticantes da tua Palavra, testemunhando a tua graça na vida cotidiana e no serviço ao próximo. Por Jesus Cristo, nosso Senhor. Amém.
 </p>
 
 <hr>
 
 <h1>Confissão de Pecados</h1>
 
-<p class="red"><em>Dirigente</em></p>
+<p class="red">Dirigente</p>
 <p>Confessemos os nossos pecados a Deus, nosso Pai.</p>
 
-<p class="red"><em>Momento de silêncio para reflexão pessoal.</em></p>
+<p class="red">Momento de silêncio para reflexão pessoal.</p>
 
-<p class="red"><em>Todos juntos, ajoelhados ou curvados:</em></p>
+<p class="red">Todos juntos, ajoelhados ou curvados:</p>
 <p>
-Deus misericordioso e Pai de toda compaixão,<br>
-confesso diante de ti que pequei em pensamentos, palavras e atitudes.<br>
-Pequei pelo mal que pratiquei e pelo bem que deixei de fazer.<br>
-Tenho falhado em amar-te acima de todas as coisas<br>
-e em amar o meu próximo como a mim mesmo.<br>
-Reconheço minha fraqueza e venho diante de ti buscando tua misericórdia.<br>
-Perdoa os meus pecados por amor de Jesus Cristo.<br>
-Purifica o meu coração, renova o meu espírito<br>
-e conduz-me pelo caminho da santidade.<br>
-Que eu abandone aquilo que desagrada a ti e viva para tua glória. Amém.
+    Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pecamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
 </p>
 
 <hr>
 
 <h1>O Credo Apostólico</h1>
 
-<p class="red"><em>Todos em pé</em></p>
+<p class="red">Todos em pé</p>
 <p>
 Creio em Deus, Pai todo-poderoso,<br>
 <span class="indent">Criador do céu e da terra.</span><br>
@@ -241,13 +588,13 @@ Creio no Espírito Santo,<br>
 
 <h1>As Orações</h1>
 
-<p class="red"><em>Dirigente</em></p>
+<p class="red">Dirigente</p>
 <p>O Senhor seja convosco.</p>
 
-<p class="red"><em>Resposta</em></p>
+<p class="red">Resposta</p>
 <p>E com o teu espírito.</p>
 
-<p class="red"><em>Dirigente</em></p>
+<p class="red">Dirigente</p>
 <p>Oremos.</p>
 
 <h2>Pai Nosso</h2>
@@ -269,21 +616,21 @@ Pois teu é o reino, o poder<br>
 
 <h2>Orações de Petição</h2>
 
-<p class="red"><em>Pela Igreja</em></p>
-<p>Senhor Jesus Cristo, guarda tua Igreja na verdade do evangelho. Concede aos pastores sabedoria, aos servos humildade e a todos os cristãos fidelidade. Que tua Igreja seja instrumento de misericórdia, justiça e esperança no mundo. Amém.</p>
+<p class="red">Pela Igreja</p>
+<p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministérios com ordenação, os presbitérios, as comunidades, as paróquias e os sínodos. Fortalece o nosso testemunho do Evangelho e concede que sejamos uma comunidade acolhedora, inclusiva e diaconal, a serviço do teu Reino de paz e justiça. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
 
-<p class="red"><em>Pela Justiça e Paz</em></p>
-<p>Deus justo e santo, estabelece a justiça entre os povos. Dá sabedoria aos governantes e coragem aos que defendem os oprimidos. Onde houver guerra, traz reconciliação; onde houver ódio, planta o teu amor. Amém.</p>
+<p class="red">Pela Justiça e Paz</p>
+<p>Soberano e bondoso Deus, Criador de todas as coisas, que nos chamas a cuidar da integridade da tua criação e a promover a paz: olha para o nosso mundo marcado pelas injustiças, pelas divisões e pela violência. Concede sabedoria e discernimento às autoridades, para que governem com responsabilidade, promovendo a dignidade e a justiça social. Dá coragem à tua Igreja para denunciar as opressões e estar ao lado dos empobrecidos e marginalizados. Que a tua paz, que excede todo o entendimento, habite em nossos corações e em nossa sociedade. Por Jesus Cristo, nosso Salvador. Amém.</p>
 
-<p class="red"><em>Pelos Aflitos e Necessitados</em></p>
-<p>Pai de misericórdia, lembra-te dos pobres, dos enfermos e de todos os que sofrem. Concede cura, força para suportar as provações e consolação aos corações abatidos. Amém.</p>
+<p class="red">Pelos Aflitos e Necessitados</p>
+<p>Misericordioso Deus e Pai, refúgio e fortaleza em tempos de aflição: volta o teu olhar compassivo para os que sofrem dores no corpo e na alma, para os famintos, enfermos, enlutados e esquecidos. Estende a tua mão consoladora sobre cada um deles, concede-lhes alívio em suas dores e renova a esperança em seus corações. Usa-nos como mãos estendidas do teu amor para acolher os que necessitam, por amor de teu Filho, Jesus Cristo, nosso Senhor. Amém.</p>
 
 <h2>Orações Pessoais</h2>
-<p class="red"><em>Espaço para intenções pessoais em silêncio.</em></p>
+<p class="red">Espaço para intenções pessoais em silêncio.</p>
 
 <h2>Ação de Graças</h2>
 <p>
-Senhor meu Deus, dou-te graças por tua bondade, criação e pela salvação concedida em Jesus Cristo. Obrigado pelas bênçãos recebidas e por tua presença contínua. Ensina-me a viver com um coração agradecido em todas as coisas. Amém.
+Deus de bondade e Pai amado, criador e preservador de todas as coisas: rendemos-te graças por tua constante fidelidade, pela vida que nos concedeste, pelo alimento de cada dia e pela graciosa salvação em teu Filho Jesus Cristo. Santifica a nossa gratidão e concede que a tua bondade nos mova a servir-te com alegria e a partilhar com generosidade o que de ti recebemos. Por Jesus Cristo, teu Filho, que contigo vive e reina na unidade do Espírito Santo, Deus de eternidade a eternidade. Amém.
 </p>
 
 <hr>
@@ -291,7 +638,7 @@ Senhor meu Deus, dou-te graças por tua bondade, criação e pela salvação con
 <h1>Encerramento</h1>
 
 <h2>Bênção Final</h2>
-<p class="red"><em>Dirigente</em></p>
+<p class="red">Dirigente</p>
 <p>
 O Senhor nos abençoe e nos guarde.<br>
 O Senhor faça resplandecer o seu rosto sobre nós e tenha misericórdia de nós.<br>
@@ -345,8 +692,6 @@ const planoLeiturasSemanal = {
   6: { at: "Salmos 103:1-22", nt: "Colossenses 3:12-17" }
 };
 
-const nomesDias = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-
 async function buscarTextoBiblico(referencia) {
   try {
     const res = await fetch(`https://bible-api.com/${encodeURIComponent(referencia)}?translation=almeida`);
@@ -378,7 +723,7 @@ async function atualizarPaginaDiaria() {
   const containerLeituras = document.getElementById("container-leituras");
   const refs = planoLeiturasSemanal[diaSemana];
 
-  containerLeituras.innerHTML = `<p class="red"><em>Buscando os textos de ${refs.at} e ${refs.nt} em português...</em></p>`;
+  containerLeituras.innerHTML = `<p class="red">Buscando os textos de ${refs.at} e ${refs.nt} em português...</p>`;
 
   const [textoAT, textoNT] = await Promise.all([
     buscarTextoBiblico(refs.at),
