@@ -5,460 +5,26 @@
 <title>Ofício Diário</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* Estilo exato extraído do CSS do Mission St. Clare */
 body {
     background: rgba(255, 247, 230, 1.0);
     font-size: 1.4em;
     font-family: Georgia, "Times New Roman", serif;
 }
-
-#stuffing {
-    padding: 2px;
-    background: rgba(255, 247, 230, 1.0);
-}
-
-h1 {
-    font-size: 106%;
-    color: rgba(255, 0, 0, 1);
-    margin-top: 2%;
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-}
-
-h2 {
-    font-size: 104%;
-    margin-top: 2%;
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-bottom: 1%;
-}
-
-h3 {
-    font-size: 102%;
-    margin-top: 1%;
-    margin-right: 2%;
-    margin-left: 10%;
-    margin-bottom: .5%;
-}
-
-p {
-    font-size: 100%;
-    margin-top: 0;
-    margin-right: 30%;
-    margin-left: 10%;
-    margin-bottom: 1%;
-    line-height: 150%;
-}
-
-audio {
-    margin-top: .5%;
-    margin-right: 2%;
-    margin-left: 10%;
-    margin-bottom: .25%;
-    border: 3px solid red;
-}
-
-.red {
-    color: rgba(255, 0, 0, 1);
-}
-
-.indent {
-    padding-left: 2%;
-    display: block;
-}
-
-.indent2 {
-    padding-left: 4%;
-    display: block;
-}
-
-.indent3 {
-    padding-left: 6%;
-    display: block;
-}
-
-.psalm-latin {
-    font-size: 90%;
-}
-
-.psalm-ref {
-    font-size: 80%;
-    font-style: italic;
-}
-
-a:link {
-    color: rgba(51, 102, 255, 1);
-    text-decoration: none;
-}
-
-a:visited {
-    color: rgba(51, 102, 255, 1);
-    text-decoration: none;
-}
-
-a:hover {
-    color: rgba(51, 102, 255, 1);
-    text-decoration: underline;
-}
-
-a:active {
-    color: rgba(51, 102, 255, 1);
-    text-decoration: none;
-}
-
-@media print {
-    body {
-        background: rgba(255);
-    }
-    .red {
-        color: rgba(0);
-    }
-    h1 {
-        color: rgba(0);
-    }
-}
-
+#stuffing { padding: 2px; background: rgba(255, 247, 230, 1.0); }
+h1 { font-size: 106%; color: rgba(255, 0, 0, 1); margin: 2% 10%; }
+h2 { font-size: 104%; margin: 2% 10% 1%; }
+h3 { font-size: 102%; margin: 1% 2% 0.5% 10%; }
+p { font-size: 100%; margin: 0 30% 1% 10%; line-height: 150%; }
+.red { color: rgba(255, 0, 0, 1); }
+.indent { padding-left: 2%; display: block; }
+.indent2 { padding-left: 4%; display: block; }
+.indent3 { padding-left: 6%; display: block; }
+a:link, a:visited { color: rgba(51, 102, 255, 1); text-decoration:none; }
+a:hover { color: rgba(51, 102, 255, 1); text-decoration:underline; }
+hr { border: none; border-top: 1px solid rgba(255, 0, 0, 0.5); margin: 20px 10%; }
 @media only screen and (max-width: 480px) {
-    body {
-        background: rgba(255, 247, 230, 1.0);
-        font-size: 1.4em;
-    }
-    #stuffing {
-        padding: 2px;
-        background: rgba(255, 247, 230, 1.0);
-    }
-    h1 {
-        font-size: 106%;
-        color: rgba(255, 0, 0, 1);
-        margin-top: 2%;
-        margin-right: 2px;
-        margin-left: 0%;
-        margin-bottom: 2%;
-    }
-    h2 {
-        font-size: 104%;
-        margin-top: 2%;
-        margin-right: 6%;
-        margin-left: 0%;
-        margin-bottom: 1%;
-    }
-    h3 {
-        font-size: 102%;
-        margin-top: 1%;
-        margin-right: 2px;
-        margin-left: 0%;
-        margin-bottom: .5%;
-    }
-    p {
-        font-size: 100%;
-        margin-top: 0;
-        margin-right: 1%;
-        margin-left: 0%;
-        margin-bottom: 1%;
-        line-height: 150%;
-    }
-    audio {
-        margin-top: .5%;
-        margin-right: 2%;
-        margin-left: 0%;
-        margin-bottom: .25%;
-        border: 1px solid red;
-    }
-}
-
-@media only screen and (min-width: 568px) {
-    body {
-        background: rgba(255, 247, 230, 1.0);
-        font-size: 1.4em;
-    }
-    #stuffing {
-        padding: 2px;
-        background: rgba(255, 247, 230, 1.0);
-    }
-    h1 {
-        font-size: 106%;
-        color: rgba(255, 0, 0, 1);
-        margin-top: 2%;
-        margin-right: 6%;
-        margin-left: 2%;
-        margin-bottom: 2%;
-    }
-    h2 {
-        font-size: 104%;
-        margin-top: 2%;
-        margin-right: 6%;
-        margin-left: 2%;
-        margin-bottom: 1%;
-    }
-    h3 {
-        font-size: 102%;
-        margin-top: 1%;
-        margin-right: 6%;
-        margin-left: 2%;
-        margin-bottom: .5%;
-    }
-    p {
-        font-size: 100%;
-        margin-top: 0;
-        margin-right: 6%;
-        margin-left: 2%;
-        margin-bottom: 1%;
-        line-height: 150%;
-    }
-    audio {
-        margin-top: .5%;
-        margin-right: 2%;
-        margin-left: 2%;
-        margin-bottom: .25%;
-        border: 1px solid red;
-    }
-}
-
-@media only screen and (min-width: 640px) {
-    body {
-        background: rgba(255, 247, 230, 1.0);
-        font-size: 1.4em;
-    }
-    #stuffing {
-        padding: 2px;
-        background: rgba(255, 247, 230, 1.0);
-    }
-    h1 {
-        font-size: 106%;
-        color: rgba(255, 0, 0, 1);
-        margin-top: 2%;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: 2%;
-    }
-    h2 {
-        font-size: 104%;
-        margin-top: 2%;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: 1%;
-    }
-    h3 {
-        font-size: 102%;
-        margin-top: 1%;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: .5%;
-    }
-    p {
-        font-size: 100%;
-        margin-top: 0;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: 1%;
-        line-height: 150%;
-    }
-    audio {
-        margin-top: .5%;
-        margin-right: 2%;
-        margin-left: 4%;
-        margin-bottom: .25%;
-        border: 1px solid red;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    body {
-        background: rgba(255, 247, 230, 1.0);
-        font-size: 1.4em;
-    }
-    #stuffing {
-        padding: 2px;
-        background: rgba(255, 247, 230, 1.0);
-    }
-    h1 {
-        font-size: 106%;
-        color: rgba(255, 0, 0, 1);
-        margin-top: 2%;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: 2%;
-    }
-    h2 {
-        font-size: 104%;
-        margin-top: 2%;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: 1%;
-    }
-    h3 {
-        font-size: 102%;
-        margin-top: 1%;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: .5%;
-    }
-    p {
-        font-size: 100%;
-        margin-top: 0;
-        margin-right: 6%;
-        margin-left: 4%;
-        margin-bottom: 1%;
-        line-height: 150%;
-    }
-    audio {
-        margin-top: .5%;
-        margin-right: 2%;
-        margin-left: 4%;
-        margin-bottom: .25%;
-        border: 1px solid red;
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    body {
-        background: rgba(255, 247, 230, 1.0);
-        font-size: 1.4em;
-    }
-    #stuffing {
-        padding: 2px;
-        background: rgba(255, 247, 230, 1.0);
-    }
-    h1 {
-        font-size: 106%;
-        color: rgba(255, 0, 0, 1);
-        margin-top: 2%;
-        margin-right: 12%;
-        margin-left: 4%;
-        margin-bottom: 2%;
-    }
-    h2 {
-        font-size: 104%;
-        margin-top: 2%;
-        margin-right: 12%;
-        margin-left: 4%;
-        margin-bottom: 1%;
-    }
-    h3 {
-        font-size: 102%;
-        margin-top: 1%;
-        margin-right: 12%;
-        margin-left: 4%;
-        margin-bottom: .5%;
-    }
-    p {
-        font-size: 100%;
-        margin-top: 0;
-        margin-right: 12%;
-        margin-left: 4%;
-        margin-bottom: 1%;
-        line-height: 150%;
-    }
-    audio {
-        margin-top: .5%;
-        margin-right: 2%;
-        margin-left: 4%;
-        margin-bottom: .25%;
-        border: 1px solid red;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    body {
-        background: rgba(255, 247, 230, 1.0);
-        font-size: 1.4em;
-    }
-    #stuffing {
-        padding: 2px;
-        background: rgba(255, 247, 230, 1.0);
-    }
-    h1 {
-        font-size: 106%;
-        color: rgba(255, 0, 0, 1);
-        margin-top: 2%;
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-bottom: 2%;
-    }
-    h2 {
-        font-size: 104%;
-        margin-top: 2%;
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-bottom: 1%;
-    }
-    h3 {
-        font-size: 102%;
-        margin-top: 1%;
-        margin-right: 2%;
-        margin-left: 10%;
-        margin-bottom: .5%;
-    }
-    p {
-        font-size: 100%;
-        margin-top: 0;
-        margin-right: 30%;
-        margin-left: 10%;
-        margin-bottom: 1%;
-        line-height: 150%;
-    }
-    audio {
-        margin-top: .5%;
-        margin-right: 2%;
-        margin-left: 10%;
-        margin-bottom: .25%;
-        border: 3px solid red;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    body {
-        background: rgba(255, 247, 230, 1.0);
-        font-size: 1.4em;
-    }
-    #stuffing {
-        padding: 2px;
-        background: rgba(255, 247, 230, 1.0);
-    }
-    h1 {
-        font-size: 106%;
-        color: rgba(255, 0, 0, 1);
-        margin-top: 2%;
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-bottom: 2%;
-    }
-    h2 {
-        font-size: 104%;
-        margin-top: 2%;
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-bottom: 1%;
-    }
-    h3 {
-        font-size: 102%;
-        margin-top: 1%;
-        margin-right: 2%;
-        margin-left: 10%;
-        margin-bottom: .5%;
-    }
-    p {
-        font-size: 100%;
-        margin-top: 0;
-        margin-right: 30%;
-        margin-left: 10%;
-        margin-bottom: 1%;
-        line-height: 150%;
-    }
-    audio {
-        margin-top: .5%;
-        margin-right: 2%;
-        margin-left: 10%;
-        margin-bottom: .25%;
-        border: 3px solid red;
-    }
-}
-
-hr {
-    border: none;
-    border-top: 1px solid rgba(255, 0, 0, 0.5);
-    margin: 20px 10%;
+    p { margin-right: 1%; margin-left: 0%; }
+    h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
 }
 </style>
 </head>
@@ -476,21 +42,16 @@ Em nome do Pai, do Filho e do Espírito Santo.<br>
 </p>
 
 <h1>Abertura</h1>
-
 <h2>Orações Iniciais</h2>
 
 <p class="red">Dirigente</p>
 <p>Senhor, abre os meus lábios.</p>
-
 <p class="red">Resposta</p>
 <p>E a minha boca anunciará o teu louvor.</p>
-
 <p class="red">Dirigente</p>
 <p>Ó Deus, vem em meu auxílio.</p>
-
 <p class="red">Resposta</p>
 <p>Senhor, apressa-te em socorrer-me.</p>
-
 <p class="red">Todos juntos</p>
 <p>
 Glória ao Pai, ao Filho e ao Espírito Santo:<br>
@@ -500,8 +61,6 @@ como era no princípio, agora e sempre. Amém.
 <hr>
 
 <h1>Cântico Bíblico do Dia</h1>
-
-<!-- Bloco dinâmico do Cântico do Dia -->
 <div id="cantico-diario">
   <p class="red">Carregando o cântico correspondente ao dia de hoje...</p>
 </div>
@@ -509,59 +68,46 @@ como era no princípio, agora e sempre. Amém.
 <hr>
 
 <h1>Salmos</h1>
-
-<p class="red">Leia diariamente um ou mais Salmos seguindo a ordem do Saltério:</p>
-
-<p>
-• Dias 1 a 30: Salmos 1–41<br>
-• Dias 31 a 60: Salmos 42–72<br>
-• Dias 61 a 90: Salmos 73–89<br>
-• Dias 91 a 120: Salmos 90–118<br>
-• Dias 121 a 150: Salmos 119–150
-</p>
-
 <p class="red">Antes da leitura do Salmo</p>
 <p>
-Ó Deus bondoso e misericordioso, que pela tua santa Palavra guias os passos do teu povo no caminho da vida: concede-nos bom entendimento de teus ensinamentos. Abre os nossos olhos e corações para que conheçamos os teus mandamentos e os guardemos com fidelidade até o fim, por Jesus Cristo, nosso Senhor. Amém.
+Ó Deus, bondoso e misericordioso, que por tua graça nos guias através das Tuas Santas Escrituras: envia sobre nós o teu Santo Espírito ao meditar neste Salmo. Dá-nos bom entendimento da tua vontade, para que, consolados pela tua promessa, guardemos os teus ensinamentos e vivamos como povo da tua aliança. Por Jesus Cristo, nosso Senhor. Amém.
 </p>
+
+<div id="container-salmo-rcl">
+  <p class="red">Buscando o Salmo do lecionário de hoje...</p>
+</div>
 
 <hr>
 
 <h1>Leituras das Escrituras</h1>
-
 <p class="red">Antes das leituras</p>
 <p>
-Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a graça do teu Reino: ilumina a nossa mente e abre o nosso coração. Concede que a tua Palavra habite ricamente em nós, transforme a nossa vida e nos conduza em verdadeira fé e obediência, por Jesus Cristo, nosso Salvador. Amém.
+Trino Deus — Pai, Filho e Espírito Santo —, que nos reúnes no amor do teu Evangelho e nos alimentas com a tua Palavra: ilumina a nossa mente e abre os nossos corações nesta hora. Faze com que a tua Palavra habite ricamente em nós, desperte a nossa fé e nos conduza em amor e obediência à tua vontade. Por Jesus Cristo, nosso Salvador. Amém.
 </p>
 
-<!-- Leituras RCL renderizadas diretamente na interface -->
 <div id="container-leituras">
-  <p class="red">Buscando as leituras do dia no lecionário...</p>
+  <p class="red">Buscando as leituras de hoje no lecionário...</p>
 </div>
 
 <p class="red">Após as leituras</p>
 <p>
-Rendemos-te graças, ó Deus de amor, pela tua santa Palavra revelada à nós. Concede-nos a força do teu Espírito para que não sejamos apenas ouvintes, mas praticantes da tua Palavra, testemunhando a tua graça na vida cotidiana e no serviço ao próximo. Por Jesus Cristo, nosso Senhor. Amém.
+Rendemos-te graças, ó Deus de amor, pela boa nova do teu Evangelho que hoje ouvimos. Concede-nos a força do teu Espírito para que não sejamos apenas ouvintes, mas praticantes da tua Palavra, testemunhando a tua graça na vida cotidiana e no serviço ao próximo. Por Jesus Cristo, nosso Senhor. Amém.
 </p>
 
 <hr>
 
 <h1>Confissão de Pecados</h1>
-
 <p class="red">Dirigente</p>
 <p>Confessemos os nossos pecados a Deus, nosso Pai.</p>
-
 <p class="red">Momento de silêncio para reflexão pessoal.</p>
-
 <p class="red">Todos juntos, ajoelhados ou curvados:</p>
 <p>
-    Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pecamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
+Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pechamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
 </p>
 
 <hr>
 
 <h1>O Credo Apostólico</h1>
-
 <p class="red">Todos em pé</p>
 <p>
 Creio em Deus, Pai todo-poderoso,<br>
@@ -587,13 +133,10 @@ Creio no Espírito Santo,<br>
 <hr>
 
 <h1>As Orações</h1>
-
 <p class="red">Dirigente</p>
 <p>O Senhor seja convosco.</p>
-
 <p class="red">Resposta</p>
 <p>E com o teu espírito.</p>
-
 <p class="red">Dirigente</p>
 <p>Oremos.</p>
 
@@ -615,22 +158,21 @@ Pois teu é o reino, o poder<br>
 </p>
 
 <h2>Orações de Petição</h2>
-
 <p class="red">Pela Igreja</p>
-<p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministérios com ordenação, os presbitérios, as comunidades, as paróquias e os sínodos. Fortalece o nosso testemunho do Evangelho e concede que sejamos uma comunidade acolhedora, inclusiva e diaconal, a serviço do teu Reino de paz e justiça. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
+<p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministérios, os presbitérios e cada comunidade. Fortalece o nosso testemunho do Evangelho e concede que sejamos uma comunidade acolhedora, inclusiva e diaconal, a serviço do teu Reino de paz e justiça. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
 
 <p class="red">Pela Justiça e Paz</p>
-<p>Soberano e bondoso Deus, Criador de todas as coisas, que nos chamas a cuidar da integridade da tua criação e a promover a paz: olha para o nosso mundo marcado pelas injustiças, pelas divisões e pela violência. Concede sabedoria e discernimento às autoridades, para que governem com responsabilidade, promovendo a dignidade e a justiça social. Dá coragem à tua Igreja para denunciar as opressões e estar ao lado dos empobrecidos e marginalizados. Que a tua paz, que excede todo o entendimento, habite em nossos corações e em nossa sociedade. Por Jesus Cristo, nosso Salvador. Amém.</p>
+<p>Soberano e bondoso Deus, Criador de todas as coisas, que nos chamas a cuidar da integridade da tua criação e a promover a paz: olha para o nosso mundo marcado pelas injustiças, pelas divisões e pela violência. Concede sabedoria e discernment às autoridades, para que governem com responsabilidade, promovendo a dignidade e a justiça social. Dá coragem à tua Igreja para denunciar as opressões e estar ao lado dos empobrecidos e marginalizados. Que a tua paz, que excede todo o entendimento, habite em nossos corações e em nossa sociedade. Por Jesus Cristo, nosso Salvador. Amém.</p>
 
 <p class="red">Pelos Aflitos e Necessitados</p>
-<p>Misericordioso Deus e Pai, refúgio e fortaleza em tempos de aflição: volta o teu olhar compassivo para os que sofrem dores no corpo e na alma, para os famintos, enfermos, enlutados e esquecidos. Estende a tua mão consoladora sobre cada um deles, concede-lhes alívio em suas dores e renova a esperança em seus corações. Usa-nos como mãos estendidas do teu amor para acolher os que necessitam, por amor de teu Filho, Jesus Cristo, nosso Senhor. Amém.</p>
+<p>Misericordioso Deus e Pai, refúgio e socorro em tempos de aflição: volta o teu olhar compassivo para todas as pessoas que passam por provações, enfermidades, luto, solidão ou desamparo. Derrama o teu Espírito Consolador sobre elas, concede-lhes alívio, saúde e esperança. Desperta em nossa comunidade a verdadeira vocação diaconal, para que sejamos mãos estendidas do teu amor e do teu cuidado no mundo. Por amor de teu Filho amado, Jesus Cristo. Amém.</p>
 
 <h2>Orações Pessoais</h2>
 <p class="red">Espaço para intenções pessoais em silêncio.</p>
 
 <h2>Ação de Graças</h2>
 <p>
-Deus de bondade e Pai amado, criador e preservador de todas as coisas: rendemos-te graças por tua constante fidelidade, pela vida que nos concedeste, pelo alimento de cada dia e pela graciosa salvação em teu Filho Jesus Cristo. Santifica a nossa gratidão e concede que a tua bondade nos mova a servir-te com alegria e a partilhar com generosidade o que de ti recebemos. Por Jesus Cristo, teu Filho, que contigo vive e reina na unidade do Espírito Santo, Deus de eternidade a eternidade. Amém.
+Deus de bondade e Pai amoroso, dador de todos os bons dons: rendemos-te graças de todo o coração por tua constante fidelidade, pelo sustento diário, por nossa comunidade e, acima de tudo, pela dádiva da salvação mediante a fé em Jesus Cristo. Acolhe o nosso louvor sincero e faze com que a gratidão pelo teu amor ilimitado se transforme em serviço alegre, partilha generosa e amor ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém.
 </p>
 
 <hr>
@@ -649,52 +191,73 @@ Em nome do Pai, do Filho e do Espírito Santo. Amém.
 </div>
 
 <script>
-// Base de dados dos Cânticos Diários
 const canticosSemana = {
-  0: {
-    titulo: "Cântico do Domingo: Digno é o Cordeiro (Apocalipse 5:9–14)",
-    texto: "E cantavam um novo cântico, dizendo:<br>Digno és de tomar o livro e de abrir os seus selos; porque foste morto, e com o teu sangue compraste para Deus homens de toda tribo, e língua, e povo, e nação;<br>E para o nosso Deus os fizeste reis e sacerdotes; e eles reinarão sobre a terra.<br>E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos anciãos; e era o número deles milhões de milhões e milhares de milhares,<br>Que com grande voz diziam:<br>Digno é o Cordeiro, que foi morto, de receber o poder, e riquezas, e sabedoria, e força, e honra, e glória, e ações de graças.<br>E ouvi a toda criatura que está no céu, e na terra, e debaixo da terra, e que está no mar, e a todas as coisas que neles há, dizer:<br>Ao que está assentado sobre o trono, e ao Cordeiro, sejam dadas ações de graças, e honra, e glória, e poder para todo o sempre.<br>E os quatro animais diziam: Amém. E os vinte e quatro anciãos prostraram-se e adoraram ao que vive para todo o sempre."
-  },
-  1: {
-    titulo: "Cântico de Segunda-feira: Cântico de Moisés (Êxodo 15:1–18)",
-    texto: "Cantarei ao Senhor, porque gloriosamente triunfou; lançou no mar o cavalo e o seu cavaleiro.<br>O Senhor é a minha força e o meu cântico; ele me foi por salvação; este é o meu Deus, portanto lhe farei uma habitação; ele é o Deus de meu pai, por isso o exaltarei.<br>O Senhor é homem de guerra; o Senhor é o seu nome.<br>Lançou no mar os carros de Faraó e o seu exército; e os seus capitães afogaram-se no mar Vermelho.<br>Os abismos os cobriram; desceram às profundezas como pedra.<br>A tua destra, ó Senhor, se tem glorificado em poder; a tua destra, ó Senhor, tem despedaçado o inimigo.<br>Tu, com a tua beneficência, guiaste este povo que salvaste; com a tua força o levaste à habitação da tua santidade.<br>O Senhor reinará eterna e perpetuamente."
-  },
-  2: {
-    titulo: "Cântico de Terça-feira: Cântico de Ana (1 Samuel 2:1–10)",
-    texto: "O meu coração exulta no Senhor, o meu poder está exaltado no Senhor; a minha boca se dilatou sobre os meus inimigos, porquanto me alegro na tua salvação.<br>Não há santo como o Senhor; porque não há outro fora de ti; e rocha nenhuma há como o nosso Deus.<br>O arco dos fortes foi quebrado, e os que tropeçavam foram cingidos de força.<br>O Senhor é o que tira a vida e a dá; faz descer à sepultura e faz tornar a subir dela.<br>O Senhor empobrece e enriquece; abaixa e também exalta.<br>Levanta o pobre do pó e, desde o monturo, exalta o necessitado, para o fazer assentar entre os príncipes, para o fazer herdar o trono de glória."
-  },
-  3: {
-    titulo: "Cântico de Quarta-feira: Magnificat (Lucas 1:46–55)",
-    texto: "A minha alma engrandece ao Senhor,<br>E o meu espírito se alegra em Deus meu Salvador,<br>Porque atentou na baixeza de sua serva; pois eis que desde agora todas as gerações me chamarão bem-aventurada,<br>Porque me fez grandes coisas o Poderoso; e santo é o seu nome.<br>E a sua misericórdia é de geração em geração sobre os que o temem.<br>Com o seu braço agiu valorosamente; dissipou os soberbos no pensamento de seus corações.<br>Depôs dos tronos os poderosos, e elevou os humildes.<br>Encheu de bens os famintos, e despediu vazios os ricos.<br>Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br>Como falou a nossos pais, para com Abraão e sua posteridade, para sempre."
-  },
-  4: {
-    titulo: "Cântico de Quinta-feira: Benedictus (Lucas 1:68–79)",
-    texto: "Bendito o Senhor Deus de Israel, porque visitou e remiu o seu povo,<br>E nos levantou uma salvação poderosa na casa de Davi seu servo,<br>Como falou pela boca dos seus santos profetas, desde o princípio do mundo;<br>Para nos livrar dos nossos inimigos e da mão de todos os que nos aborrecem;<br>Para manifestar misericórdia a nossos pais, e lembrar-se do seu santo concerto,<br>E tu, ó menino, serás chamado profeta do Altíssimo, porque hás de ir ante a face do Senhor, a preparar os seus caminhos;<br>Para dar ao seu povo conhecimento da salvação, na remissão dos seus pecados;<br>Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos visitou."
-  },
-  5: {
-    titulo: "Cântico de Sexta-feira: Nunc Dimittis (Lucas 2:29–32)",
-    texto: "Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>Pois já os meus olhos viram a tua salvação,<br>A qual tu preparaste perante a face de todos os povos;<br>Luz para alumiar as nações, e para glória de teu povo Israel."
-  },
-  6: {
-    titulo: "Cântico de Sábado: Cântico do Cordeiro (Apocalipse 15:3–4)",
-    texto: "Grandes e maravilhosas são as tuas obras, Senhor Deus Todo-Poderoso!<br>Justos e verdadeiros são os teus caminhos, ó Rei dos santos.<br>Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br>Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos."
+  0: { titulo: "Cântico do Domingo: Digno é o Cordeiro (Apocalipse 5:9–14)", texto: "E cantavam um novo cântico, dizendo:<br>Digno és de tomar o livro e de abrir os seus selos; porque foste morto, e com o teu sangue compraste para Deus homens de toda tribo, e língua, e povo, e nação;<br>E para o nosso Deus os fizeste reis e sacerdotes; e eles reinarão sobre a terra.<br>E olhei, e ouvi a voz de muitos anjos ao redor do trono, e dos animais, e dos anciãos; e era o número deles milhões de milhões e milhares de milhares,<br>Que com grande voz diziam:<br>Digno é o Cordeiro, que foi morto, de receber o poder, e riquezas, e sabedoria, e força, e honra, e glória, e ações de graças.<br>E ouvi a toda criatura que está no céu, e na terra, e debaixo da terra, e que está no mar, e a todas as coisas que neles há, dizer:<br>Ao que está assentado sobre o trono, e ao Cordeiro, sejam dadas ações de graças, e honra, e glória, e poder para todo o sempre.<br>E os quatro animais diziam: Amém. E os vinte e quatro anciãos prostraram-se e adoraram ao que vive para todo o sempre." },
+  1: { titulo: "Cântico de Segunda-feira: Cântico de Moisés (Êxodo 15:1–18)", texto: "Cantarei ao Senhor, porque gloriosamente triunfou; lançou no mar o cavalo e o seu cavaleiro.<br>O Senhor é a minha força e o meu cântico; ele me foi por salvação; este é o meu Deus, portanto lhe farei uma habitação; ele é o Deus de meu pai, por isso o exaltarei.<br>O Senhor é homem de guerra; o Senhor é o seu nome.<br>Lançou no mar os carros de Faraó e o seu exército; e os seus capitães afogaram-se no mar Vermelho.<br>Os abismos os cobriram; desceram às profundezas como pedra.<br>A tua destra, ó Senhor, se tem glorificado em poder; a tua destra, ó Senhor, tem despedaçado o inimigo.<br>Tu, com a tua beneficência, guiaste este povo que salvaste; com a tua força o levaste à habitação da tua santidade.<br>O Senhor reinará eterna e perpetuamente." },
+  2: { titulo: "Cântico de Terça-feira: Cântico de Ana (1 Samuel 2:1–10)", texto: "O meu coração exulta no Senhor, o meu poder está exaltado no Senhor; a minha boca se dilatou sobre os meus inimigos, porquanto me alegro na tua salvação.<br>Não há santo como o Senhor; porque não há outro fora de ti; e rocha nenhuma há como o nosso Deus.<br>O arco dos fortes foi quebrado, e os que tropeçavam foram cingidos de força.<br>O Senhor é o que tira a vida e a dá; faz descer à sepultura e faz tornar a subir dela.<br>O Senhor empobrece e enriquece; abaixa e também exalta.<br>Levanta o pobre do pó e, desde o monturo, exalta o necessitado, para o fazer assentar entre os príncipes, para o fazer herdar o trono de glória." },
+  3: { titulo: "Cântico de Quarta-feira: Magnificat (Lucas 1:46–55)", texto: "A minha alma engrandece ao Senhor,<br>E o meu espírito se alegra em Deus meu Salvador,<br>Porque atentou na baixeza de sua serva; pois eis que desde agora todas as gerações me chamarão bem-aventurada,<br>Porque me fez grandes coisas o Poderoso; e santo é o seu nome.<br>E a sua misericórdia é de geração em geração sobre os que o temem.<br>Com o seu braço agiu valorosamente; dissipou os soberbos no pensamento de seus corações.<br>Depôs dos tronos os poderosos, e elevou os humildes.<br>Encheu de bens os famintos, e despediu vazios os ricos.<br>Auxiliou a Israel seu servo, recordando-se da sua misericórdia;<br>Como falou a nossos pais, para com Abraão e sua posteridade, para sempre." },
+  4: { titulo: "Cântico de Quinta-feira: Benedictus (Lucas 1:68–79)", texto: "Bendito o Senhor Deus de Israel, porque visitou e remiu o seu povo,<br>E nos levantou uma salvação poderosa na casa de Davi seu servo,<br>Como falou pela boca dos seus santos profetas, desde o princípio do mundo;<br>Para nos livrar dos nossos inimigos e da mão de todos os que nos aborrecem;<br>Para manifestar misericórdia a nossos pais, e lembrar-se do seu santo concerto,<br>E tu, ó menino, serás chamado profeta do Altíssimo, porque hás de ir ante a face do Senhor, a preparar os seus caminhos;<br>Para dar ao seu povo conhecimento da salvação, na remissão dos seus pecados;<br>Pelas entranhas da misericórdia do nosso Deus, com que o Oriente do alto nos visitou." },
+  5: { titulo: "Cântico de Sexta-feira: Nunc Dimittis (Lucas 2:29–32)", texto: "Agora, Senhor, despedes em paz o teu servo, segundo a tua palavra;<br>Pois já os meus olhos viram a tua salvação,<br>A qual tu preparaste perante a face de todos os povos;<br>Luz para alumiar as nações, e para glória de teu povo Israel." },
+  6: { titulo: "Cântico de Sábado: Cântico do Cordeiro (Apocalipse 15:3–4)", texto: "Grandes e maravilhosas são as tuas obras, Senhor Deus Todo-Poderoso!<br>Justos e verdadeiros são os teus caminhos, ó Rei dos santos.<br>Quem te não temerá, ó Senhor, e não magnificará o teu nome?<br>Porque só tu és santo; por isso todas as nações virão e se prostrarão diante de ti, porque os teus juízos são manifestos." }
+};
+
+const traducaoLivros = {
+  "Genesis": "Gênesis", "Exodus": "Êxodo", "Leviticus": "Levítico", "Numbers": "Números", "Deuteronomy": "Deuteronômio",
+  "Joshua": "Josué", "Judges": "Juízes", "Ruth": "Rute", "1 Samuel": "1 Samuel", "2 Samuel": "2 Samuel",
+  "1 Kings": "1 Reis", "2 Kings": "2 Reis", "1 Chronicles": "1 Crônicas", "2 Chronicles": "2 Crônicas",
+  "Ezra": "Esdras", "Nehemiah": "Neemias", "Esther": "Ester", "Job": "Jó", "Psalm": "Salmos", "Psalms": "Salmos",
+  "Proverbs": "Provérbios", "Ecclesiastes": "Eclesiastes", "Song of Solomon": "Cantares", "Isaiah": "Isaías",
+  "Jeremiah": "Jeremias", "Lamentations": "Lamentações", "Ezekiel": "Ezequiel", "Daniel": "Daniel",
+  "Hosea": "Oséias", "Joel": "Joel", "Amos": "Amós", "Obadiah": "Obadias", "Jonah": "Jonas", "Micah": "Miquéias",
+  "Nahum": "Naum", "Habakkuk": "Habacuque", "Zephaniah": "Sofonias", "Haggai": "Ageu", "Zechariah": "Zacarias", "Malachi": "Malaquias",
+  "Matthew": "Mateus", "Mark": "Marcos", "Luke": "Lucas", "John": "João", "Acts": "Atos", "Romans": "Romanos",
+  "1 Corinthians": "1 Coríntios", "2 Corinthians": "2 Coríntios", "Galatians": "Gálatas", "Ephesians": "Efésios",
+  "Philippians": "Filipenses", "Colossians": "Colossenses", "1 Thessalonians": "1 Tessalonicenses", "2 Thessalonians": "2 Tessalonicenses",
+  "1 Timothy": "1 Timóteo", "2 Timothy": "2 Timóteo", "Titus": "Tito", "Philemon": "Filemom", "Hebrews": "Hebreus",
+  "James": "Tiago", "1 Peter": "1 Pedro", "2 Peter": "2 Pedro", "1 John": "1 João", "2 John": "2 João", "3 John": "3 João",
+  "Jude": "Judas", "Revelation": "Apocalipse"
+};
+
+function traduzirParaExibicao(refIngles) {
+  if (!refIngles) return "";
+  let refLimpa = refIngles.trim();
+  for (let en in traducaoLivros) {
+    if (refLimpa.startsWith(en)) {
+      return refLimpa.replace(en, traducaoLivros[en]);
+    }
   }
-};
+  return refLimpa;
+}
 
-// Leituras RCL do dia da semana
-const planoLeiturasSemanal = {
-  0: { at: "Isaias 55:1-11", nt: "2 Corintios 4:5-12" },
-  1: { at: "Salmos 19:1-14", nt: "Romanos 12:1-8" },
-  2: { at: "Proverbios 3:1-12", nt: "1 Joao 4:7-21" },
-  3: { at: "Jeremias 31:31-34", nt: "Hebreus 8:8-12" },
-  4: { at: "Ezequiel 36:24-28", nt: "Efesios 4:17-32" },
-  5: { at: "Isaias 53:1-12", nt: "1 Pedro 2:21-25" },
-  6: { at: "Salmos 103:1-22", nt: "Colossenses 3:12-17" }
-};
+// Lê o lecionário a partir do arquivo rcl.json salvo no repositório
+async function consultarLeituraDoDia(dataObj) {
+  const ano = dataObj.getFullYear();
+  const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
+  const dia = String(dataObj.getDate()).padStart(2, '0');
+  const dataIso = `${ano}-${mes}-${dia}`;
 
-async function buscarTextoBiblico(referencia) {
   try {
-    const res = await fetch(`https://bible-api.com/${encodeURIComponent(referencia)}?translation=almeida`);
+    const res = await fetch("./rcl.json");
+    if (res.ok) {
+      const db = await res.json();
+      if (db[dataIso]) {
+        return {
+          salmo: db[dataIso].psalm || db[dataIso].psalms,
+          at: db[dataIso].first_reading || db[dataIso].old_testament,
+          nt: db[dataIso].second_reading || db[dataIso].gospel
+        };
+      }
+    }
+  } catch(e) {
+    console.error("Erro ao ler rcl.json:", e);
+  }
+  return null;
+}
+
+async function buscarTextoBiblico(referenciaIngles) {
+  if (!referenciaIngles) return "Referência não disponível.";
+  try {
+    const res = await fetch(`https://bible-api.com/${encodeURIComponent(referenciaIngles)}?translation=almeida`);
     if (!res.ok) throw new Error();
     const data = await res.json();
     return data.text || "Texto não disponível nesta tradução.";
@@ -706,36 +269,48 @@ async function buscarTextoBiblico(referencia) {
 async function atualizarPaginaDiaria() {
   const hoje = new Date();
   const diaSemana = hoje.getDay();
-  
-  // 1. Atualizar o cabeçalho de data
+
+  // Cabeçalho da data
   const opcoesData = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   document.getElementById("data-cabecalho").innerHTML = hoje.toLocaleDateString('pt-BR', opcoesData);
 
-  // 2. Atualizar o Cântico Diário
+  // Cântico
   const cantico = canticosSemana[diaSemana];
-  const containerCantico = document.getElementById("cantico-diario");
-  containerCantico.innerHTML = `
+  document.getElementById("cantico-diario").innerHTML = `
     <h2>${cantico.titulo}</h2>
     <p>${cantico.texto}</p>
   `;
 
-  // 3. Buscar e renderizar as Leituras Bíblicas em Português
+  const containerSalmo = document.getElementById("container-salmo-rcl");
   const containerLeituras = document.getElementById("container-leituras");
-  const refs = planoLeiturasSemanal[diaSemana];
 
-  containerLeituras.innerHTML = `<p class="red">Buscando os textos de ${refs.at} e ${refs.nt} em português...</p>`;
+  containerSalmo.innerHTML = `<p class="red">Buscando o Salmo de hoje no lecionário...</p>`;
+  containerLeituras.innerHTML = `<p class="red">Buscando as leituras de hoje no lecionário...</p>`;
 
-  const [textoAT, textoNT] = await Promise.all([
-    buscarTextoBiblico(refs.at),
-    buscarTextoBiblico(refs.nt)
-  ]);
+  const refs = await consultarLeituraDoDia(hoje);
 
-  containerLeituras.innerHTML = `
-    <h2>Antigo Testamento: ${refs.at}</h2>
-    <p>${textoAT.replace(/\n/g, '<br>')}</p>
-    <h2>Novo Testamento: ${refs.nt}</h2>
-    <p>${textoNT.replace(/\n/g, '<br>')}</p>
-  `;
+  if (refs && (refs.salmo || refs.at)) {
+    const [textoSalmo, textoAT, textoNT] = await Promise.all([
+      buscarTextoBiblico(refs.salmo),
+      buscarTextoBiblico(refs.at),
+      buscarTextoBiblico(refs.nt)
+    ]);
+
+    containerSalmo.innerHTML = `
+      <h2>${traduzirParaExibicao(refs.salmo)}</h2>
+      <p>${textoSalmo.replace(/\n/g, '<br>')}</p>
+    `;
+
+    containerLeituras.innerHTML = `
+      <h2>Primeira Leitura (AT): ${traduzirParaExibicao(refs.at)}</h2>
+      <p>${textoAT.replace(/\n/g, '<br>')}</p>
+      <h2>Segunda Leitura (NT): ${traduzirParaExibicao(refs.nt)}</h2>
+      <p>${textoNT.replace(/\n/g, '<br>')}</p>
+    `;
+  } else {
+    containerSalmo.innerHTML = `<p class="red">Não foi possível localizar as leituras para a data de hoje no rcl.json.</p>`;
+    containerLeituras.innerHTML = `<p class="red">Não foi possível localizar as leituras para a data de hoje no rcl.json.</p>`;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", atualizarPaginaDiaria);
