@@ -89,7 +89,6 @@ hr {
     font-size: 1em;
     padding: 4px;
     background: #fff;
-    border: 1px solid rgba(255, 0, 0, 0.5);
 }
 
 .card-domingo {
@@ -125,7 +124,16 @@ hr {
     display: block;
     margin: 15px 10%;
 }
-
+.blue-label {
+    color: #3366ff;
+    font-weight: normal; /* remove o negrito */
+}
+.subcabecalho-info {
+    color: #222;
+    margin: 10px 10%;
+    font-size: 100%;
+    line-height: 140%;
+}
 @media only screen and (max-width: 480px) {
     p { margin-right: 1%; margin-left: 0%; }
     h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
@@ -139,12 +147,14 @@ hr {
 <div id="stuffing">
 
 <div class="seletor-data">
-  <label for="test-date" class="red"><strong>Selecionar Data do Ofício (Ano A): </strong></label>
+  <label for="test-date" class="blue-label">Selecionar data (Ano A): </label>
   <input type="date" id="test-date" onchange="testarData(this.value)">
 </div>
 
-<p class="red" id="data-cabecalho">Carregando data...</p>
-
+<div class="subcabecalho-info" id="subcabecalho-info">
+  Carregando informações do dia...
+</div>
+  
 <!-- Container para o conteúdo do Domingo -->
 <div id="conteudo-domingo" style="display: none;">
   <div class="card-domingo">
@@ -473,7 +483,41 @@ const FESTAS_DOMINGO = {
   "2026-11-15": "Próprio 28 (33)",
   "2026-11-22": "Cristo Rei - Próprio 29 (34)"
 };
+const LISTA_DATAS_ORDENADAS = Object.keys(FESTAS_DOMINGO).sort();
 
+function obterProprioOuFesta(dataAlvo) {
+  const ano = dataAlvo.getFullYear();
+  const mes = String(dataAlvo.getMonth() + 1).padStart(2, '0');
+  const dia = String(dataAlvo.getDate()).padStart(2, '0');
+  const dataChave = `${ano}-${mes}-${dia}`;
+
+  if (FESTAS_DOMINGO[dataChave]) {
+    return FESTAS_DOMINGO[dataChave];
+  }
+
+  let ultimoNome = "Tempo Comum";
+  for (let i = 0; i < LISTA_DATAS_ORDENADAS.length; i++) {
+    const dataFestaStr = LISTA_DATAS_ORDENADAS[i];
+    if (dataChave >= dataFestaStr) {
+      ultimoNome = FESTAS_DOMINGO[dataFestaStr];
+    } else {
+      break;
+    }
+  }
+  return ultimoNome;
+}
+
+function atualizarSubcabecalho(dataAlvo) {
+  const diaSemanaNome = dataAlvo.toLocaleDateString('pt-BR', { weekday: 'long' });
+  const diaSemanaCapitalizado = diaSemanaNome.charAt(0).toUpperCase() + diaSemanaNome.slice(1);
+  const proprioOuFesta = obterProprioOuFesta(dataAlvo);
+
+  const elSub = document.getElementById("subcabecalho-info");
+  if (elSub) {
+    elSub.innerHTML = `${diaSemanaCapitalizado}<br>Ofício Diário<br>${proprioOuFesta}`;
+  }
+}
+  
 function atualizarDomingoFesta(dataChave) {
   const elFesta = document.getElementById("domingo-festa-nome");
   if (elFesta) {
@@ -856,9 +900,7 @@ async function carregarLiturgiaParaData(dataAlvo) {
   const dia = String(dataAlvo.getDate()).padStart(2, '0');
   const dataChave = `${ano}-${mes}-${dia}`;
   
-  const opcoesData = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  document.getElementById("data-cabecalho").innerHTML = dataAlvo.toLocaleDateString('pt-BR', opcoesData);
-  document.getElementById("test-date").value = dataChave;
+atualizarSubcabecalho(dataAlvo);  document.getElementById("test-date").value = dataChave;
 
   const divDomingo = document.getElementById("conteudo-domingo");
   const divSemana = document.getElementById("conteudo-semana");
