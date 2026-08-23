@@ -102,7 +102,7 @@ hr {
 }
 
 .gif-vela {
-    max-width: 250px; /* Aumentado para o GIF ficar maior */
+    max-width: 250px;
     height: auto;
     display: block;
     margin: 40px auto 20px auto;
@@ -111,14 +111,13 @@ hr {
 </head>
 
 <body>
-  
-  <div id="stuffing">
+<div id="stuffing">
 
   <h1>Ofício Diário</h1>
   
   <p class="subtitulo red"><em>"O Senhor seja a tua luz e a tua salvação."</em></p>
 
-<a href="manha.html" class="btn-oficio">
+  <a href="manha.html" class="btn-oficio">
     <strong>Ofício Diário (com leituras)</strong>
     Roteiro completo para a oração diária com leituras bíblicas do lecionário.
   </a>
@@ -127,15 +126,36 @@ hr {
     <strong>Breve Ofício para Encerrar o Dia</strong>
     Oração para recolhimento, reflexão e descanso.
   </a>
-  <audio src="nadateturbe.mp3" autoplay loop muted></audio>
 
-  <!-- GIF de vela adicionado abaixo dos botões -->
+  <!-- GIF de vela -->
   <img src="vela.gif" alt="Vela acesa" class="gif-vela">
 
 </div>
-</body>
-</html>
-</div>
+
+<!-- Elemento de áudio sem muted -->
+<audio id="bg-audio" src="nadateturbe.mp3" loop autoplay></audio>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-audio');
+    
+    // Tenta tocar automaticamente ao abrir
+    let playPromise = audio.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Se o navegador bloquear o som automático, toca no primeiro toque ou clique do usuário
+        const startOnInteraction = () => {
+          audio.play();
+          window.removeEventListener('click', startOnInteraction);
+          window.removeEventListener('touchstart', startOnInteraction);
+        };
+        window.addEventListener('click', startOnInteraction);
+        window.addEventListener('touchstart', startOnInteraction);
+      });
+    }
+  });
+</script>
 </body>
 
 </html>
