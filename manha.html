@@ -1083,6 +1083,21 @@ document.addEventListener("DOMContentLoaded", () => {
     player.addEventListener("ended", resumeBgAudio);
   });
 });
+  document.addEventListener('visibilitychange', () => {
+  // Finds ALL audio elements on the page (both background & inline players)
+  const allAudios = document.querySelectorAll('audio');
+
+  if (document.hidden) {
+    // 🛑 Stops EVERYTHING when switching tabs or leaving the app
+    allAudios.forEach(audio => audio.pause());
+  } else {
+    // ▶️ Resumes ONLY background music when returning (if active)
+    const bgAudio = document.getElementById('bg-audio');
+    if (bgAudio) {
+      bgAudio.play().catch(() => {});
+    }
+  }
+});
 </script>
 </body>
 </html>
