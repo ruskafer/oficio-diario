@@ -30,6 +30,11 @@ body {
     padding: 0;
 }
 
+/* Força Times New Roman em botões e controles */
+input, select, button, textarea {
+    font-family: "Times New Roman", Times, serif;
+}
+
 #stuffing {
     padding: 2px;
 }
@@ -122,12 +127,20 @@ audio {
 <body id="topo">
 <div id="stuffing">
 
+  <!-- Background Music Controls -->
+  <div style="text-align: center; margin: 15px 10px 20px 10px;">
+    <button id="btn-bg-audio" style="background: #fff8eb; border: 1px solid rgba(255, 0, 0, 0.6); color: rgba(255, 0, 0, 1); padding: 8px 16px; border-radius: 4px; font-size: 0.9em; cursor: pointer;">
+      🎵 Ativar Música de Fundo
+    </button>
+  </div>
+
+  <!-- Background Audio Element -->
+  <audio id="bg-audio" src="blessthelord.mp3" loop></audio>
+
   <!-- Subcabeçalho em texto preto normal -->
   <div class="subcabecalho-info" id="subcabecalho-info">
     Carregando informações do dia...
   </div>
-
-
 
   <p class="red"><em>Todos juntos</em></p>
   <p>
@@ -303,6 +316,12 @@ audio {
     <a href="#topo">↑ voltar ao topo</a>
   </p>
 
+  <!-- Rodapé de atribuição discreto -->
+  <footer style="text-align: center; font-size: 0.75em; color: #666; margin: 40px 10% 20px 10%; border-top: 1px solid rgba(255, 0, 0, 0.2); padding-top: 15px;">
+    <p style="margin: 0; line-height: 140%;">Organizado e mantido com carinho por Daniel Augusto Ribeiro</p>
+    <p style="margin: 5px 0 0 0; font-style: italic;">Oferecido gratuitamente para o fortalecimento da vida de oração.</p>
+  </footer>
+
 </div>
 
 <script>
@@ -449,10 +468,112 @@ document.addEventListener("DOMContentLoaded", () => {
   const salmoHoje = salmosNoite[diaSemana];
 
   const containerSalmo = document.getElementById("salmo-noite");
-  containerSalmo.innerHTML = `
-    <h2>${salmoHoje.titulo}</h2>
-    <p>${salmoHoje.texto}</p>
-  `;
+  if (containerSalmo) {
+    containerSalmo.innerHTML = `
+      <h2>${salmoHoje.titulo}</h2>
+      <p>${salmoHoje.texto}</p>
+    `;
+  }
+});
+
+// Controle de Áudio Inteligente e Gestão de Mídia de Fundo
+document.addEventListener("DOMContentLoaded", () => {
+  const bgAudio = document.getElementById("bg-audio");
+  const bgBtn = document.getElementById("btn-bg-audio");
+  let userWantsMusic = true;
+  let pausedByOtherPlayer = false;
+
+  const updateButtonText = () => {
+    if (!bgBtn) return;
+    if (!bgAudio.paused) {
+      bgBtn.innerText = "🔊 Pausar Música de Fundo";
+    } else {
+      bgBtn.innerText = "🎵 Ativar Música de Fundo";
+    }
+  };
+
+  // 1. Alternar música de fundo via botão
+  if (bgBtn) {
+    bgBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (bgAudio.paused) {
+        userWantsMusic = true;
+        bgAudio.play().then(() => {
+          updateButtonText();
+        }).catch(err => console.log("Erro ao tocar áudio:", err));
+      } else {
+        userWantsMusic = false;
+        bgAudio.pause();
+        updateButtonText();
+      }
+    });
+  }
+
+  // 2. Iniciar áudio de fundo na primeira interação (toque, clique ou rolagem)
+  const startBgOnInteraction = () => {
+    if (userWantsMusic && bgAudio.paused && !pausedByOtherPlayer) {
+      bgAudio.play().then(() => {
+        updateButtonText();
+        removeAllInteractionListeners();
+      }).catch(() => {});
+    }
+  };
+
+  function removeAllInteractionListeners() {
+    window.removeEventListener("click", startBgOnInteraction);
+    window.removeEventListener("touchstart", startBgOnInteraction);
+    window.removeEventListener("touchmove", startBgOnInteraction);
+    window.removeEventListener("scroll", startBgOnInteraction);
+    window.removeEventListener("wheel", startBgOnInteraction);
+  }
+
+  window.addEventListener("click", startBgOnInteraction);
+  window.addEventListener("touchstart", startBgOnInteraction);
+  window.addEventListener("touchmove", startBgOnInteraction);
+  window.addEventListener("scroll", startBgOnInteraction);
+  window.addEventListener("wheel", startBgOnInteraction);
+
+  // 3. Pausar a música de fundo se o hino de recolhida (debonspoderes.mp3) for ativado
+  const inlineAudios = document.querySelectorAll("audio:not(#bg-audio)");
+  
+  inlineAudios.forEach(player => {
+    player.addEventListener("play", () => {
+      if (!bgAudio.paused && userWantsMusic) {
+        bgAudio.pause();
+        pausedByOtherPlayer = true;
+        updateButtonText();
+      }
+    });
+
+    const resumeBgAudio = () => {
+      if (userWantsMusic && pausedByOtherPlayer) {
+        bgAudio.play().then(() => {
+          pausedByOtherPlayer = false;
+          updateButtonText();
+        }).catch(() => {});
+      }
+    };
+
+    player.addEventListener("pause", resumeBgAudio);
+    player.addEventListener("ended", resumeBgAudio);
+  });
+
+  // 4. Pausar TODOS os áudios ao trocar de aba, minimizar ou bloquear a tela
+  document.addEventListener("visibilitychange", () => {
+    const allAudios = document.querySelectorAll("audio");
+
+    if (document.hidden) {
+      allAudios.forEach(audio => audio.pause());
+      updateButtonText();
+    } else {
+      // Retoma apenas a música de fundo se ativada
+      if (userWantsMusic && !pausedByOtherPlayer) {
+        bgAudio.play().then(() => {
+          updateButtonText();
+        }).catch(() => {});
+      }
+    }
+  });
 });
 </script>
 </body>
