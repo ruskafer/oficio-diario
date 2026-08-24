@@ -166,6 +166,16 @@ audio {
 <body>
 <div id="stuffing">
 
+<!-- Background Audio Element & Controls -->
+<audio id="bg-audio" src="nadateturbe.mp3" loop></audio>
+
+<div style="text-align: right; margin: 10px 10%; font-size: 85%;">
+  <button id="btn-toggle-bg" style="padding: 6px 12px; background: #fff8eb; border: 1px solid rgba(255, 0, 0, 0.6); color: #222; cursor: pointer; border-radius: 4px;">
+    🔇 Ativar Música de Fundo
+  </button>
+</div>
+  
+
 <div class="seletor-data">
   <label for="test-date" class="blue-label">Selecionar data (Ano A): </label>
   <input type="date" id="test-date" onchange="testarData(this.value)">
@@ -988,6 +998,50 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   carregarLiturgiaParaData(dataInicial);
+});
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const bgAudio = document.getElementById("bg-audio");
+  const toggleBtn = document.getElementById("btn-toggle-bg");
+  let wasBgPlaying = false; // Tracks if background audio was active before secondary player started
+
+  // 1. Toggle Button Handler
+  if (toggleBtn && bgAudio) {
+    toggleBtn.addEventListener("click", () => {
+      if (bgAudio.paused) {
+        bgAudio.play().then(() => {
+          toggleBtn.innerText = "🔊 Desativar Música de Fundo";
+        }).catch(err => console.log("Playback error:", err));
+      } else {
+        bgAudio.pause();
+        toggleBtn.innerText = "🔇 Ativar Música de Fundo";
+      }
+    });
+  }
+
+  // 2. Pause Background Audio When Any Page Player Plays
+  document.querySelectorAll("audio:not(#bg-audio)").forEach(player => {
+    player.addEventListener("play", () => {
+      if (bgAudio && !bgAudio.paused) {
+        wasBgPlaying = true;
+        bgAudio.pause();
+        if (toggleBtn) toggleBtn.innerText = "🔇 Música de Fundo (Pausada)";
+      }
+    });
+
+    // 3. Resume Background Audio When Page Player Ends or Pauses
+    const resumeBgAudio = () => {
+      if (bgAudio && wasBgPlaying) {
+        bgAudio.play().then(() => {
+          if (toggleBtn) toggleBtn.innerText = "🔊 Desativar Música de Fundo";
+        }).catch(err => console.log("Resume error:", err));
+        wasBgPlaying = false;
+      }
+    };
+
+    player.addEventListener("pause", resumeBgAudio);
+    player.addEventListener("ended", resumeBgAudio);
+  });
 });
 </script>
 </body>
