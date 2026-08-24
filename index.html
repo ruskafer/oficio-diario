@@ -34,6 +34,36 @@
 
 // Fires on initial load AND when returning via the back button
 window.addEventListener('pageshow', playAudio);
+
+  window.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bg-audio');
+
+  const startAudioOnInteraction = () => {
+    if (audio.paused) {
+      audio.play().then(() => {
+        // Audio started successfully! Remove all interaction listeners.
+        removeAllListeners();
+      }).catch(err => {
+        console.log('Audio playback waiting for gesture:', err);
+      });
+    }
+  };
+
+  function removeAllListeners() {
+    window.removeEventListener('click', startAudioOnInteraction);
+    window.removeEventListener('touchstart', startAudioOnInteraction);
+    window.removeEventListener('touchmove', startAudioOnInteraction);
+    window.removeEventListener('scroll', startAudioOnInteraction);
+    window.removeEventListener('wheel', startAudioOnInteraction);
+  }
+
+  // Attach to all user input triggers
+  window.addEventListener('click', startAudioOnInteraction);
+  window.addEventListener('touchstart', startAudioOnInteraction);
+  window.addEventListener('touchmove', startAudioOnInteraction);
+  window.addEventListener('scroll', startAudioOnInteraction);
+  window.addEventListener('wheel', startAudioOnInteraction);
+});
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
