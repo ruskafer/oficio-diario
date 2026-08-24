@@ -169,7 +169,7 @@ audio {
 <!-- Background Music Controls -->
 <div style="text-align: center; margin: 15px 10px 20px 10px;">
   <button id="btn-bg-audio" style="background: #fff8eb; border: 1px solid rgba(255, 0, 0, 0.6); color: rgba(255, 0, 0, 1); padding: 8px 16px; border-radius: 4px; font-size: 0.9em; cursor: pointer;">
-    🔊 Desativar Música de Fundo
+    🎵 Ativar Música de Fundo
   </button>
 </div>
 
@@ -921,7 +921,8 @@ async function carregarLiturgiaParaData(dataAlvo) {
   const dia = String(dataAlvo.getDate()).padStart(2, '0');
   const dataChave = `${ano}-${mes}-${dia}`;
   
-atualizarSubcabecalho(dataAlvo);  document.getElementById("test-date").value = dataChave;
+  atualizarSubcabecalho(dataAlvo);
+  document.getElementById("test-date").value = dataChave;
 
   const divDomingo = document.getElementById("conteudo-domingo");
   const divSemana = document.getElementById("conteudo-semana");
@@ -1000,34 +1001,44 @@ document.addEventListener("DOMContentLoaded", () => {
   carregarLiturgiaParaData(dataInicial);
 });
 
-
+// Lógica para Música de Fundo e Controle Inteligente de Áudio
 document.addEventListener("DOMContentLoaded", () => {
   const bgAudio = document.getElementById("bg-audio");
   const bgBtn = document.getElementById("btn-bg-audio");
-  let userWantsMusic = true; // Tracks if the user wants background audio active
-  let pausedByOtherPlayer = false; // Tracks if paused because an inline player started
+  let userWantsMusic = true;
+  let pausedByOtherPlayer = false;
 
-  // Toggle Background Music manually
+  const updateButtonText = () => {
+    if (!bgBtn) return;
+    if (!bgAudio.paused) {
+      bgBtn.innerText = "🔊 Pausar Música de Fundo";
+    } else {
+      bgBtn.innerText = "🎵 Ativar Música de Fundo";
+    }
+  };
+
+  // 1. Alternar música de fundo manualmente via botão
   if (bgBtn) {
-    bgBtn.addEventListener("click", () => {
+    bgBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       if (bgAudio.paused) {
         userWantsMusic = true;
         bgAudio.play().then(() => {
-          bgBtn.innerText = C;
-        }).catch(err => console.log("Playback error:", err));
+          updateButtonText();
+        }).catch(err => console.log("Erro ao tocar áudio:", err));
       } else {
         userWantsMusic = false;
         bgAudio.pause();
-        bgBtn.innerText = "🔇 Ativar Música de Fundo";
+        updateButtonText();
       }
     });
   }
 
-  // Smart Interaction: Attempt to start background music on first scroll/click/touch
+  // 2. Iniciar áudio de fundo ao primeiro toque, clique ou rolagem de tela
   const startBgOnInteraction = () => {
     if (userWantsMusic && bgAudio.paused && !pausedByOtherPlayer) {
       bgAudio.play().then(() => {
-        if (bgBtn) bgBtn.innerText = "🔊 Desativar Música de Fundo";
+        updateButtonText();
         removeAllInteractionListeners();
       }).catch(() => {});
     }
@@ -1047,23 +1058,23 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", startBgOnInteraction);
   window.addEventListener("wheel", startBgOnInteraction);
 
-  // Auto-pause background audio when inline players play (and resume when finished)
+  // 3. Pausar a música de fundo se o player de áudio do texto (deustrino.mp3) for ativado
   const inlineAudios = document.querySelectorAll("audio:not(#bg-audio)");
   
   inlineAudios.forEach(player => {
-    // When inline player starts playing -> pause background audio
     player.addEventListener("play", () => {
       if (!bgAudio.paused && userWantsMusic) {
         bgAudio.pause();
         pausedByOtherPlayer = true;
+        updateButtonText();
       }
     });
 
-    // When inline player pauses or ends -> resume background audio
     const resumeBgAudio = () => {
       if (userWantsMusic && pausedByOtherPlayer) {
         bgAudio.play().then(() => {
           pausedByOtherPlayer = false;
+          updateButtonText();
         }).catch(() => {});
       }
     };
