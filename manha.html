@@ -169,7 +169,7 @@ audio {
 <!-- Background Music Controls -->
 <div style="text-align: center; margin: 15px 10px 20px 10px;">
   <button id="btn-bg-audio" style="background: #fff8eb; border: 1px solid rgba(255, 0, 0, 0.6); color: rgba(255, 0, 0, 1); padding: 8px 16px; border-radius: 4px; font-size: 0.9em; cursor: pointer;">
-    🔊 Ativar Música de Fundo
+    🔇 Ativar Música de Fundo
   </button>
 </div>
 
@@ -1011,9 +1011,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateButtonText = () => {
     if (!bgBtn) return;
     if (!bgAudio.paused) {
-      bgBtn.innerText = "🔇 Pausar Música de Fundo";
+      bgBtn.innerText = "🔊 Pausar Música de Fundo";
     } else {
-      bgBtn.innerText = "🔊 Ativar Música de Fundo";
+      bgBtn.innerText = "🔇 Ativar Música de Fundo";
     }
   };
 
