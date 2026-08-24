@@ -143,6 +143,22 @@ hr {
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('bg-audio');
+    // 1. Pause audio as soon as the user hides/leaves the app or locks their device
+document.addEventListener('visibilitychange', () => {
+  const audio = document.getElementById('bg-audio');
+  if (document.hidden) {
+    audio.pause();
+  } else {
+    // Optional: Resume playing when the user opens the app back up
+    audio.play().catch(() => {});
+  }
+});
+
+// 2. Extra safety for mobile browser page closure or navigation away
+window.addEventListener('pagehide', () => {
+  const audio = document.getElementById('bg-audio');
+  if (audio) audio.pause();
+});
 
     // 1. Force muted playback immediately on load (Browsers allow muted autoplay)
     audio.muted = true;
