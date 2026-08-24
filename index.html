@@ -16,54 +16,6 @@
         .catch((err) => console.log('Falha ao registrar Service Worker:', err));
     });
   }
-  const playAudio = () => {
-  const audio = document.getElementById('bg-audio');
-  if (audio && audio.paused) {
-    audio.play().catch(() => {
-      // Fallback: play on next interaction if blocked
-      const startOnInteraction = () => {
-        audio.play();
-        window.removeEventListener('click', startOnInteraction);
-        window.removeEventListener('touchstart', startOnInteraction);
-      };
-      window.addEventListener('click', startOnInteraction);
-      window.addEventListener('touchstart', startOnInteraction);
-    });
-  }
-};
-
-// Fires on initial load AND when returning via the back button
-window.addEventListener('pageshow', playAudio);
-
-  window.addEventListener('DOMContentLoaded', () => {
-  const audio = document.getElementById('bg-audio');
-
-  const startAudioOnInteraction = () => {
-    if (audio.paused) {
-      audio.play().then(() => {
-        // Audio started successfully! Remove all interaction listeners.
-        removeAllListeners();
-      }).catch(err => {
-        console.log('Audio playback waiting for gesture:', err);
-      });
-    }
-  };
-
-  function removeAllListeners() {
-    window.removeEventListener('click', startAudioOnInteraction);
-    window.removeEventListener('touchstart', startAudioOnInteraction);
-    window.removeEventListener('touchmove', startAudioOnInteraction);
-    window.removeEventListener('scroll', startAudioOnInteraction);
-    window.removeEventListener('wheel', startAudioOnInteraction);
-  }
-
-  // Attach to all user input triggers
-  window.addEventListener('click', startAudioOnInteraction);
-  window.addEventListener('touchstart', startAudioOnInteraction);
-  window.addEventListener('touchmove', startAudioOnInteraction);
-  window.addEventListener('scroll', startAudioOnInteraction);
-  window.addEventListener('wheel', startAudioOnInteraction);
-});
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -174,10 +126,9 @@ hr {
   </a>
 
   <a href="noite.html" class="btn-oficio">
-    <strong>Breve Ofício para Encerrar o Dia</strong>
+    <strong>Breve Ofício para Encerrar do Dia</strong>
     Oração para recolhimento, reflexão e descanso.
   </a>
-
 
   <footer style="text-align: center; font-size: 0.75em; color: #666; margin: 40px 10% 20px 10%; border-top: 1px solid rgba(255, 0, 0, 0.2); padding-top: 15px;">
     <p style="margin: 0; line-height: 140%;">Organizado e mantido com carinho por Daniel Augusto Ribeiro</p>
@@ -186,33 +137,44 @@ hr {
 
 </div> <!-- Fim da div #stuffing -->
 
-<!-- Elemento de áudio sem muted -->
-<audio id="bg-audio" src="nadateturbe.mp3" loop autoplay></audio> 
-
-</div>
-
-<!-- Elemento de áudio sem muted -->
-<audio id="bg-audio" src="nadateturbe.mp3" loop autoplay></audio>
+<!-- Single background audio element -->
+<audio id="bg-audio" src="nadateturbe.mp3" loop muted></audio>
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('bg-audio');
-    
-    // Tenta tocar automaticamente ao abrir
-    let playPromise = audio.play();
-    
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Se o navegador bloquear o som automático, toca no primeiro toque ou clique do usuário
-        const startOnInteraction = () => {
-          audio.play();
-          window.removeEventListener('click', startOnInteraction);
-          window.removeEventListener('touchstart', startOnInteraction);
-        };
-        window.addEventListener('click', startOnInteraction);
-        window.addEventListener('touchstart', startOnInteraction);
-      });
+
+    // 1. Force muted playback immediately on load (Browsers allow muted autoplay)
+    audio.muted = true;
+    audio.play().catch(() => {});
+
+    // 2. Unmute and play on any scroll, swipe, touch, or click
+    const unlockAudio = () => {
+      audio.muted = false;
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      }
+      removeListeners();
+    };
+
+    function removeListeners() {
+      window.removeEventListener('click', unlockAudio);
+      window.removeEventListener('touchstart', unlockAudio);
+      window.removeEventListener('touchmove', unlockAudio);
+      window.removeEventListener('scroll', unlockAudio);
+      window.removeEventListener('wheel', unlockAudio);
     }
+
+    window.addEventListener('click', unlockAudio);
+    window.addEventListener('touchstart', unlockAudio);
+    window.addEventListener('touchmove', unlockAudio);
+    window.addEventListener('scroll', unlockAudio);
+    window.addEventListener('wheel', unlockAudio);
+
+    // Handles returning to page via browser Back button
+    window.addEventListener('pageshow', () => {
+      if (audio.paused) audio.play().catch(() => {});
+    });
   });
 </script>
 </body>
