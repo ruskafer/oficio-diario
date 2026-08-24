@@ -16,6 +16,24 @@
         .catch((err) => console.log('Falha ao registrar Service Worker:', err));
     });
   }
+  const playAudio = () => {
+  const audio = document.getElementById('bg-audio');
+  if (audio && audio.paused) {
+    audio.play().catch(() => {
+      // Fallback: play on next interaction if blocked
+      const startOnInteraction = () => {
+        audio.play();
+        window.removeEventListener('click', startOnInteraction);
+        window.removeEventListener('touchstart', startOnInteraction);
+      };
+      window.addEventListener('click', startOnInteraction);
+      window.addEventListener('touchstart', startOnInteraction);
+    });
+  }
+};
+
+// Fires on initial load AND when returning via the back button
+window.addEventListener('pageshow', playAudio);
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
