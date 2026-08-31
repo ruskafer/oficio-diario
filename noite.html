@@ -20,124 +20,156 @@
 <title>Breve Ofício da Noite</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* Estilos alinhados com o Ofício Diário da IECLB */
-body {
-    background: rgba(255, 247, 230, 1.0);
-    font-size: 1.4em;
-    font-family: "Times New Roman", Times, serif;
-    color: #222;
+  :root {
+    --bg-main: #fcf8f2;
+    --card-bg: #ffffff;
+    --red-primary: #b3261e;
+    --red-subtle: #fbf0ef;
+    --text-primary: #2b2b2b;
+    --text-secondary: #595959;
+    --accent-blue: #1a56db;
+    --border-color: #ebdcd0;
+    --radius-lg: 16px;
+    --radius-md: 8px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+  }
 
-/* Força Times New Roman em botões e controles */
-input, select, button, textarea {
-    font-family: "Times New Roman", Times, serif;
-}
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    padding: 16px;
+    font-size: 1.05rem;
+  }
 
-#stuffing {
-    padding: 2px;
-}
+  #stuffing {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
 
-h1 {
-    font-size: 106%;
-    color: rgba(255, 0, 0, 1);
-    margin-top: 2%;
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-}
+  /* Headings & Typography */
+  h1 {
+    font-size: 1.75rem;
+    color: var(--red-primary);
+    margin: 28px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--red-subtle);
+    font-weight: 700;
+  }
 
-h2 {
-    font-size: 104%;
-    margin-top: 2%;
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-bottom: 1%;
-}
+  h2 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin: 20px 0 12px 0;
+    font-weight: 600;
+  }
 
-h3 {
-    font-size: 102%;
-    margin-top: 1%;
-    margin-right: 2%;
-    margin-left: 10%;
-    margin-bottom: .5%;
-}
+  h3 {
+    font-size: 1.1rem;
+    margin: 16px 0 8px 0;
+    color: var(--text-secondary);
+  }
 
-p {
-    font-size: 100%;
-    margin-top: 0;
-    margin-right: 30%;
-    margin-left: 10%;
-    margin-bottom: 1%;
-    line-height: 150%;
-}
+  p {
+    margin-bottom: 14px;
+    color: var(--text-primary);
+  }
 
-.red {
-    color: rgba(255, 0, 0, 1);
-}
+  .red {
+    color: var(--red-primary);
+  }
 
-.subcabecalho-info {
-    color: #222;
-    margin: 15px 10%;
-    font-size: 100%;
-    line-height: 140%;
-}
+  em .red, .red em {
+    font-style: italic;
+    font-weight: 500;
+  }
 
-.indent { padding-left: 2%; display: block; }
-.indent2 { padding-left: 4%; display: block; }
-.indent3 { padding-left: 6%; display: block; }
+  .indent { padding-left: 20px; display: block; }
+  .indent2 { padding-left: 40px; display: block; }
+  .indent3 { padding-left: 60px; display: block; }
 
-a:link, a:visited {
-    color: rgba(51, 102, 255, 1);
+  a:link, a:visited {
+    color: var(--accent-blue);
     text-decoration: none;
-}
+    transition: opacity 0.2s;
+  }
 
-a:hover {
-    color: rgba(51, 102, 255, 1);
+  a:hover {
     text-decoration: underline;
-}
+    opacity: 0.85;
+  }
 
-hr {
+  hr {
     border: none;
-    border-top: 1px solid rgba(255, 0, 0, 0.5);
-    margin: 20px 10%;
-}
+    border-top: 1px solid var(--border-color);
+    margin: 28px 0;
+  }
 
-.topo {
-    margin: 30px 10% 20px 10%;
+  .subcabecalho-info {
+    background: #f7f9fc;
+    color: var(--text-primary);
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-left: 4px solid var(--accent-blue);
+    margin-bottom: 24px;
+  }
+
+  .topo {
+    margin: 28px 0 16px 0;
     text-align: right;
-}
+    font-size: 0.9rem;
+  }
 
-audio {
-    border: 3px solid rgba(255, 0, 0, 1);
-    display: block;
-    margin: 15px 0;
-}
+  audio {
+    width: 100%;
+    margin: 12px 0;
+    border-radius: 8px;
+  }
 
-@media only screen and (max-width: 480px) {
-    p { margin-right: 1%; margin-left: 0%; }
-    h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
-    .subcabecalho-info { margin: 15px 0%; }
-    hr { margin: 20px 0%; }
-    .topo { margin: 30px 0% 20px 0%; }
-}
+  footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+  }
+
+  footer p {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      padding: 8px;
+    }
+
+    #stuffing {
+      padding: 16px;
+      border-radius: 12px;
+    }
+  }
 </style>
 </head>
 <body id="topo">
 <div id="stuffing">
 
-  <!-- Background Music Controls -->
-  <div style="text-align: center; margin: 15px 10px 20px 10px;">
-    <button id="btn-bg-audio" style="background: #fff8eb; border: 1px solid rgba(255, 0, 0, 0.6); color: rgba(255, 0, 0, 1); padding: 8px 16px; border-radius: 4px; font-size: 0.9em; cursor: pointer;">
-      🎵 Ativar Música de Fundo
-    </button>
-  </div>
-
-  <!-- Background Audio Element -->
-  <audio id="bg-audio" src="blessthelord.mp3" loop></audio>
-
-  <!-- Subcabeçalho em texto preto normal -->
+  <!-- Subcabeçalho em texto informativo -->
   <div class="subcabecalho-info" id="subcabecalho-info">
     Carregando informações do dia...
   </div>
@@ -197,7 +229,7 @@ audio {
   <p class="red"><em>Todos juntos:</em></p>
 
   <p>
-  Deus de infinita misericórdia, ao encerrar este dia, colocamo-nos diante da tua presença com o coração contrito. Confessamos que nem sempre vivemos de acordo com a tua vontade: falhamos no amor a ti e no serviço ao nosso próximo, omitindo-nos diante da necessidade alheia e pecando por pensamentos, palavras e ações. Perdoa a nossa culpa, renova em nós a esperança e concede-nos descansar no abraço da tua graça e do teu amor incondicional, revelados em Jesus Cristo, nosso Salvador. Amém.
+  Deus de infinita misericórdia, ao encerrar este dia, colocamo-nos diante da tua presença com o coração contrito. Confessamos que nem sempre vivemos de acordo com a tua vontade: falhamos no amor a ti e no serviço à nossa pessoa próxima, omitindo-nos diante da necessidade alheia e pecando por pensamentos, palavras e ações. Perdoa a nossa culpa, renova em nós a esperança e concede-nos descansar no abraço da tua graça e do teu amor incondicional, revelados em Jesus Cristo, nosso Salvador. Amém.
   </p>
 
   <h1>Oração da Noite de Martim Lutero</h1>
@@ -220,8 +252,8 @@ audio {
   <span class="indent">seja feita a tua vontade,</span>
   <span class="indent2">assim na terra como no céu.</span>
   O pão nosso de cada dia nos dá hoje.
-  Perdoa-nos as nossas dívidas
-  <span class="indent">assim como nós perdoamos</span>
+  <span class="indent">Perdoa-nos as nossas dívidas</span>
+  <span class="indent">assim como nós também perdoamos</span>
   <span class="indent3">aos nossos devedores.</span>
   E não nos deixes cair em tentação,
   <span class="indent">mas livra-nos do mal.</span>
@@ -234,13 +266,13 @@ audio {
   <p class="red"><em>Pela Igreja, pelo Mundo e pelos Aflitos</em></p>
 
   <p>
-  Ó Deus, amparo dos fracos e sustento dos que confiam em ti: rogamos-te nesta noite por toda a tua Igreja, para que permaneça fiel no testemunho do Evangelho e na prática do amor e da justiça. Intercedemos pelo mundo, por paz entre as nações e pelo cuidado integral com a tua Criação. Guarda todas as pessoas que passam a noite em sofrimento, enfermidade, solidão ou desamparo. Sê o consolo dos aflitos e capacita-nos a sermos instrumentos da tua compaixão e diaconia. Por Jesus Cristo, nosso Senhor. Amém.
+  Ó amado Deus, nosso Pai, amparo dos fracos e refúgio de todos os que em ti confiam: Nesta noite, chegamos a ti em oração, unindo nossos corações como tua querida  de fé, Corpo de Cristo. Te pedimos pela tua Igreja, para que permaneça firme no testemunho do Evangelho da tua graça e continue a praticar o amor, a justiça e o cuidado com as pessoas. Olha com carinho para o nosso mundo. Concede a tua paz às nações e ensina-nos a zelar com responsabilidade pela tua linda Criação. Acompanha com a tua presença consoladora todas as pessoas que passam esta noite em sofrimento, dor, enfermidade ou solidão. Sê o aconchego dos aflitos e fortalece nossas mãos para a diaconia, para que sejamos instrumentos vivos do teu amor e da tua compaixão no dia a dia. Tudo isso te pedimos por Jesus Cristo, teu Filho amado, nosso Salvador, que vive e reina contigo e com o Espírito Santo, de eternidade a eternidade. Amém.
   </p>
 
   <h2>Oração de Recolhimento</h2>
 
   <p>
-  Permanece conosco, Senhor, pois a noite se aproxima e o dia já declina. Sê o nosso guia, ilumina a nossa escuridão e guarda o nosso descanso. Em tuas mãos confiamos nossas vidas, nossas famílias e a nossa comunidade. Concede-nos um sono tranquilo e reparador, bons sonhos e uma noite de paz, longe de todas as ciladas do inimigo, para que, ao despertar de um novo dia, possamos louvar o teu nome e servir-te com alegria. Por Jesus Cristo, teu Filho amado. Amém.
+  Ó amado Senhor e Salvador, permanece conosco, pois a noite já vem chegando e o dia vai caindo. Sê o nosso guia carinhoso, ilumina a nossa escuridão e guarda o descanso do nosso lar. Em tuas mãos amorosas entregamos as nossas vidas, as nossas famílias e a nossa querida comunidade. Concede-nos, ó Pai, uma noite calma, um sono tranquilo e o refúgio da tua paz, livres de qualquer mal, preocupação, aflição e cilada do inimigo. Que, ao acordarmos no amanhecer de um novo dia, possamos renovar nossas forças para louvar o teu santo nome e te servir com gratidão e alegria. Por Jesus Cristo, teu Filho amado, nosso Senhor. Amém.
   </p>
 
 
@@ -279,9 +311,9 @@ audio {
 
   <p>
   3. Estende-nos o cálice amargo<br>
-  da dor e o bebermos sem embargo,<br>
+  da dor e o beberemos sem embargo,<br>
   Porque nos vem de tuas mãos divinas.<br>
-  Até com gratidão sofre ensinas.
+  Até com gratidão sofrer ensinas.
   </p>
 
   <p>
@@ -317,9 +349,9 @@ audio {
   </p>
 
   <!-- Rodapé de atribuição discreto -->
-  <footer style="text-align: center; font-size: 0.75em; color: #666; margin: 40px 10% 20px 10%; border-top: 1px solid rgba(255, 0, 0, 0.2); padding-top: 15px;">
-    <p style="margin: 0; line-height: 140%;">Organizado e mantido com carinho por Daniel Augusto Ribeiro</p>
-    <p style="margin: 5px 0 0 0; font-style: italic;">Oferecido gratuitamente para o fortalecimento da vida de oração.</p>
+  <footer>
+    <p>Organizado e mantido com carinho por Daniel Augusto Ribeiro</p>
+    <p style="margin-top: 4px; font-style: italic;">Oferecido gratuitamente para o fortalecimento da vida de oração.</p>
   </footer>
 
 </div>
@@ -433,7 +465,7 @@ const salmosNoite = {
   2: { 
     ref: "Salmo 23:1-6", 
     titulo: "Salmo 23 — O bom Pastor que nos guia (Terça-feira)", 
-    texto: "O Senhor é o meu pastor, nada me faltará.<br>Deitar-me faz em verdes pastos, guia-me suavemente a águas tranquilas.<br>Refrigera a minha alma; guia-me pelas veredas da justiça, por amor do seu nome.<br>Ainda que eu andasse pelo vale da sombra da morte, não temeria mal algum, porque tu estás comigo; a tua vara e o teu cajado me consolam.<br>Preparas uma mesa perante mim na presença dos meus inimigos, unges a minha cabeça com óleo, o meu cálice transborda.<br>Certamente que a bondade e a misericórdia me seguirão todos os dias da minha vida; e habitarei na casa do Senhor por longos dias." 
+    texto: "O Senhor é o meu pastor, nada me faltará.<br>Deitar-me faz em verdes pastos, guia-me suavemente a águas tranquilas.<br>Refrigera a minha alma; guia-me pelas veredas da justiça, por amor do seu nome.<br>Ainda que eu demanding pelas veredas da sombra da morte, não temeria mal algum, porque tu estás comigo; a tua vara e o teu cajado me consolam.<br>Preparas uma mesa perante mim na presença dos meus inimigos, unges a minha cabeça com óleo, o meu cálice transborda.<br>Certamente que a bondade e a misericórdia me seguirão todos os dias da minha vida; e habitarei na casa do Senhor por longos dias." 
   },
   3: { 
     ref: "Salmo 121:1-8", 
@@ -474,106 +506,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>${salmoHoje.texto}</p>
     `;
   }
-});
-
-// Controle de Áudio Inteligente e Gestão de Mídia de Fundo
-document.addEventListener("DOMContentLoaded", () => {
-  const bgAudio = document.getElementById("bg-audio");
-  const bgBtn = document.getElementById("btn-bg-audio");
-  let userWantsMusic = true;
-  let pausedByOtherPlayer = false;
-
-  const updateButtonText = () => {
-    if (!bgBtn) return;
-    if (!bgAudio.paused) {
-      bgBtn.innerText = "🔊 Pausar Música de Fundo";
-    } else {
-      bgBtn.innerText = "🎵 Ativar Música de Fundo";
-    }
-  };
-
-  // 1. Alternar música de fundo via botão
-  if (bgBtn) {
-    bgBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (bgAudio.paused) {
-        userWantsMusic = true;
-        bgAudio.play().then(() => {
-          updateButtonText();
-        }).catch(err => console.log("Erro ao tocar áudio:", err));
-      } else {
-        userWantsMusic = false;
-        bgAudio.pause();
-        updateButtonText();
-      }
-    });
-  }
-
-  // 2. Iniciar áudio de fundo na primeira interação (toque, clique ou rolagem)
-  const startBgOnInteraction = () => {
-    if (userWantsMusic && bgAudio.paused && !pausedByOtherPlayer) {
-      bgAudio.play().then(() => {
-        updateButtonText();
-        removeAllInteractionListeners();
-      }).catch(() => {});
-    }
-  };
-
-  function removeAllInteractionListeners() {
-    window.removeEventListener("click", startBgOnInteraction);
-    window.removeEventListener("touchstart", startBgOnInteraction);
-    window.removeEventListener("touchmove", startBgOnInteraction);
-    window.removeEventListener("scroll", startBgOnInteraction);
-    window.removeEventListener("wheel", startBgOnInteraction);
-  }
-
-  window.addEventListener("click", startBgOnInteraction);
-  window.addEventListener("touchstart", startBgOnInteraction);
-  window.addEventListener("touchmove", startBgOnInteraction);
-  window.addEventListener("scroll", startBgOnInteraction);
-  window.addEventListener("wheel", startBgOnInteraction);
-
-  // 3. Pausar a música de fundo se o hino de recolhida (debonspoderes.mp3) for ativado
-  const inlineAudios = document.querySelectorAll("audio:not(#bg-audio)");
-  
-  inlineAudios.forEach(player => {
-    player.addEventListener("play", () => {
-      if (!bgAudio.paused && userWantsMusic) {
-        bgAudio.pause();
-        pausedByOtherPlayer = true;
-        updateButtonText();
-      }
-    });
-
-    const resumeBgAudio = () => {
-      if (userWantsMusic && pausedByOtherPlayer) {
-        bgAudio.play().then(() => {
-          pausedByOtherPlayer = false;
-          updateButtonText();
-        }).catch(() => {});
-      }
-    };
-
-    player.addEventListener("pause", resumeBgAudio);
-    player.addEventListener("ended", resumeBgAudio);
-  });
-
-  // 4. Pausar TODOS os áudios ao trocar de aba, minimizar ou bloquear a tela
-  document.addEventListener("visibilitychange", () => {
-    const allAudios = document.querySelectorAll("audio");
-
-    if (document.hidden) {
-      allAudios.forEach(audio => audio.pause());
-      updateButtonText();
-    } else {
-      // Retoma apenas a música de fundo se ativada
-      if (userWantsMusic && !pausedByOtherPlayer) {
-        bgAudio.play().then(() => {
-          updateButtonText();
-        }).catch(() => {});
-      }
-    }
-  });
 });
 </script>
 </body>
