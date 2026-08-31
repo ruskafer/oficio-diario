@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- PWA Manifest & Theme -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#fff7e6">
 <link rel="apple-touch-icon" href="icon-512.png">
 
-<!-- Register Service Worker -->
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -115,29 +113,6 @@
     border: none;
     border-top: 1px solid var(--border-color);
     margin: 28px 0;
-  }
-
-  /* Audio Controls Header */
-  .control-bar {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  #btn-bg-audio {
-    background: var(--red-subtle);
-    border: 1px solid rgba(179, 38, 30, 0.2);
-    color: var(--red-primary);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  #btn-bg-audio:hover {
-    background: var(--red-primary);
-    color: #ffffff;
   }
 
   /* Date Selector & Subheader */
@@ -277,16 +252,6 @@
 <body>
 <div id="stuffing">
 
-<!-- Background Music Controls -->
-<div class="control-bar">
-  <button id="btn-bg-audio">
-    🔇 Ativar Música de Fundo
-  </button>
-</div>
-
-<!-- Background Audio Element -->
-<audio id="bg-audio" src="blessthelord.mp3" loop></audio>  
-
 <div class="seletor-data">
   <label for="test-date" class="blue-label">Selecionar data (Ano A): </label>
   <input type="date" id="test-date" onchange="testarData(this.value)">
@@ -296,12 +261,10 @@
   Carregando informações do dia...
 </div>
   
-<!-- Container para o conteúdo do Domingo -->
 <div id="conteudo-domingo" style="display: none;">
   <div class="card-domingo">
     <h2>Dia do Senhor (Domingo)</h2>
     
-    <!-- Elemento para exibir o nome litúrgico em português -->
     <p class="red" id="domingo-festa-nome" style="font-size: 1.1em;"></p>
 
     <p><strong>Alegrai-vos! Hoje é o Dia da Ressurreição.</strong></p>
@@ -312,7 +275,6 @@
     
     <hr>
 
-    <!-- Momento de Reflexão Pessoal e Pastoral -->
     <h2>Tempo de reflexão e descanso</h2>
     <p>
       Quer você já tenha participado do culto hoje ou ainda esteja se preparando para ir, o Domingo é um dia de desaceleração. Para quem celebra a <strong>Santa Ceia</strong>, no sacramento recebemos verdadeiramente o corpo e o sangue de Jesus para o perdão dos pecados, o fortalecimento da fé e a renovação da esperança.
@@ -322,7 +284,6 @@
 
     <hr>
 
-    <!-- Hino Luterano e Player incorporado -->
     <p><strong>LCI 503 — Quem só em Deus, o Pai, confia</strong></p>
 
     <div class="video-container">
@@ -342,7 +303,6 @@
   </div>
 </div>
 
-<!-- Container para o conteúdo dos Dias da Semana -->
 <div id="conteudo-semana">
   <h1>Ofício Diário</h1>
 
@@ -410,7 +370,7 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <p class="red"><em>Após as leituras</em></p>
   <p>
-  Rendemos-te graças, ó Deus de infinita bondade, pela tua santa Palavra revelada a nós. Dá-nos a tua graça para que a semente da tua verdade frutifique em nossas atitudes diárias, para o louvor do teu santo nome e o serviço ao nosso próximo, por Jesus Cristo, nosso Senhor. Amém.
+  Rendemos-te graças, ó Deus de infinita bondade, pela tua santa Palavra revelada a nós. Dá-nos a tua graça para que a semente da tua verdade frutifique em nossas atitudes diárias, para o louvor do teu santo nome e o serviço ao nosso próximo e à nossa próxima, por Jesus Cristo, nosso Senhor. Amém.
   </p>
 
 
@@ -423,7 +383,7 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <p class="red"><em>Todos juntos, ajoelhados ou curvados:</em></p>
   <p>
-  Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo. Pecamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
+  Bondoso e misericordioso Deus, Pai do nosso Senhor Jesus Cristo: confessamos diante de ti a nossa condição humana marcada pelo pecado e pela fragilidade. Faltamos com o amor a ti e falhamos na solidariedade para com o nosso próximo e a nossa próxima. Pecamos por pensamentos, palavras e ações, pelo mal que praticamos e pelo bem que deixamos de fazer. Não somos dignos e dignas do teu amor, mas confiamos na tua promessa de graça e perdão. Por amor de Jesus Cristo, que entregou sua vida por nós na cruz, tem compaixão de nós: perdoa a nossa culpa, renova o nosso coração e restaura a nossa comunhão contigo e com a comunidade. Por Jesus Cristo, nosso Redentor. Amém.
   </p>
 
 
@@ -471,8 +431,8 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
   <span class="indent">seja feita a tua vontade,</span>
   <span class="indent2">assim na terra como no céu.</span>
   O pão nosso de cada dia nos dá hoje.
-<span class="indent">Perdoa-nos as nossas dívidas</span>
-  <span class="indent">assim como nós também perdoamos</span>
+  Perdoa-nos as nossas dívidas
+  <span class="indent">assim como nós perdoamos</span>
   <span class="indent3">aos nossos devedores.</span>
   E não nos deixes cair em tentação,
   <span class="indent">mas livra-nos do mal.</span>
@@ -484,12 +444,12 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
   <h2>Orações de Petição</h2>
 
   <p class="red"><em>Pela Igreja</em></p>
-  <p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: nem sempre temos sido fieis ao teu chamado e muitas vezes nos acomodamos e nos calamos em vez de anunciar com coragem o teu Evangelho. Rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministros e ministras, os sínodos, presbitérios e cada comunidade e paróquia. Perdoa a nossa falta de empenho e faze-nos uma comunidade viva, acolhedora e verdadeiramente diaconal, que serve com alegria ao próximo e testemunha o Teu Evangelho reconciliador. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
+  <p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: nem sempre temos sido fieis ao teu chamado e muitas vezes nos acomodamos e nos calamos em vez de anunciar com coragem o teu Evangelho. Rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministros e ministras, os sínodos, presbitérios e cada comunidade e paróquia. Perdoa a nossa falta de empenho e faze-nos uma comunidade viva, acolhedora e verdadeiramente diaconal, que serve com alegria à pessoa próxima e testemunha o Teu Evangelho reconciliador. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
 
   <p class="red"><em>Pela Justiça e Paz</em></p>
 <p>Soberano e compassivo Deus, Criador de todas as coisas, que nos confiaste o cuidado do teu mundo e nos chamas a promover a paz: olhamos para a nossa sociedade e reconhecemos, com contrição, a nossa própria omissão diante da injustiça, da violência e do sofrimento dos mais vulneráveis. Muitas vezes nos omitimos, calamos o nosso protesto e nos beneficiamos de estruturas que oprimem. Oramos pelas autoridades para que governem com sabedoria, mas pedimos também por nós: desperta-nos do nosso comodismo, concede-nos coragem para denunciar os males que ferem a dignidade humana e capacita-nos a agir ativamente em favor dos empobrecidos, da paz e do cuidado com a Criação. Por Jesus Cristo, nosso Salvador. Amém.</p>
   <p class="red"><em>Pelos Aflitos e Necessitados</em></p>
-  <p>Deus de amor e refúgio bem presente nas tribulações, que em Jesus Cristo assumiste a nossa dor e te compadeceste das multidões: confessamos que frequentemente passamos ao largo do sofrimento alheio, fechando os nossos olhos e corações para aqueles e aquelas que clamam por socorro. Tem misericórdia de todas as pessoas enlutadas, enfermas, solitárias, desempregadas, famintas e desamparadas. Derrama sobre elas o teu Consolador e move-nos a nós mesmos para que não ofereçamos apenas palavras, mas sejamos tuas mãos estendidas em solidariedade concreta, consolo e serviço cristão e amoroso. Por amor de teu Filho amado, Jesus Cristo. Amém. 
+  <p>Deus de amor e refúgio bem presente nas tribulações, que em Jesus Cristo assumiste a nossa dor e te compadeceste das multidões: confessamos que frequentemente passamos ao largo do sofrimento alheio, fechando os nossos olhos e corações para aqueles que clamam por socorro. Tem misericórdia de todas as pessoas enlutadas, enfermas, solitárias, desempregadas, famintas e desamparadas. Derrama sobre elas o teu Consolador e move-nos a nós mesmos para que não ofereçamos apenas palavras, mas sejamos tuas mãos estendidas em solidariedade concreta, consolo e serviço cristão e amoroso. Por amor de teu Filho amado, Jesus Cristo. Amém. 
   </p>
 
   <h2>Orações Pessoais</h2>
@@ -497,7 +457,7 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <h2>Ação de Graças</h2>
   <p>
-Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero à pessoa próxima. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém. </p>
+Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém. </p>
 
 
   <h1>Encerramento</h1>
@@ -512,12 +472,8 @@ Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalme
   </p>
 </div>
 
-<!-- ======================================================= -->
-<!-- SEÇÃO SOBRE O PROJETO (FONTE MENOR / FIXA EM TODOS OS DIAS) -->
-<!-- ======================================================= -->
 <div class="sobre-projeto">
   
-  <!-- Espaço reservado para a imagem de Martinho Lutero -->
   <img src="lutero.jpeg" alt="Martim Lutero" class="img-lutero">
 
   <h2>Sobre este Projeto</h2>
@@ -1110,104 +1066,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   carregarLiturgiaParaData(dataInicial);
-});
-
-// Lógica para Música de Fundo e Controle Inteligente de Áudio
-document.addEventListener("DOMContentLoaded", () => {
-  const bgAudio = document.getElementById("bg-audio");
-  const bgBtn = document.getElementById("btn-bg-audio");
-  let userWantsMusic = true;
-  let pausedByOtherPlayer = false;
-
-  const updateButtonText = () => {
-    if (!bgBtn) return;
-    if (!bgAudio.paused) {
-      bgBtn.innerText = "🔊 Pausar Música de Fundo";
-    } else {
-      bgBtn.innerText = "🔇 Ativar Música de Fundo";
-    }
-  };
-
-  // 1. Alternar música de fundo manualmente via botão
-  if (bgBtn) {
-    bgBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (bgAudio.paused) {
-        userWantsMusic = true;
-        bgAudio.play().then(() => {
-          updateButtonText();
-        }).catch(err => console.log("Erro ao tocar áudio:", err));
-      } else {
-        userWantsMusic = false;
-        bgAudio.pause();
-        updateButtonText();
-      }
-    });
-  }
-
-  // 2. Iniciar áudio de fundo ao primeiro toque, clique ou rolagem de tela
-  const startBgOnInteraction = () => {
-    if (userWantsMusic && bgAudio.paused && !pausedByOtherPlayer) {
-      bgAudio.play().then(() => {
-        updateButtonText();
-        removeAllInteractionListeners();
-      }).catch(() => {});
-    }
-  };
-
-  function removeAllInteractionListeners() {
-    window.removeEventListener("click", startBgOnInteraction);
-    window.removeEventListener("touchstart", startBgOnInteraction);
-    window.removeEventListener("touchmove", startBgOnInteraction);
-    window.removeEventListener("scroll", startBgOnInteraction);
-    window.removeEventListener("wheel", startBgOnInteraction);
-  }
-
-  window.addEventListener("click", startBgOnInteraction);
-  window.addEventListener("touchstart", startBgOnInteraction);
-  window.addEventListener("touchmove", startBgOnInteraction);
-  window.addEventListener("scroll", startBgOnInteraction);
-  window.addEventListener("wheel", startBgOnInteraction);
-
-  // 3. Pausar a música de fundo se o player de áudio do texto (deustrino.mp3) for ativado
-  const inlineAudios = document.querySelectorAll("audio:not(#bg-audio)");
-  
-  inlineAudios.forEach(player => {
-    player.addEventListener("play", () => {
-      if (!bgAudio.paused && userWantsMusic) {
-        bgAudio.pause();
-        pausedByOtherPlayer = true;
-        updateButtonText();
-      }
-    });
-
-    const resumeBgAudio = () => {
-      if (userWantsMusic && pausedByOtherPlayer) {
-        bgAudio.play().then(() => {
-          pausedByOtherPlayer = false;
-          updateButtonText();
-        }).catch(() => {});
-      }
-    };
-
-    player.addEventListener("pause", resumeBgAudio);
-    player.addEventListener("ended", resumeBgAudio);
-  });
-});
-  document.addEventListener('visibilitychange', () => {
-  // Finds ALL audio elements on the page (both background & inline players)
-  const allAudios = document.querySelectorAll('audio');
-
-  if (document.hidden) {
-    // 🛑 Stops EVERYTHING when switching tabs or leaving the app
-    allAudios.forEach(audio => audio.pause());
-  } else {
-    // ▶️ Resumes ONLY background music when returning (if active)
-    const bgAudio = document.getElementById('bg-audio');
-    if (bgAudio) {
-      bgAudio.play().catch(() => {});
-    }
-  }
 });
 </script>
 </body>
