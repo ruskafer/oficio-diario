@@ -20,155 +20,266 @@
 <title>Ofício Diário - Com leituras do LCR (Ano A)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* Força Times New Roman em toda a página */
-body {
-    background: rgba(255, 247, 230, 1.0);
-    font-size: 1.4em;
-    font-family: "Times New Roman", Times, serif;
-}
+  :root {
+    --bg-main: #fcf8f2;
+    --card-bg: #ffffff;
+    --red-primary: #b3261e;
+    --red-subtle: #fbf0ef;
+    --text-primary: #2b2b2b;
+    --text-secondary: #595959;
+    --accent-blue: #1a56db;
+    --border-color: #ebdcd0;
+    --radius-lg: 16px;
+    --radius-md: 8px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
 
-/* Força Times New Roman também nos campos de formulário e seletores */
-input, select, button, textarea {
-    font-family: "Times New Roman", Times, serif;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-#stuffing {
-    padding: 2px;
-    background: rgba(255, 247, 230, 1.0);
-}
-h1 {
-    font-size: 106%;
-    color: rgba(255, 0, 0, 1);
-    margin-top:2%;
-    margin-right:10%;
-    margin-left:10%;
-    margin-bottom:2%;
-}
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    padding: 16px;
+    font-size: 1.05rem;
+  }
 
-h2 {
-    font-size: 104%;
-    margin-top:2%;
-    margin-right:10%;
-    margin-left:10%;
-    margin-bottom:1%;
-}
+  #stuffing {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
 
-h3 {
-    font-size: 102%;
-    margin-top:1%;
-    margin-right:2%;
-    margin-left:10%;
-    margin-bottom:.5%;
-}
+  /* Headings & Typography */
+  h1 {
+    font-size: 1.75rem;
+    color: var(--red-primary);
+    margin: 28px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--red-subtle);
+    font-weight: 700;
+  }
 
-p {
-    font-size: 100%;
-    margin-top:0;
-    margin-right:30%;
-    margin-left:10%;
-    margin-bottom:1%;
-    line-height:150%;
-}
+  h2 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin: 20px 0 12px 0;
+    font-weight: 600;
+  }
 
-.red {
-    color: rgba(255, 0, 0, 1);
-}
+  h3 {
+    font-size: 1.1rem;
+    margin: 16px 0 8px 0;
+    color: var(--text-secondary);
+  }
 
-.indent { padding-left: 2%; display: block; }
-.indent2 { padding-left: 4%; display: block; }
-.indent3 { padding-left: 6%; display: block; }
+  p {
+    margin-bottom: 14px;
+    color: var(--text-primary);
+  }
 
-a:link, a:visited {
-    color: rgba(51, 102, 255, 1);
-    text-decoration:none;
-}
+  .red {
+    color: var(--red-primary);
+  }
 
-a:hover {
-    color: rgba(51, 102, 255, 1);
-    text-decoration:underline;
-}
+  em .red, .red em {
+    font-style: italic;
+    font-weight: 500;
+  }
 
-hr {
+  .indent { padding-left: 20px; display: block; }
+  .indent2 { padding-left: 40px; display: block; }
+  .indent3 { padding-left: 60px; display: block; }
+
+  a:link, a:visited {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+  }
+
+  hr {
     border: none;
-    border-top: 1px solid rgba(255, 0, 0, 0.5);
-    margin: 20px 10%;
-}
+    border-top: 1px solid var(--border-color);
+    margin: 28px 0;
+  }
 
-.seletor-data {
-    margin: 10px 10%;
-    font-size: 80%;
-}
+  /* Audio Controls Header */
+  .control-bar {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-.seletor-data input {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1em;
-    padding: 4px;
-    background: #fff;
-  border: 2px solid #000;
-}
+  #btn-bg-audio {
+    background: var(--red-subtle);
+    border: 1px solid rgba(179, 38, 30, 0.2);
+    color: var(--red-primary);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
 
-.card-domingo {
-    background: #fff8eb;
-    border-left: 4px solid rgba(255, 0, 0, 0.8);
-    padding: 15px;
-    margin: 15px 10% 15px 10%;
-}
+  #btn-bg-audio:hover {
+    background: var(--red-primary);
+    color: #ffffff;
+  }
 
-/* Estilos para a seção explicativa do projeto com fonte menor */
-.sobre-projeto {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 2px solid rgba(255, 0, 0, 0.6);
-    font-size: 0.8em; /* Define tamanho de fonte menor para todo o bloco */
-    color: #333;
-}
+  /* Date Selector & Subheader */
+  .seletor-data {
+    background: var(--bg-main);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid var(--border-color);
+  }
 
-.sobre-projeto h2 {
-    font-size: 110%;
-    color: rgba(255, 0, 0, 0.9);
-    margin-top: 20px;
-}
+  .blue-label {
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
 
-.sobre-projeto p {
-    font-size: 100%;
-    line-height: 140%;
-}
-audio {
-    border: 3px solid rgba(255, 0, 0, 1);
-    display: block;
-    margin: 15px 0;
-}
-.img-lutero {
-    max-width: 180px;
+  .seletor-data input[type="date"] {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    outline: none;
+  }
+
+  .seletor-data input[type="date"]:focus {
+    border-color: var(--accent-blue);
+  }
+
+  .subcabecalho-info {
+    background: #f7f9fc;
+    color: var(--text-primary);
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-left: 4px solid var(--accent-blue);
+    margin-bottom: 24px;
+  }
+
+  /* Sunday Card */
+  .card-domingo {
+    background: var(--bg-main);
+    border-left: 5px solid var(--red-primary);
+    padding: 24px;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: 20px 0;
+  }
+
+  /* Audio Players */
+  audio {
+    width: 100%;
+    margin: 12px 0;
+    border-radius: 8px;
+  }
+
+  /* Embedded YouTube Responsive */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    margin: 16px 0;
+    background: #000;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* About Section */
+  .sobre-projeto {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border-color);
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+
+  .sobre-projeto h2 {
+    font-size: 1.15rem;
+    color: var(--red-primary);
+    margin-top: 24px;
+  }
+
+  .sobre-projeto p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .img-lutero {
+    max-width: 160px;
     height: auto;
     display: block;
-    margin: 15px 10%;
-}
-.blue-label {
-    color: #3366ff;
-    font-weight: normal; /* remove o negrito */
-}
-.subcabecalho-info {
-    color: #222;
-    margin: 10px 10%;
-    font-size: 100%;
-    line-height: 140%;
-}
-@media only screen and (max-width: 480px) {
-    p { margin-right: 1%; margin-left: 0%; }
-    h1, h2, h3 { margin-left: 0%; margin-right: 2px; }
-    .seletor-data { margin: 10px 0%; }
-    .card-domingo { margin: 15px 0%; }
-    .img-lutero { margin: 15px auto; }
-}
+    margin: 20px auto;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    border: 3px solid var(--border-color);
+  }
+
+  /* Responsive Rules */
+  @media only screen and (max-width: 600px) {
+    body {
+      padding: 8px;
+    }
+
+    #stuffing {
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .seletor-data {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .seletor-data input[type="date"] {
+      width: 100%;
+    }
+  }
 </style>
 </head>
 <body>
 <div id="stuffing">
 
 <!-- Background Music Controls -->
-<div style="text-align: center; margin: 15px 10px 20px 10px;">
-  <button id="btn-bg-audio" style="background: #fff8eb; border: 1px solid rgba(255, 0, 0, 0.6); color: rgba(255, 0, 0, 1); padding: 8px 16px; border-radius: 4px; font-size: 0.9em; cursor: pointer;">
+<div class="control-bar">
+  <button id="btn-bg-audio">
     🔇 Ativar Música de Fundo
   </button>
 </div>
@@ -199,7 +310,7 @@ audio {
     <p><em>"Pois onde estiverem dois ou três reunidos em meu nome, ali estou eu no meio deles." (Mateus 18:20)</em></p>
     <p>As leituras diárias do Lecionário Comum Revisado nos preparam de segunda a sábado. No domingo, somos convidados e convidadas a participar do <strong>Culto Comunitário</strong> em nossa comunidade local.</p>
     
-    <hr style="margin: 20px 0; border-top: 1px solid rgba(255, 0, 0, 0.3);">
+    <hr>
 
     <!-- Momento de Reflexão Pessoal e Pastoral -->
     <h2>Tempo de reflexão e descanso</h2>
@@ -209,13 +320,13 @@ audio {
 
     <p class="red"><strong>Desejamos um abençoado Domingo e um culto fraterno em sua Comunidade!</strong></p>
 
-    <hr style="margin: 20px 0; border-top: 1px solid rgba(255, 0, 0, 0.3);">
+    <hr>
 
     <!-- Hino Luterano e Player incorporado -->
     <p><strong>LCI 503 — Quem só em Deus, o Pai, confia</strong></p>
 
     <div class="video-container">
-    <iframe 
+      <iframe 
         src="https://www.youtube.com/embed/4I41k8TUPDo" 
         title="LCI 503 - Quem só em Deus, o Pai, confia" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -360,8 +471,8 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
   <span class="indent">seja feita a tua vontade,</span>
   <span class="indent2">assim na terra como no céu.</span>
   O pão nosso de cada dia nos dá hoje.
-  Perdoa-nos as nossas dívidas
-  <span class="indent">assim como nós perdoamos</span>
+<span class="indent">Perdoa-nos as nossas dívidas</span>
+  <span class="indent">assim como nós também perdoamos</span>
   <span class="indent3">aos nossos devedores.</span>
   E não nos deixes cair em tentação,
   <span class="indent">mas livra-nos do mal.</span>
@@ -373,12 +484,12 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
   <h2>Orações de Petição</h2>
 
   <p class="red"><em>Pela Igreja</em></p>
-  <p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: nem sempre temos sido fieis ao teu chamado e muitas vezes nos acomodamos e nos calamos em vez de anunciar com coragem o teu Evangelho. Rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministros e ministras, os sínodos, presbitérios e cada comunidade e paróquia. Perdoa a nossa falta de empenho e faze-nos uma comunidade viva, acolhedora e verdadeiramente diaconal, que serve com alegria ao próximo e testemunha a Teu Evangelho reconciliador. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
+  <p>Deus de graça e de amor, que chamas, congregas e santificas a tua Igreja por meio da Palavra e dos Sacramentos: nem sempre temos sido fieis ao teu chamado e muitas vezes nos acomodamos e nos calamos em vez de anunciar com coragem o teu Evangelho. Rogamos-te por toda a tua Igreja Cristã na terra e, de modo especial, pela nossa Igreja Evangélica de Confissão Luterana no Brasil. Abençoa os ministros e ministras, os sínodos, presbitérios e cada comunidade e paróquia. Perdoa a nossa falta de empenho e faze-nos uma comunidade viva, acolhedora e verdadeiramente diaconal, que serve com alegria ao próximo e testemunha o Teu Evangelho reconciliador. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina, um só Deus, hoje e sempre. Amém.</p>
 
   <p class="red"><em>Pela Justiça e Paz</em></p>
 <p>Soberano e compassivo Deus, Criador de todas as coisas, que nos confiaste o cuidado do teu mundo e nos chamas a promover a paz: olhamos para a nossa sociedade e reconhecemos, com contrição, a nossa própria omissão diante da injustiça, da violência e do sofrimento dos mais vulneráveis. Muitas vezes nos omitimos, calamos o nosso protesto e nos beneficiamos de estruturas que oprimem. Oramos pelas autoridades para que governem com sabedoria, mas pedimos também por nós: desperta-nos do nosso comodismo, concede-nos coragem para denunciar os males que ferem a dignidade humana e capacita-nos a agir ativamente em favor dos empobrecidos, da paz e do cuidado com a Criação. Por Jesus Cristo, nosso Salvador. Amém.</p>
   <p class="red"><em>Pelos Aflitos e Necessitados</em></p>
-  <p>Deus de amor e refúgio bem presente nas tribulações, que em Jesus Cristo assumiste a nossa dor e te compadeceste das multidões: confessamos que frequentemente passamos ao largo do sofrimento alheio, fechando os nossos olhos e corações para aqueles que clamam por socorro. Tem misericórdia de todas as pessoas enlutadas, enfermas, solitárias, desempregadas, famintas e desamparadas. Derrama sobre elas o teu Consolador e move-nos a nós mesmos para que não ofereçamos apenas palavras, mas sejamos tuas mãos estendidas em solidariedade concreta, consolo e serviço amoroso. Por amor de teu Filho amado, Jesus Cristo. Amém. 
+  <p>Deus de amor e refúgio bem presente nas tribulações, que em Jesus Cristo assumiste a nossa dor e te compadeceste das multidões: confessamos que frequentemente passamos ao largo do sofrimento alheio, fechando os nossos olhos e corações para aqueles e aquelas que clamam por socorro. Tem misericórdia de todas as pessoas enlutadas, enfermas, solitárias, desempregadas, famintas e desamparadas. Derrama sobre elas o teu Consolador e move-nos a nós mesmos para que não ofereçamos apenas palavras, mas sejamos tuas mãos estendidas em solidariedade concreta, consolo e serviço cristão e amoroso. Por amor de teu Filho amado, Jesus Cristo. Amém. 
   </p>
 
   <h2>Orações Pessoais</h2>
@@ -386,7 +497,7 @@ Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a
 
   <h2>Ação de Graças</h2>
   <p>
-Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém. </p>
+Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero à pessoa próxima. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém. </p>
 
 
   <h1>Encerramento</h1>
